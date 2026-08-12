@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BaliAtvAdventureRouteImport } from './routes/bali-atv-adventure'
+import { Route as BaliBuggyAdventureRouteImport } from './routes/bali-buggy-adventure'
+import { Route as BaliSafariMarineParkRouteImport } from './routes/bali-safari-marine-park'
+import { Route as BaliSwingRouteImport } from './routes/bali-swing'
+import { Route as BaliZooRouteImport } from './routes/bali-zoo'
+import { Route as ExperiencesRouteImport } from './routes/experiences'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BaliAtvAdventureRoute = BaliAtvAdventureRouteImport.update({
+  id: '/bali-atv-adventure',
+  path: '/bali-atv-adventure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliBuggyAdventureRoute = BaliBuggyAdventureRouteImport.update({
+  id: '/bali-buggy-adventure',
+  path: '/bali-buggy-adventure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliSafariMarineParkRoute = BaliSafariMarineParkRouteImport.update({
+  id: '/bali-safari-marine-park',
+  path: '/bali-safari-marine-park',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliSwingRoute = BaliSwingRouteImport.update({
+  id: '/bali-swing',
+  path: '/bali-swing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliZooRoute = BaliZooRouteImport.update({
+  id: '/bali-zoo',
+  path: '/bali-zoo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesRoute = ExperiencesRouteImport.update({
+  id: '/experiences',
+  path: '/experiences',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bali-atv-adventure': typeof BaliAtvAdventureRoute
+  '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
+  '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
+  '/bali-swing': typeof BaliSwingRoute
+  '/bali-zoo': typeof BaliZooRoute
+  '/experiences': typeof ExperiencesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bali-atv-adventure': typeof BaliAtvAdventureRoute
+  '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
+  '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
+  '/bali-swing': typeof BaliSwingRoute
+  '/bali-zoo': typeof BaliZooRoute
+  '/experiences': typeof ExperiencesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bali-atv-adventure': typeof BaliAtvAdventureRoute
+  '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
+  '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
+  '/bali-swing': typeof BaliSwingRoute
+  '/bali-zoo': typeof BaliZooRoute
+  '/experiences': typeof ExperiencesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/bali-atv-adventure'
+    | '/bali-buggy-adventure'
+    | '/bali-safari-marine-park'
+    | '/bali-swing'
+    | '/bali-zoo'
+    | '/experiences'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bali-atv-adventure'
+    | '/bali-buggy-adventure'
+    | '/bali-safari-marine-park'
+    | '/bali-swing'
+    | '/bali-zoo'
+    | '/experiences'
+  id:
+    | '__root__'
+    | '/'
+    | '/bali-atv-adventure'
+    | '/bali-buggy-adventure'
+    | '/bali-safari-marine-park'
+    | '/bali-swing'
+    | '/bali-zoo'
+    | '/experiences'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BaliAtvAdventureRoute: typeof BaliAtvAdventureRoute
+  BaliBuggyAdventureRoute: typeof BaliBuggyAdventureRoute
+  BaliSafariMarineParkRoute: typeof BaliSafariMarineParkRoute
+  BaliSwingRoute: typeof BaliSwingRoute
+  BaliZooRoute: typeof BaliZooRoute
+  ExperiencesRoute: typeof ExperiencesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bali-atv-adventure': {
+      id: '/bali-atv-adventure'
+      path: '/bali-atv-adventure'
+      fullPath: '/bali-atv-adventure'
+      preLoaderRoute: typeof BaliAtvAdventureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-buggy-adventure': {
+      id: '/bali-buggy-adventure'
+      path: '/bali-buggy-adventure'
+      fullPath: '/bali-buggy-adventure'
+      preLoaderRoute: typeof BaliBuggyAdventureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-safari-marine-park': {
+      id: '/bali-safari-marine-park'
+      path: '/bali-safari-marine-park'
+      fullPath: '/bali-safari-marine-park'
+      preLoaderRoute: typeof BaliSafariMarineParkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-swing': {
+      id: '/bali-swing'
+      path: '/bali-swing'
+      fullPath: '/bali-swing'
+      preLoaderRoute: typeof BaliSwingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-zoo': {
+      id: '/bali-zoo'
+      path: '/bali-zoo'
+      fullPath: '/bali-zoo'
+      preLoaderRoute: typeof BaliZooRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences': {
+      id: '/experiences'
+      path: '/experiences'
+      fullPath: '/experiences'
+      preLoaderRoute: typeof ExperiencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BaliAtvAdventureRoute: BaliAtvAdventureRoute,
+  BaliBuggyAdventureRoute: BaliBuggyAdventureRoute,
+  BaliSafariMarineParkRoute: BaliSafariMarineParkRoute,
+  BaliSwingRoute: BaliSwingRoute,
+  BaliZooRoute: BaliZooRoute,
+  ExperiencesRoute: ExperiencesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
