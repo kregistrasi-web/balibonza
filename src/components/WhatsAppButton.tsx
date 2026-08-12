@@ -32,7 +32,7 @@ export function WhatsAppButton({
 }: Props) {
   return (
     <a
-      href={whatsappLink({ experience })}
+      href={whatsappLink(experience ? { experience } : {})}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackEvent("whatsapp_click", { experience: experience ?? "general" })}
