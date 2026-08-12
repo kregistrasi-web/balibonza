@@ -10,16 +10,26 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as BaliAtvAdventureRouteImport } from './routes/bali-atv-adventure'
 import { Route as BaliBuggyAdventureRouteImport } from './routes/bali-buggy-adventure'
+import { Route as BaliPrivateToursRouteImport } from './routes/bali-private-tours'
 import { Route as BaliSafariMarineParkRouteImport } from './routes/bali-safari-marine-park'
 import { Route as BaliSwingRouteImport } from './routes/bali-swing'
 import { Route as BaliZooRouteImport } from './routes/bali-zoo'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as NusaPenidaToursRouteImport } from './routes/nusa-penida-tours'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BaliAtvAdventureRoute = BaliAtvAdventureRouteImport.update({
@@ -30,6 +40,11 @@ const BaliAtvAdventureRoute = BaliAtvAdventureRouteImport.update({
 const BaliBuggyAdventureRoute = BaliBuggyAdventureRouteImport.update({
   id: '/bali-buggy-adventure',
   path: '/bali-buggy-adventure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliPrivateToursRoute = BaliPrivateToursRouteImport.update({
+  id: '/bali-private-tours',
+  path: '/bali-private-tours',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BaliSafariMarineParkRoute = BaliSafariMarineParkRouteImport.update({
@@ -47,78 +62,128 @@ const BaliZooRoute = BaliZooRouteImport.update({
   path: '/bali-zoo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExperiencesRoute = ExperiencesRouteImport.update({
   id: '/experiences',
   path: '/experiences',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NusaPenidaToursRoute = NusaPenidaToursRouteImport.update({
+  id: '/nusa-penida-tours',
+  path: '/nusa-penida-tours',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bali-atv-adventure': typeof BaliAtvAdventureRoute
   '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
+  '/bali-private-tours': typeof BaliPrivateToursRoute
   '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
   '/bali-swing': typeof BaliSwingRoute
   '/bali-zoo': typeof BaliZooRoute
+  '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
+  '/nusa-penida-tours': typeof NusaPenidaToursRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bali-atv-adventure': typeof BaliAtvAdventureRoute
   '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
+  '/bali-private-tours': typeof BaliPrivateToursRoute
   '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
   '/bali-swing': typeof BaliSwingRoute
   '/bali-zoo': typeof BaliZooRoute
+  '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
+  '/nusa-penida-tours': typeof NusaPenidaToursRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/bali-atv-adventure': typeof BaliAtvAdventureRoute
   '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
+  '/bali-private-tours': typeof BaliPrivateToursRoute
   '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
   '/bali-swing': typeof BaliSwingRoute
   '/bali-zoo': typeof BaliZooRoute
+  '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
+  '/nusa-penida-tours': typeof NusaPenidaToursRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/bali-atv-adventure'
     | '/bali-buggy-adventure'
+    | '/bali-private-tours'
     | '/bali-safari-marine-park'
     | '/bali-swing'
     | '/bali-zoo'
+    | '/contact'
     | '/experiences'
+    | '/nusa-penida-tours'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/bali-atv-adventure'
     | '/bali-buggy-adventure'
+    | '/bali-private-tours'
     | '/bali-safari-marine-park'
     | '/bali-swing'
     | '/bali-zoo'
+    | '/contact'
     | '/experiences'
+    | '/nusa-penida-tours'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/bali-atv-adventure'
     | '/bali-buggy-adventure'
+    | '/bali-private-tours'
     | '/bali-safari-marine-park'
     | '/bali-swing'
     | '/bali-zoo'
+    | '/contact'
     | '/experiences'
+    | '/nusa-penida-tours'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   BaliAtvAdventureRoute: typeof BaliAtvAdventureRoute
   BaliBuggyAdventureRoute: typeof BaliBuggyAdventureRoute
+  BaliPrivateToursRoute: typeof BaliPrivateToursRoute
   BaliSafariMarineParkRoute: typeof BaliSafariMarineParkRoute
   BaliSwingRoute: typeof BaliSwingRoute
   BaliZooRoute: typeof BaliZooRoute
+  ContactRoute: typeof ContactRoute
   ExperiencesRoute: typeof ExperiencesRoute
+  NusaPenidaToursRoute: typeof NusaPenidaToursRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -128,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bali-atv-adventure': {
@@ -142,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/bali-buggy-adventure'
       fullPath: '/bali-buggy-adventure'
       preLoaderRoute: typeof BaliBuggyAdventureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-private-tours': {
+      id: '/bali-private-tours'
+      path: '/bali-private-tours'
+      fullPath: '/bali-private-tours'
+      preLoaderRoute: typeof BaliPrivateToursRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bali-safari-marine-park': {
@@ -165,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BaliZooRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/experiences': {
       id: '/experiences'
       path: '/experiences'
@@ -172,17 +258,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nusa-penida-tours': {
+      id: '/nusa-penida-tours'
+      path: '/nusa-penida-tours'
+      fullPath: '/nusa-penida-tours'
+      preLoaderRoute: typeof NusaPenidaToursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   BaliAtvAdventureRoute: BaliAtvAdventureRoute,
   BaliBuggyAdventureRoute: BaliBuggyAdventureRoute,
+  BaliPrivateToursRoute: BaliPrivateToursRoute,
   BaliSafariMarineParkRoute: BaliSafariMarineParkRoute,
   BaliSwingRoute: BaliSwingRoute,
   BaliZooRoute: BaliZooRoute,
+  ContactRoute: ContactRoute,
   ExperiencesRoute: ExperiencesRoute,
+  NusaPenidaToursRoute: NusaPenidaToursRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,7 +1,7 @@
 import { whatsappLink, trackEvent } from "@/config/site";
 
 type Props = {
-  experience?: string;
+  experience?: string | undefined;
   label?: string;
   className?: string;
   variant?: "solid" | "outline" | "ghost";
