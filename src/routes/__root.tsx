@@ -109,7 +109,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "BaliBonza",
           description: "Bali Activities, Adventures & Private Tours",
           areaServed: "Bali, Indonesia",
-          sameAs: ["https://instagram.com/balibonza"],
         }),
       },
     ],

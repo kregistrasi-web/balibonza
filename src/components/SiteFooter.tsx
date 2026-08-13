@@ -83,26 +83,6 @@ export function SiteFooter() {
                 </a>
               </li>
             )}
-            <li>
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-surface-foreground"
-              >
-                Instagram @balibonza
-              </a>
-            </li>
-            <li>
-              <a
-                href={siteConfig.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-surface-foreground"
-              >
-                Facebook
-              </a>
-            </li>
           </ul>
         </div>
       </div>
