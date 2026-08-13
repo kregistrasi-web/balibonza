@@ -12,8 +12,8 @@ export const siteConfig = {
   whatsappNumber: "",
   email: "",
   social: {
-    instagram: "https://instagram.com/balibonza",
-    facebook: "https://www.facebook.com/",
+    instagram: "",
+    facebook: "",
     youtube: "", // add only when the official URL is provided
   },
   serviceArea: "Bali, Indonesia — including Ubud, Kuta, Seminyak, Canggu, Nusa Dua and Sanur",

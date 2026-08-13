@@ -32,7 +32,6 @@ export const Route = createFileRoute("/")({
           description,
           areaServed: "Bali, Indonesia",
           url: "/",
-          sameAs: [siteConfig.social.instagram],
         }),
       },
     ],
