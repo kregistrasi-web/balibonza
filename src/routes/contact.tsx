@@ -8,9 +8,9 @@ import { siteConfig, whatsappLink, trackEvent } from "@/config/site";
 export const Route = createFileRoute("/contact")({
   head: () =>
     pageHead({
-      title: "Contact KitKat Bali Tour | Book Your Bali Experience",
+      title: "Contact BaliBonza | Book Your Bali Experience",
       description:
-        "Contact KitKat Bali Tour on WhatsApp, email or social media to book Bali activities, private tours, transfers and Nusa Penida trips.",
+        "Contact BaliBonza on WhatsApp, email or social media to book Bali activities, private tours, transfers and Nusa Penida trips.",
       path: "/contact",
     }),
   component: ContactPage,
@@ -117,7 +117,7 @@ function ContactPage() {
               )}
               <li>
                 <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
-                  Instagram @kitkat_bali
+                  Instagram @balibonza
                 </a>
               </li>
               <li>

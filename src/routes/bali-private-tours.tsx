@@ -7,7 +7,7 @@ import swingImg from "@/assets/bali-swing-experience.jpg";
 export const Route = createFileRoute("/bali-private-tours")({
   head: () =>
     pageHead({
-      title: "Private Bali Tours & Private Driver | KitKat Bali Tour",
+      title: "Private Bali Tours & Private Driver | BaliBonza",
       description:
         "Private Bali tours with your own driver: Ubud, temples, waterfalls, rice terraces, cultural days, airport transfers and custom itineraries.",
       path: "/bali-private-tours",

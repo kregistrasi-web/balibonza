@@ -44,9 +44,9 @@ export const experiences: Experience[] = [
     h1: "Bali ATV Adventure",
     short:
       "Ride a quad through jungle tracks, rice fields and village trails on one of Bali's most popular adventures.",
-    metaTitle: "Bali ATV Adventure | Jungle ATV Ride | KitKat Bali Tour",
+    metaTitle: "Bali ATV Adventure | Jungle ATV Ride | BaliBonza",
     metaDescription:
-      "Book a Bali ATV adventure through jungle tracks and rice fields. Single or tandem quad rides arranged by KitKat Bali Tour, with pickup available.",
+      "Book a Bali ATV adventure through jungle tracks and rice fields. Single or tandem quad rides arranged by BaliBonza, with pickup available.",
     image: atvImg,
     alt: "ATV quad bikes riding a jungle track in Bali surrounded by palms and rice fields",
     location: "Ubud area, Bali",
@@ -56,7 +56,7 @@ export const experiences: Experience[] = [
     price: "From $XX",
     intro: [
       "A Bali ATV tour is the easiest way to swap the beach for real Bali countryside. You ride an all-terrain quad along dirt tracks that cut between rice fields, plantations and village lanes, with a guide leading the group the whole way.",
-      "KitKat Bali Tour arranges your Bali ATV ride with trusted local operators, handles the transport, and confirms availability over WhatsApp before you pay anything.",
+      "BaliBonza arranges your Bali ATV ride with trusted local operators, handles the transport, and confirms availability over WhatsApp before you pay anything.",
     ],
     highlights: [
       "Guided jungle and countryside ATV track",
@@ -119,9 +119,9 @@ export const experiences: Experience[] = [
     h1: "Bali Zoo Experiences",
     short:
       "Family-friendly animal encounters and day visits at Bali Zoo, arranged and booked for you.",
-    metaTitle: "Bali Zoo Tickets & Experiences | KitKat Bali Tour",
+    metaTitle: "Bali Zoo Tickets & Experiences | BaliBonza",
     metaDescription:
-      "Bali Zoo tickets, animal encounters and family experiences arranged by KitKat Bali Tour. Tell us your dates on WhatsApp for availability and pricing.",
+      "Bali Zoo tickets, animal encounters and family experiences arranged by BaliBonza. Tell us your dates on WhatsApp for availability and pricing.",
     image: zooImg,
     alt: "Family watching an elephant during an animal encounter at a tropical zoo in Bali",
     location: "Gianyar, Bali",
@@ -131,7 +131,7 @@ export const experiences: Experience[] = [
     price: "From $XX",
     intro: [
       "Bali Zoo is one of the island's most popular family attractions, with tropical gardens, animal habitats and a range of add-on encounters.",
-      "KitKat Bali Tour is an independent booking and travel service. We arrange your Bali Zoo tickets and transport — Bali Zoo is owned and operated by its own management.",
+      "BaliBonza is an independent booking and travel service. We arrange your Bali Zoo tickets and transport — Bali Zoo is owned and operated by its own management.",
     ],
     highlights: [
       "Bali Zoo admission arranged for your dates",
@@ -169,7 +169,7 @@ export const experiences: Experience[] = [
     ],
     faq: [
       {
-        q: "Does KitKat Bali Tour operate Bali Zoo?",
+        q: "Does BaliBonza operate Bali Zoo?",
         a: "No. Bali Zoo is a third-party attraction. We are a Bali travel and booking service that arranges tickets, experiences and transport for you.",
       },
       {
@@ -189,9 +189,9 @@ export const experiences: Experience[] = [
     h1: "Bali Safari & Marine Park",
     short:
       "Safari journeys, wildlife viewing and family attractions at Bali Safari & Marine Park.",
-    metaTitle: "Bali Safari & Marine Park Tickets | KitKat Bali Tour",
+    metaTitle: "Bali Safari & Marine Park Tickets | BaliBonza",
     metaDescription:
-      "Bali Safari & Marine Park tickets and family packages arranged by KitKat Bali Tour, with optional private transport. Ask for availability on WhatsApp.",
+      "Bali Safari & Marine Park tickets and family packages arranged by BaliBonza, with optional private transport. Ask for availability on WhatsApp.",
     image: safariImg,
     alt: "Guests in a safari vehicle watching zebras in an open savannah enclosure at Bali Safari",
     location: "Gianyar, Bali",
@@ -247,7 +247,7 @@ export const experiences: Experience[] = [
         a: "Yes, private car transfers can be added to any package for most areas of Bali.",
       },
       {
-        q: "Is KitKat Bali Tour the park operator?",
+        q: "Is BaliBonza the park operator?",
         a: "No. Bali Safari & Marine Park is a third-party attraction; we are the travel service that arranges your tickets and transport.",
       },
     ],
@@ -259,9 +259,9 @@ export const experiences: Experience[] = [
     h1: "Bali Buggy Adventure",
     short:
       "Off-road buggy driving through jungle tracks, rice fields and village scenery.",
-    metaTitle: "Bali Buggy Adventure | Off Road Buggy Bali | KitKat Bali Tour",
+    metaTitle: "Bali Buggy Adventure | Off Road Buggy Bali | BaliBonza",
     metaDescription:
-      "Bali buggy adventure through off-road jungle tracks and rice fields. Two-seat and four-seat buggy options arranged by KitKat Bali Tour.",
+      "Bali buggy adventure through off-road jungle tracks and rice fields. Two-seat and four-seat buggy options arranged by BaliBonza.",
     image: buggyImg,
     alt: "Off-road buggy driving a dirt track between Bali rice fields with palm trees behind",
     location: "Ubud area, Bali",
@@ -328,9 +328,9 @@ export const experiences: Experience[] = [
     h1: "Bali Swing Experience",
     short:
       "Jungle swings, nests and photo spots overlooking Bali's valleys and terraces.",
-    metaTitle: "Bali Swing Experience & Tour | KitKat Bali Tour",
+    metaTitle: "Bali Swing Experience & Tour | BaliBonza",
     metaDescription:
-      "Book a Bali Swing experience with jungle and valley views, photo spots and optional private transport, arranged by KitKat Bali Tour.",
+      "Book a Bali Swing experience with jungle and valley views, photo spots and optional private transport, arranged by BaliBonza.",
     image: swingImg,
     alt: "Woman on a jungle swing above a green Bali valley with terraces and morning mist",
     location: "Ubud area, Bali",

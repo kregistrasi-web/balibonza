@@ -80,13 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "KitKat Bali Tour | Bali Activities, Adventures & Private Tours" },
+      { title: "BaliBonza | Bali Activities, Adventures & Private Tours" },
       {
         name: "description",
         content:
-          "Book Bali activities, adventures, wildlife experiences and private tours with KitKat Bali Tour.",
+          "Book Bali activities, adventures, wildlife experiences and private tours with BaliBonza.",
       },
-      { property: "og:site_name", content: "KitKat Bali Tour" },
+      { property: "og:site_name", content: "BaliBonza" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -106,10 +106,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "KitKat Bali Tour",
+          name: "BaliBonza",
           description: "Bali Activities, Adventures & Private Tours",
           areaServed: "Bali, Indonesia",
-          sameAs: ["https://instagram.com/kitkat_bali"],
+          sameAs: ["https://instagram.com/balibonza"],
         }),
       },
     ],

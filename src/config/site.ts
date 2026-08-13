@@ -1,10 +1,10 @@
 /**
- * Central configuration for KitKat Bali Tour.
+ * Central configuration for BaliBonza.
  * Update contact details, social links and tracking IDs here only.
  */
 
 export const siteConfig = {
-  name: "KitKat Bali Tour",
+  name: "BaliBonza",
   tagline: "Bali Activities, Adventures & Private Tours",
   description:
     "Book Bali ATV, Bali Zoo, Bali Safari, buggy adventures, Bali Swing, private tours and Nusa Penida trips with a local Bali team.",
@@ -12,7 +12,7 @@ export const siteConfig = {
   whatsappNumber: "",
   email: "",
   social: {
-    instagram: "https://instagram.com/kitkat_bali",
+    instagram: "https://instagram.com/balibonza",
     facebook: "https://www.facebook.com/",
     youtube: "", // add only when the official URL is provided
   },
