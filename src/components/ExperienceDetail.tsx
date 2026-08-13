@@ -58,7 +58,7 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
       <section className="border-b border-border bg-muted/50">
         <dl className="container-page grid grid-cols-2 gap-6 py-6 text-sm lg:grid-cols-4">
           {[
-            ["Starting price", exp.price],
+            ["Price", exp.price],
             ["Duration", exp.duration],
             ["Location", exp.location],
             ["Suitable for", exp.suitableFor],
@@ -134,7 +134,7 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
           <section>
             <h2 className="font-display text-2xl font-semibold">Gallery</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Photo gallery placeholder — real {exp.title} photos will be added here once supplied.
+              Photos of {exp.title} and the surrounding area in Bali.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
               {[0, 1, 2].map((i) => (
