@@ -90,7 +90,7 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="hover:text-surface-foreground"
               >
-                Instagram @kitkat_bali
+                Instagram @balibonza
               </a>
             </li>
             <li>

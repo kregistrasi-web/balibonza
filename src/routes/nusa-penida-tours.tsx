@@ -7,9 +7,9 @@ import heroImg from "@/assets/bali-hero.jpg";
 export const Route = createFileRoute("/nusa-penida-tours")({
   head: () =>
     pageHead({
-      title: "Nusa Penida Tours & Snorkeling | KitKat Bali Tour",
+      title: "Nusa Penida Tours & Snorkeling | BaliBonza",
       description:
-        "West, east and combination Nusa Penida day tours plus snorkeling trips and fast boat transfers, arranged by KitKat Bali Tour.",
+        "West, east and combination Nusa Penida day tours plus snorkeling trips and fast boat transfers, arranged by BaliBonza.",
       path: "/nusa-penida-tours",
     }),
   component: NusaPenidaPage,

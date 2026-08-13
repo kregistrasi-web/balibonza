@@ -7,9 +7,9 @@ import { siteConfig } from "@/config/site";
 export const Route = createFileRoute("/about")({
   head: () =>
     pageHead({
-      title: "About KitKat Bali Tour | Local Bali Activities Team",
+      title: "About BaliBonza | Local Bali Activities Team",
       description:
-        "KitKat Bali Tour is a local Bali travel and experience booking service arranging adventures, wildlife parks, private tours, transport and island trips.",
+        "BaliBonza is a local Bali travel and experience booking service arranging adventures, wildlife parks, private tours, transport and island trips.",
       path: "/about",
     }),
   component: AboutPage,

@@ -6,7 +6,7 @@ import { ExperienceCard } from "@/components/ExperienceCard";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { siteConfig } from "@/config/site";
 
-const title = "KitKat Bali Tour | Bali ATV, Zoo, Safari, Buggy & Swing Experiences";
+const title = "BaliBonza | Bali ATV, Zoo, Safari, Buggy & Swing Experiences";
 const description =
   "Book Bali activities with a local team: Bali ATV adventure, Bali Zoo, Bali Safari & Marine Park, buggy adventures, Bali Swing, private tours and Nusa Penida trips.";
 
@@ -137,7 +137,7 @@ function Index() {
         <div>
           <p className="eyebrow">Why us</p>
           <h2 className="mt-2 font-display text-3xl font-semibold sm:text-4xl">
-            Why Book With KitKat Bali Tour?
+            Why Book With BaliBonza?
           </h2>
           <dl className="mt-6 space-y-5">
             {reasons.map(([t, d]) => (

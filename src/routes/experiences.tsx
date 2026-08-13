@@ -7,7 +7,7 @@ import { pageHead } from "@/lib/seo";
 export const Route = createFileRoute("/experiences")({
   head: () =>
     pageHead({
-      title: "Bali Activities & Experiences | KitKat Bali Tour",
+      title: "Bali Activities & Experiences | BaliBonza",
       description:
         "Browse Bali activities: ATV and buggy adventures, Bali Zoo, Bali Safari, Bali Swing, private tours, snorkeling, Nusa Penida trips and transport.",
       path: "/experiences",
