@@ -53,7 +53,7 @@ export const experiences: Experience[] = [
     duration: "Approx. 2 hours riding (confirm on booking)",
     type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families with teens",
-    price: "From $XX",
+    price: "Price on request",
     intro: [
       "A Bali ATV tour is the easiest way to swap the beach for real Bali countryside. You ride an all-terrain quad along dirt tracks that cut between rice fields, plantations and village lanes, with a guide leading the group the whole way.",
       "BaliBonza arranges your Bali ATV ride with trusted local operators, handles the transport, and confirms availability over WhatsApp before you pay anything.",
@@ -91,7 +91,7 @@ export const experiences: Experience[] = [
     ],
     important: [
       "Track routes and inclusions depend on the operator selected for your date.",
-      "Prices shown are placeholders until confirmed for your group size and date.",
+      "We confirm the exact price for your group size and date before you book.",
     ],
     faq: [
       {
@@ -128,7 +128,7 @@ export const experiences: Experience[] = [
     duration: "Half day (flexible)",
     type: "Wildlife • Family",
     suitableFor: "Families with children, first-time visitors",
-    price: "From $XX",
+    price: "Price on request",
     intro: [
       "Bali Zoo is one of the island's most popular family attractions, with tropical gardens, animal habitats and a range of add-on encounters.",
       "BaliBonza is an independent booking and travel service. We arrange your Bali Zoo tickets and transport — Bali Zoo is owned and operated by its own management.",
@@ -198,7 +198,7 @@ export const experiences: Experience[] = [
     duration: "Full or half day",
     type: "Wildlife • Family",
     suitableFor: "Families, groups, wildlife lovers",
-    price: "From $XX",
+    price: "Price on request",
     intro: [
       "Bali Safari & Marine Park combines a safari journey through open animal habitats with shows, rides and family facilities in one large park.",
       "We handle the booking side: admission packages, guest numbers and transport. The park itself is operated by Bali Safari & Marine Park.",
@@ -268,7 +268,7 @@ export const experiences: Experience[] = [
     duration: "Approx. 2 hours riding (confirm on booking)",
     type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families driving together",
-    price: "From $XX",
+    price: "Price on request",
     intro: [
       "A Bali buggy adventure gives you more space and a shared cockpit compared with a quad, so couples and families can ride together while still getting the full off-road experience.",
       "We match you with a buggy operator that fits your group size and location, then confirm the schedule with you directly.",
@@ -337,7 +337,7 @@ export const experiences: Experience[] = [
     duration: "1–2 hours at the park",
     type: "Scenic • Photo experience",
     suitableFor: "Couples, families, photo lovers",
-    price: "From $XX",
+    price: "Price on request",
     intro: [
       "Bali Swing parks combine swings of different heights with nests, platforms and viewpoints set above green valleys — the classic Bali photo experience.",
       "We book your entry package, arrange transport if needed, and confirm exactly which swings and props are included at the park you choose.",

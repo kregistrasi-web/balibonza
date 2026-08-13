@@ -54,7 +54,7 @@ function NusaPenidaPage() {
             <div key={name} className="rounded-2xl border border-border bg-card p-6">
               <h3 className="font-display text-lg font-semibold">{name}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-              <p className="mt-4 text-sm font-semibold">From $XX</p>
+              <p className="mt-4 text-sm font-semibold">Price on request</p>
               <WhatsAppButton experience={name} label="Ask on WhatsApp" variant="outline" className="mt-4 px-4 py-2.5" />
             </div>
           ))}
