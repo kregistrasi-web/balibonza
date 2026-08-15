@@ -1,6 +1,8 @@
 import atvImg from "@/assets/bali-atv-adventure-jungle-river.jpg";
 
 
+
+
 import zooImg from "@/assets/bali-zoo-animal-experience.jpg";
 import safariImg from "@/assets/bali-safari-marine-park.jpg";
 import buggyImg from "@/assets/bali-buggy-adventure.jpg";
