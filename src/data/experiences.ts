@@ -65,6 +65,7 @@ export const experiences: Experience[] = [
     type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families with teens",
     price: "Price on request",
+    categoryId: "atv-off-road",
     intro: [
       "A Bali ATV tour is the easiest way to swap the beach for real Bali countryside. You ride an all-terrain quad along dirt tracks that cut between rice fields, plantations and village lanes, with a guide leading the group the whole way.",
       "BaliBonza arranges your Bali ATV ride with trusted local operators, handles the transport, and confirms availability over WhatsApp before you pay anything.",
