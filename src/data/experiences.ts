@@ -417,39 +417,32 @@ export function getExperience(slug: string) {
 
 export const categories = [
   {
-    title: "Adventure",
-    description: "ATV, buggy, tubing and water sports across Bali.",
-    items: ["Bali ATV", "Bali Buggy", "Water Sports", "Tubing"],
+    id: "atv-off-road",
+    title: "ATV & Off-Road",
+    description:
+      "Quad and buggy adventures through jungle tracks, rice fields and village trails.",
+    items: ["Bali ATV Adventure", "Bali Buggy Adventure"],
     to: "/bali-atv-adventure",
   },
   {
-    title: "Wildlife & Family",
-    description: "Zoo visits, safari journeys and animal encounters.",
-    items: ["Bali Zoo", "Bali Safari & Marine Park", "Animal experiences"],
+    id: "wildlife-animal",
+    title: "Wildlife & Animal",
+    description: "Zoo visits, safari journeys and animal encounters across Bali.",
+    items: ["Bali Zoo", "Bali Safari & Marine Park"],
     to: "/bali-zoo",
   },
   {
-    title: "Scenic & Instagrammable",
-    description: "Swings, rice terraces, waterfalls and viewpoints.",
-    items: ["Bali Swing", "Rice terraces", "Waterfalls", "Viewpoints"],
+    id: "swing-scenic",
+    title: "Swing & Scenic",
+    description: "Jungle swings, nests and scenic photo spots with valley views.",
+    items: ["Bali Swing"],
     to: "/bali-swing",
   },
   {
-    title: "Private Tours",
-    description: "Ubud, culture, temples and fully custom day tours.",
-    items: ["Ubud tours", "Temple tours", "Cultural tours", "Custom day tours"],
-    to: "/bali-private-tours",
-  },
-  {
-    title: "Islands & Snorkeling",
-    description: "Nusa Penida day trips, snorkeling and manta spots.",
-    items: ["West Nusa Penida", "East Nusa Penida", "Snorkeling"],
+    id: "island-experiences",
+    title: "Island Experiences",
+    description: "Nusa Penida day trips, island hopping and coastal exploration.",
+    items: ["Nusa Penida Tours"],
     to: "/nusa-penida-tours",
-  },
-  {
-    title: "Transportation",
-    description: "Airport transfers, private drivers and fast boats.",
-    items: ["Airport transfer", "Private driver", "Fast boat"],
-    to: "/bali-private-tours",
   },
 ];
