@@ -8,6 +8,12 @@ import safariImg from "@/assets/bali-safari-marine-park.jpg";
 import buggyImg from "@/assets/bali-buggy-adventure.jpg";
 import swingImg from "@/assets/bali-swing-experience.jpg";
 
+export type CategoryId =
+  | "atv-off-road"
+  | "wildlife-animal"
+  | "swing-scenic"
+  | "island-experiences";
+
 export type Experience = {
   slug: string;
   path: string;
@@ -23,6 +29,7 @@ export type Experience = {
   type: string;
   suitableFor: string;
   price: string;
+  categoryId?: CategoryId;
   highlights: string[];
   flow: string[];
   included: string[];
