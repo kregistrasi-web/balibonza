@@ -35,7 +35,6 @@ function ExperiencesPage() {
               <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
             </div>
 
-
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {categoryExperiences.length > 0 ? (
                 categoryExperiences.map((exp, i) => (
