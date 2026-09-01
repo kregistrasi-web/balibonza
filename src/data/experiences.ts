@@ -353,6 +353,7 @@ export const experiences: Experience[] = [
     type: "Scenic • Photo experience",
     suitableFor: "Couples, families, photo lovers",
     price: "Price on request",
+    categoryId: "swing-scenic",
     intro: [
       "Bali Swing parks combine swings of different heights with nests, platforms and viewpoints set above green valleys — the classic Bali photo experience.",
       "We book your entry package, arrange transport if needed, and confirm exactly which swings and props are included at the park you choose.",
