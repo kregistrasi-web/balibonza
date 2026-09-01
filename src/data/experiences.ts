@@ -283,6 +283,7 @@ export const experiences: Experience[] = [
     type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families driving together",
     price: "Price on request",
+    categoryId: "atv-off-road",
     intro: [
       "A Bali buggy adventure gives you more space and a shared cockpit compared with a quad, so couples and families can ride together while still getting the full off-road experience.",
       "We match you with a buggy operator that fits your group size and location, then confirm the schedule with you directly.",
