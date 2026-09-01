@@ -8,6 +8,12 @@ import safariImg from "@/assets/bali-safari-marine-park.jpg";
 import buggyImg from "@/assets/bali-buggy-adventure.jpg";
 import swingImg from "@/assets/bali-swing-experience.jpg";
 
+export type CategoryId =
+  | "atv-off-road"
+  | "wildlife-animal"
+  | "swing-scenic"
+  | "island-experiences";
+
 export type Experience = {
   slug: string;
   path: string;
@@ -23,6 +29,7 @@ export type Experience = {
   type: string;
   suitableFor: string;
   price: string;
+  categoryId?: CategoryId;
   highlights: string[];
   flow: string[];
   included: string[];
@@ -58,6 +65,7 @@ export const experiences: Experience[] = [
     type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families with teens",
     price: "Price on request",
+    categoryId: "atv-off-road",
     intro: [
       "A Bali ATV tour is the easiest way to swap the beach for real Bali countryside. You ride an all-terrain quad along dirt tracks that cut between rice fields, plantations and village lanes, with a guide leading the group the whole way.",
       "BaliBonza arranges your Bali ATV ride with trusted local operators, handles the transport, and confirms availability over WhatsApp before you pay anything.",
@@ -133,6 +141,7 @@ export const experiences: Experience[] = [
     type: "Wildlife • Family",
     suitableFor: "Families with children, first-time visitors",
     price: "Price on request",
+    categoryId: "wildlife-animal",
     intro: [
       "Bali Zoo is one of the island's most popular family attractions, with tropical gardens, animal habitats and a range of add-on encounters.",
       "BaliBonza is an independent booking and travel service. We arrange your Bali Zoo tickets and transport — Bali Zoo is owned and operated by its own management.",
@@ -203,6 +212,7 @@ export const experiences: Experience[] = [
     type: "Wildlife • Family",
     suitableFor: "Families, groups, wildlife lovers",
     price: "Price on request",
+    categoryId: "wildlife-animal",
     intro: [
       "Bali Safari & Marine Park combines a safari journey through open animal habitats with shows, rides and family facilities in one large park.",
       "We handle the booking side: admission packages, guest numbers and transport. The park itself is operated by Bali Safari & Marine Park.",
@@ -273,6 +283,7 @@ export const experiences: Experience[] = [
     type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families driving together",
     price: "Price on request",
+    categoryId: "atv-off-road",
     intro: [
       "A Bali buggy adventure gives you more space and a shared cockpit compared with a quad, so couples and families can ride together while still getting the full off-road experience.",
       "We match you with a buggy operator that fits your group size and location, then confirm the schedule with you directly.",
@@ -342,6 +353,7 @@ export const experiences: Experience[] = [
     type: "Scenic • Photo experience",
     suitableFor: "Couples, families, photo lovers",
     price: "Price on request",
+    categoryId: "swing-scenic",
     intro: [
       "Bali Swing parks combine swings of different heights with nests, platforms and viewpoints set above green valleys — the classic Bali photo experience.",
       "We book your entry package, arrange transport if needed, and confirm exactly which swings and props are included at the park you choose.",
@@ -405,39 +417,32 @@ export function getExperience(slug: string) {
 
 export const categories = [
   {
-    title: "Adventure",
-    description: "ATV, buggy, tubing and water sports across Bali.",
-    items: ["Bali ATV", "Bali Buggy", "Water Sports", "Tubing"],
+    id: "atv-off-road",
+    title: "ATV & Off-Road",
+    description:
+      "Quad and buggy adventures through jungle tracks, rice fields and village trails.",
+    items: ["Bali ATV Adventure", "Bali Buggy Adventure"],
     to: "/bali-atv-adventure",
   },
   {
-    title: "Wildlife & Family",
-    description: "Zoo visits, safari journeys and animal encounters.",
-    items: ["Bali Zoo", "Bali Safari & Marine Park", "Animal experiences"],
+    id: "wildlife-animal",
+    title: "Wildlife & Animal",
+    description: "Zoo visits, safari journeys and animal encounters across Bali.",
+    items: ["Bali Zoo", "Bali Safari & Marine Park"],
     to: "/bali-zoo",
   },
   {
-    title: "Scenic & Instagrammable",
-    description: "Swings, rice terraces, waterfalls and viewpoints.",
-    items: ["Bali Swing", "Rice terraces", "Waterfalls", "Viewpoints"],
+    id: "swing-scenic",
+    title: "Swing & Scenic",
+    description: "Jungle swings, nests and scenic photo spots with valley views.",
+    items: ["Bali Swing"],
     to: "/bali-swing",
   },
   {
-    title: "Private Tours",
-    description: "Ubud, culture, temples and fully custom day tours.",
-    items: ["Ubud tours", "Temple tours", "Cultural tours", "Custom day tours"],
-    to: "/bali-private-tours",
-  },
-  {
-    title: "Islands & Snorkeling",
-    description: "Nusa Penida day trips, snorkeling and manta spots.",
-    items: ["West Nusa Penida", "East Nusa Penida", "Snorkeling"],
+    id: "island-experiences",
+    title: "Island Experiences",
+    description: "Nusa Penida day trips, island hopping and coastal exploration.",
+    items: ["Nusa Penida Tours"],
     to: "/nusa-penida-tours",
-  },
-  {
-    title: "Transportation",
-    description: "Airport transfers, private drivers and fast boats.",
-    items: ["Airport transfer", "Private driver", "Fast boat"],
-    to: "/bali-private-tours",
   },
 ];
