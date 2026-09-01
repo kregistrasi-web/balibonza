@@ -141,6 +141,7 @@ export const experiences: Experience[] = [
     type: "Wildlife • Family",
     suitableFor: "Families with children, first-time visitors",
     price: "Price on request",
+    categoryId: "wildlife-animal",
     intro: [
       "Bali Zoo is one of the island's most popular family attractions, with tropical gardens, animal habitats and a range of add-on encounters.",
       "BaliBonza is an independent booking and travel service. We arrange your Bali Zoo tickets and transport — Bali Zoo is owned and operated by its own management.",
