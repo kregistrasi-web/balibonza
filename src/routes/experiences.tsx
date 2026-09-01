@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { experiences, categories } from "@/data/experiences";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -25,27 +25,58 @@ function ExperiencesPage() {
         islands and transport. Message us on WhatsApp for availability and pricing.
       </p>
 
-      <h2 className="mt-12 font-display text-2xl font-semibold">Top experiences</h2>
-      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {experiences.map((exp, i) => (
-          <ExperienceCard key={exp.slug} exp={exp} priority={i === 0} />
-        ))}
-      </div>
+      {categories.map((c, categoryIndex) => {
+        const categoryExperiences = experiences.filter((e) => e.categoryId === c.id);
 
-      <h2 className="mt-16 font-display text-2xl font-semibold">Browse by category</h2>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {categories.map((c) => (
-          <div key={c.title} className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="font-display text-lg font-semibold">{c.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
-            <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-              {c.items.map((i) => (
-                <li key={i}>{i}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+        return (
+          <section key={c.id} className="mt-12">
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="font-display text-2xl font-semibold">{c.title}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
+            </div>
+
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {categoryExperiences.length > 0 ? (
+                categoryExperiences.map((exp, i) => (
+                  <ExperienceCard
+                    key={exp.slug}
+                    exp={exp}
+                    priority={categoryIndex === 0 && i === 0}
+                  />
+                ))
+              ) : (
+                <Link
+                  to={c.to}
+                  className="flex flex-col justify-between rounded-2xl border border-border bg-card p-6 transition-colors hover:bg-accent/50"
+                >
+                  <div>
+                    <h3 className="font-display text-lg font-semibold">{c.items[0]}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
+                  </div>
+                  <span className="mt-4 inline-flex items-center text-sm font-semibold text-primary">
+                    Explore {c.title}
+                    <svg
+                      className="ml-1 size-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.25 8.75L21 12m0 0l-3.75 3.25M21 12H3"
+                      />
+                    </svg>
+                  </span>
+                </Link>
+              )}
+            </div>
+          </section>
+        );
+      })}
     </div>
   );
 }
+
