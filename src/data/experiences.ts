@@ -212,6 +212,7 @@ export const experiences: Experience[] = [
     type: "Wildlife • Family",
     suitableFor: "Families, groups, wildlife lovers",
     price: "Price on request",
+    categoryId: "wildlife-animal",
     intro: [
       "Bali Safari & Marine Park combines a safari journey through open animal habitats with shows, rides and family facilities in one large park.",
       "We handle the booking side: admission packages, guest numbers and transport. The park itself is operated by Bali Safari & Marine Park.",
