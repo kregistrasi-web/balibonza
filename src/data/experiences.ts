@@ -416,7 +416,7 @@ export const experiences: Experience[] = [
     metaTitle: "Bali Jeep Sunrise – Mount Batur | BaliBonza",
     metaDescription:
       "Book a Bali Jeep sunrise adventure around Mount Batur. 4WD Jeep ride across volcanic landscapes and scenic viewpoints, arranged by BaliBonza.",
-    image: jeepImg,
+    image: jeepImg.url,
     alt: "4WD Jeep on the volcanic slopes of Mount Batur at sunrise in Bali",
     location: "Mount Batur, Bali",
     duration: "Half day",
