@@ -3,10 +3,7 @@ import zooImg from "@/assets/bali-zoo-animal-experience.jpg";
 import safariImg from "@/assets/bali-safari-marine-park.jpg";
 import buggyImg from "@/assets/bali-buggy-adventure.jpg";
 import swingImg from "@/assets/bali-swing-experience.jpg";
-
-// TODO: Replace with the client-supplied Jeep Sunrise photo once uploaded
-// (e.g. import jeepImg from "@/assets/bali-jeep-sunrise-mount-batur.jpg").
-export const jeepImg = "/images/bali-jeep-sunrise-mount-batur.jpg";
+import jeepImg from "@/assets/bali-jeep-sunrise-mount-batur.webp.asset.json";
 
 export type CategoryId =
   | "atv-off-road"
@@ -419,7 +416,7 @@ export const experiences: Experience[] = [
     metaTitle: "Bali Jeep Sunrise – Mount Batur | BaliBonza",
     metaDescription:
       "Book a Bali Jeep sunrise adventure around Mount Batur. 4WD Jeep ride across volcanic landscapes and scenic viewpoints, arranged by BaliBonza.",
-    image: jeepImg,
+    image: jeepImg.url,
     alt: "4WD Jeep on the volcanic slopes of Mount Batur at sunrise in Bali",
     location: "Mount Batur, Bali",
     duration: "Half day",
