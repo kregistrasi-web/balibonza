@@ -1,12 +1,12 @@
 import atvImg from "@/assets/bali-atv-adventure-jungle-river.jpg";
-
-
-
-
 import zooImg from "@/assets/bali-zoo-animal-experience.jpg";
 import safariImg from "@/assets/bali-safari-marine-park.jpg";
 import buggyImg from "@/assets/bali-buggy-adventure.jpg";
 import swingImg from "@/assets/bali-swing-experience.jpg";
+
+// TODO: Replace with the client-supplied Jeep Sunrise photo once uploaded
+// (e.g. import jeepImg from "@/assets/bali-jeep-sunrise-mount-batur.jpg").
+export const jeepImg = "/images/bali-jeep-sunrise-mount-batur.jpg";
 
 export type CategoryId =
   | "atv-off-road"
