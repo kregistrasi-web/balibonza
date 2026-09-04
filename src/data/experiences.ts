@@ -409,6 +409,83 @@ export const experiences: Experience[] = [
       },
     ],
   },
+  {
+    slug: "bali-jeep-sunrise",
+    path: "/bali-jeep-sunrise",
+    title: "Bali Jeep Sunrise – Mount Batur",
+    h1: "Bali Jeep Sunrise – Mount Batur",
+    short:
+      "Sunrise adventure by 4WD Jeep around Mount Batur, with volcanic landscapes and scenic viewpoints.",
+    metaTitle: "Bali Jeep Sunrise – Mount Batur | BaliBonza",
+    metaDescription:
+      "Book a Bali Jeep sunrise adventure around Mount Batur. 4WD Jeep ride across volcanic landscapes and scenic viewpoints, arranged by BaliBonza.",
+    image: jeepImg,
+    alt: "4WD Jeep on the volcanic slopes of Mount Batur at sunrise in Bali",
+    location: "Mount Batur, Bali",
+    duration: "Half day",
+    type: "Adventure • Off-road",
+    suitableFor: "Couples, friends, families, sunrise lovers",
+    price: "Price on request",
+    categoryId: "atv-off-road",
+    intro: [
+      "The Bali Jeep sunrise experience takes you up the slopes of Mount Batur in a 4WD Jeep, so you can watch the sunrise over the volcano and lake without a strenuous hike.",
+      "BaliBonza arranges your Mount Batur Jeep trip with trusted local operators, handles the early-morning pickup, and confirms availability over WhatsApp before you pay anything.",
+    ],
+    highlights: [
+      "Sunrise from a Mount Batur viewpoint reached by 4WD Jeep",
+      "Drive across volcanic black lava fields and sand",
+      "Scenic viewpoints over the volcano, lake and caldera",
+      "No hiking required — the Jeep does the climbing",
+      "Optional hotel pickup from South Bali and Ubud",
+    ],
+    flow: [
+      "Early-morning pickup from your hotel or meeting point",
+      "Arrive at the Jeep base and meet your driver-guide",
+      "4WD ride up the volcanic slopes in the dark",
+      "Watch sunrise from a scenic viewpoint",
+      "Explore the black lava fields and photo stops",
+      "Return to the base and transfer back to your hotel (if selected)",
+    ],
+    included: [
+      "4WD Jeep ride with driver-guide",
+      "Sunrise viewpoint visit at Mount Batur",
+      "Booking assistance and confirmation",
+      "Private transport when added to your package",
+    ],
+    excluded: [
+      "Meals and drinks unless part of the chosen package",
+      ...commonExcluded,
+    ],
+    pickup:
+      "Early-morning hotel pickup can be arranged for most areas of South Bali and Ubud. Share your hotel name on WhatsApp and we will confirm the pickup time and any transport surcharge.",
+    requirements: [
+      "Warm layer recommended — it is cold before sunrise",
+      "Closed shoes and comfortable clothing",
+      "Suitable for most ages; not a strenuous activity",
+    ],
+    important: [
+      "Sunrise visibility depends on weather conditions on the day.",
+      "We confirm the exact price for your group size and date before you book.",
+    ],
+    faq: [
+      {
+        q: "Do I need to hike to see the Mount Batur sunrise?",
+        a: "No. The 4WD Jeep takes you up the volcanic slopes to a sunrise viewpoint, so there is no trekking involved.",
+      },
+      {
+        q: "What time does the Jeep sunrise tour start?",
+        a: "Pickup is in the early hours of the morning so you reach the viewpoint before sunrise. We confirm the exact pickup time for your hotel location when you book.",
+      },
+      {
+        q: "What should I wear for the Mount Batur Jeep tour?",
+        a: "Bring a warm layer or jacket, as it is cold on the mountain before sunrise, plus comfortable closed shoes.",
+      },
+      {
+        q: "Is hotel pickup included?",
+        a: "Pickup is available in many areas. Availability and any extra cost depend on your location, so we confirm it when you book.",
+      },
+    ],
+  },
 ];
 
 export function getExperience(slug: string) {
