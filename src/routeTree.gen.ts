@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BaliAtvAdventureRouteImport } from './routes/bali-atv-adventure'
 import { Route as BaliBuggyAdventureRouteImport } from './routes/bali-buggy-adventure'
+import { Route as BaliJeepSunriseRouteImport } from './routes/bali-jeep-sunrise'
 import { Route as BaliPrivateToursRouteImport } from './routes/bali-private-tours'
 import { Route as BaliSafariMarineParkRouteImport } from './routes/bali-safari-marine-park'
 import { Route as BaliSwingRouteImport } from './routes/bali-swing'
@@ -40,6 +41,11 @@ const BaliAtvAdventureRoute = BaliAtvAdventureRouteImport.update({
 const BaliBuggyAdventureRoute = BaliBuggyAdventureRouteImport.update({
   id: '/bali-buggy-adventure',
   path: '/bali-buggy-adventure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliJeepSunriseRoute = BaliJeepSunriseRouteImport.update({
+  id: '/bali-jeep-sunrise',
+  path: '/bali-jeep-sunrise',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BaliPrivateToursRoute = BaliPrivateToursRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/bali-atv-adventure': typeof BaliAtvAdventureRoute
   '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
+  '/bali-jeep-sunrise': typeof BaliJeepSunriseRoute
   '/bali-private-tours': typeof BaliPrivateToursRoute
   '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
   '/bali-swing': typeof BaliSwingRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/bali-atv-adventure': typeof BaliAtvAdventureRoute
   '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
+  '/bali-jeep-sunrise': typeof BaliJeepSunriseRoute
   '/bali-private-tours': typeof BaliPrivateToursRoute
   '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
   '/bali-swing': typeof BaliSwingRoute
@@ -117,6 +125,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/bali-atv-adventure': typeof BaliAtvAdventureRoute
   '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
+  '/bali-jeep-sunrise': typeof BaliJeepSunriseRoute
   '/bali-private-tours': typeof BaliPrivateToursRoute
   '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
   '/bali-swing': typeof BaliSwingRoute
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/bali-atv-adventure'
     | '/bali-buggy-adventure'
+    | '/bali-jeep-sunrise'
     | '/bali-private-tours'
     | '/bali-safari-marine-park'
     | '/bali-swing'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/bali-atv-adventure'
     | '/bali-buggy-adventure'
+    | '/bali-jeep-sunrise'
     | '/bali-private-tours'
     | '/bali-safari-marine-park'
     | '/bali-swing'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/bali-atv-adventure'
     | '/bali-buggy-adventure'
+    | '/bali-jeep-sunrise'
     | '/bali-private-tours'
     | '/bali-safari-marine-park'
     | '/bali-swing'
@@ -176,6 +188,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BaliAtvAdventureRoute: typeof BaliAtvAdventureRoute
   BaliBuggyAdventureRoute: typeof BaliBuggyAdventureRoute
+  BaliJeepSunriseRoute: typeof BaliJeepSunriseRoute
   BaliPrivateToursRoute: typeof BaliPrivateToursRoute
   BaliSafariMarineParkRoute: typeof BaliSafariMarineParkRoute
   BaliSwingRoute: typeof BaliSwingRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/bali-buggy-adventure'
       fullPath: '/bali-buggy-adventure'
       preLoaderRoute: typeof BaliBuggyAdventureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-jeep-sunrise': {
+      id: '/bali-jeep-sunrise'
+      path: '/bali-jeep-sunrise'
+      fullPath: '/bali-jeep-sunrise'
+      preLoaderRoute: typeof BaliJeepSunriseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bali-private-tours': {
@@ -280,6 +300,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BaliAtvAdventureRoute: BaliAtvAdventureRoute,
   BaliBuggyAdventureRoute: BaliBuggyAdventureRoute,
+  BaliJeepSunriseRoute: BaliJeepSunriseRoute,
   BaliPrivateToursRoute: BaliPrivateToursRoute,
   BaliSafariMarineParkRoute: BaliSafariMarineParkRoute,
   BaliSwingRoute: BaliSwingRoute,

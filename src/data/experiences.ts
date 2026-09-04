@@ -498,7 +498,7 @@ export const categories = [
     title: "ATV & Off-Road",
     description:
       "Quad and buggy adventures through jungle tracks, rice fields and village trails.",
-    items: ["Bali ATV Adventure", "Bali Buggy Adventure"],
+    items: ["Bali ATV Adventure", "Bali Buggy Adventure", "Bali Jeep Sunrise – Mount Batur"],
     to: "/bali-atv-adventure",
   },
   {
