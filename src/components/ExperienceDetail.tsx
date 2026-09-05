@@ -137,10 +137,10 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
               Photos of {exp.title} and the surrounding area in Bali.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {[0, 1, 2].map((i) => (
+              {(exp.gallery ?? [exp.image, exp.image, exp.image]).map((src, i) => (
                 <img
                   key={i}
-                  src={exp.image}
+                  src={src}
                   alt={`${exp.title} in Bali — photo ${i + 1}`}
                   width={1600}
                   height={1000}
