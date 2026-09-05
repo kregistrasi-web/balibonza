@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/bali-hero.jpg";
-import atvImg from "@/assets/bali-atv-adventure-jungle-river.jpg";
+import atvImg from "@/assets/bali-atv-gallery-river-canyon.webp.asset.json";
 import { experiences, categories } from "@/data/experiences";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
