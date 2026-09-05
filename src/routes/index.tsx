@@ -125,8 +125,8 @@ function Index() {
 
       <section className="container-page grid items-center gap-10 py-16 lg:grid-cols-2">
         <img
-          src={atvImg}
-          alt="Riders on quad bikes crossing a muddy jungle track during a Bali ATV adventure"
+          src={atvImg.url}
+          alt="Riders on red quad bikes following a river canyon track during a Bali ATV adventure"
           width={1600}
           height={1000}
           loading="lazy"
