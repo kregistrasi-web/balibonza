@@ -8,8 +8,7 @@ export const siteConfig = {
   tagline: "Bali Activities, Adventures & Private Tours",
   description:
     "Book Bali ATV, Bali Zoo, Bali Safari, buggy adventures, Bali Swing, private tours and Nusa Penida trips with a local Bali team.",
-  // TODO: replace with the real WhatsApp number in international format (digits only)
-  whatsappNumber: "",
+  whatsappNumber: "6281999986009",
   email: "",
   social: {
     instagram: "",
