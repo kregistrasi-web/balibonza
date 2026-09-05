@@ -24,6 +24,7 @@ export type Experience = {
   metaTitle: string;
   metaDescription: string;
   image: string;
+  gallery?: string[];
   alt: string;
   location: string;
   duration: string;
@@ -59,8 +60,9 @@ export const experiences: Experience[] = [
     metaTitle: "Bali ATV Adventure | Jungle ATV Ride | BaliBonza",
     metaDescription:
       "Book a Bali ATV adventure through jungle tracks and rice fields. Single or tandem quad rides arranged by BaliBonza, with pickup available.",
-    image: atvImg,
-    alt: "ATV quad bikes riding a jungle track in Bali surrounded by palms and rice fields",
+    image: atvImg.url,
+    gallery: [atvGallery1.url, atvGallery2.url, atvGallery3.url, atvGallery4.url],
+    alt: "Guests on red ATV quad bikes posing in front of a waterfall on a Bali jungle track",
     location: "Ubud area, Bali",
     duration: "Approx. 2 hours riding (confirm on booking)",
     type: "Adventure • Off-road",
