@@ -1,4 +1,8 @@
-import atvImg from "@/assets/bali-atv-adventure-jungle-river.jpg";
+import atvImg from "@/assets/bali-atv-adventure-card.webp.asset.json";
+import atvGallery1 from "@/assets/bali-atv-gallery-waterfall-couple.webp.asset.json";
+import atvGallery2 from "@/assets/bali-atv-gallery-jungle-track.webp.asset.json";
+import atvGallery3 from "@/assets/bali-atv-gallery-bridge.webp.asset.json";
+import atvGallery4 from "@/assets/bali-atv-gallery-river-canyon.webp.asset.json";
 import zooImg from "@/assets/bali-zoo-animal-experience.jpg";
 import safariImg from "@/assets/bali-safari-marine-park.jpg";
 import buggyImg from "@/assets/bali-buggy-adventure.jpg";
@@ -20,6 +24,7 @@ export type Experience = {
   metaTitle: string;
   metaDescription: string;
   image: string;
+  gallery?: string[];
   alt: string;
   location: string;
   duration: string;
@@ -55,8 +60,9 @@ export const experiences: Experience[] = [
     metaTitle: "Bali ATV Adventure | Jungle ATV Ride | BaliBonza",
     metaDescription:
       "Book a Bali ATV adventure through jungle tracks and rice fields. Single or tandem quad rides arranged by BaliBonza, with pickup available.",
-    image: atvImg,
-    alt: "ATV quad bikes riding a jungle track in Bali surrounded by palms and rice fields",
+    image: atvImg.url,
+    gallery: [atvGallery1.url, atvGallery2.url, atvGallery3.url, atvGallery4.url],
+    alt: "Guests on red ATV quad bikes posing in front of a waterfall on a Bali jungle track",
     location: "Ubud area, Bali",
     duration: "Approx. 2 hours riding (confirm on booking)",
     type: "Adventure • Off-road",
