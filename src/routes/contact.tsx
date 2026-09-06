@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { pageHead } from "@/lib/seo";
 import { siteConfig, whatsappLink, trackEvent } from "@/config/site";
+import { experiences } from "@/data/experiences";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
