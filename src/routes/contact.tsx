@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { pageHead } from "@/lib/seo";
 import { siteConfig, whatsappLink, trackEvent } from "@/config/site";
+import { experiences } from "@/data/experiences";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
@@ -16,8 +17,17 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
+function findExperienceByInput(input: string) {
+  const query = input.trim().toLowerCase();
+  if (!query) return undefined;
+  return experiences.find((e) => e.title.toLowerCase().includes(query));
+}
+
 function ContactPage() {
   const [form, setForm] = useState({ name: "", experience: "", date: "", guests: "", pickup: "" });
+
+  const selectedExperience = useMemo(() => findExperienceByInput(form.experience), [form.experience]);
+  const whatsappMessage = selectedExperience?.whatsappText;
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -31,6 +41,7 @@ function ContactPage() {
         date: form.date,
         guests: form.guests,
         pickup: form.pickup,
+        ...(whatsappMessage ? { message: whatsappMessage } : {}),
       }),
       "_blank",
       "noopener",
@@ -104,7 +115,12 @@ function ContactPage() {
             <h2 className="font-display text-lg font-semibold">Reach us</h2>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
-                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+                <a
+                  href={whatsappLink(whatsappMessage ? { message: whatsappMessage } : {})}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground"
+                >
                   WhatsApp
                 </a>
               </li>
@@ -121,7 +137,7 @@ function ContactPage() {
             <h3 className="font-semibold">Service area</h3>
             <p className="mt-1 text-muted-foreground">{siteConfig.serviceArea}</p>
           </div>
-          <WhatsAppButton className="w-full" />
+          <WhatsAppButton className="w-full" message={whatsappMessage} />
         </aside>
       </div>
     </div>
