@@ -115,7 +115,12 @@ function ContactPage() {
             <h2 className="font-display text-lg font-semibold">Reach us</h2>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
-                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+                <a
+                  href={whatsappLink(whatsappMessage ? { message: whatsappMessage } : {})}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground"
+                >
                   WhatsApp
                 </a>
               </li>
@@ -132,7 +137,7 @@ function ContactPage() {
             <h3 className="font-semibold">Service area</h3>
             <p className="mt-1 text-muted-foreground">{siteConfig.serviceArea}</p>
           </div>
-          <WhatsAppButton className="w-full" />
+          <WhatsAppButton className="w-full" message={whatsappMessage} />
         </aside>
       </div>
     </div>
