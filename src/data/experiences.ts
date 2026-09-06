@@ -71,6 +71,8 @@ export const experiences: Experience[] = [
     suitableFor: "Couples, friends, families with teens",
     price: "Price on request",
     categoryId: "atv-off-road",
+    whatsappText:
+      "Hello BaliBonza,\n\nI would like to book the Bali ATV Adventure.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
     intro: [
       "A Bali ATV tour is the easiest way to swap the beach for real Bali countryside. You ride an all-terrain quad along dirt tracks that cut between rice fields, plantations and village lanes, with a guide leading the group the whole way.",
       "BaliBonza arranges your Bali ATV ride with trusted local operators, handles the transport, and confirms availability over WhatsApp before you pay anything.",
@@ -147,6 +149,8 @@ export const experiences: Experience[] = [
     suitableFor: "Families with children, first-time visitors",
     price: "Price on request",
     categoryId: "wildlife-animal",
+    whatsappText:
+      "Hello BaliBonza,\n\nI would like to book Bali Zoo tickets/experiences.\n\nPlease send me availability, package options, and total price for my group.\n\nThank you.",
     intro: [
       "Bali Zoo is one of the island's most popular family attractions, with tropical gardens, animal habitats and a range of add-on encounters.",
       "BaliBonza is an independent booking and travel service. We arrange your Bali Zoo tickets and transport — Bali Zoo is owned and operated by its own management.",
@@ -218,6 +222,8 @@ export const experiences: Experience[] = [
     suitableFor: "Families, groups, wildlife lovers",
     price: "Price on request",
     categoryId: "wildlife-animal",
+    whatsappText:
+      "Hello BaliBonza,\n\nI would like to book Bali Safari & Marine Park.\n\nPlease send me package options, availability, and total price.\n\nThank you.",
     intro: [
       "Bali Safari & Marine Park combines a safari journey through open animal habitats with shows, rides and family facilities in one large park.",
       "We handle the booking side: admission packages, guest numbers and transport. The park itself is operated by Bali Safari & Marine Park.",
@@ -289,6 +295,8 @@ export const experiences: Experience[] = [
     suitableFor: "Couples, friends, families driving together",
     price: "Price on request",
     categoryId: "atv-off-road",
+    whatsappText:
+      "Hello BaliBonza,\n\nI would like to book the Bali Buggy Adventure.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
     intro: [
       "A Bali buggy adventure gives you more space and a shared cockpit compared with a quad, so couples and families can ride together while still getting the full off-road experience.",
       "We match you with a buggy operator that fits your group size and location, then confirm the schedule with you directly.",
@@ -359,6 +367,8 @@ export const experiences: Experience[] = [
     suitableFor: "Couples, families, photo lovers",
     price: "Price on request",
     categoryId: "swing-scenic",
+    whatsappText:
+      "Hello BaliBonza,\n\nI would like to book the Bali Swing Experience.\n\nPlease send me availability, package options, and total price.\n\nThank you.",
     intro: [
       "Bali Swing parks combine swings of different heights with nests, platforms and viewpoints set above green valleys — the classic Bali photo experience.",
       "We book your entry package, arrange transport if needed, and confirm exactly which swings and props are included at the park you choose.",
@@ -432,6 +442,8 @@ export const experiences: Experience[] = [
     suitableFor: "Couples, friends, families, sunrise lovers",
     price: "Price on request",
     categoryId: "atv-off-road",
+    whatsappText:
+      "Hello BaliBonza,\n\nI would like to book the Bali Jeep Sunrise – Mount Batur.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
     intro: [
       "The Bali Jeep sunrise experience takes you up the slopes of Mount Batur in a 4WD Jeep, so you can watch the sunrise over the volcano and lake without a strenuous hike.",
       "BaliBonza arranges your Mount Batur Jeep trip with trusted local operators, handles the early-morning pickup, and confirms availability over WhatsApp before you pay anything.",
