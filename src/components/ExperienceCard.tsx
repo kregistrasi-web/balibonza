@@ -48,7 +48,13 @@ export function ExperienceCard({ exp, priority = false }: { exp: Experience; pri
           >
             View Experience
           </Link>
-          <WhatsAppButton experience={exp.title} label="WhatsApp" variant="outline" className="px-4 py-2.5" />
+          <WhatsAppButton
+            experience={exp.title}
+            message={exp.whatsappText}
+            label="WhatsApp"
+            variant="outline"
+            className="px-4 py-2.5"
+          />
         </div>
       </div>
     </article>

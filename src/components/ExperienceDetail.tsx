@@ -44,7 +44,7 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
           <h1 className="mt-3 max-w-3xl text-4xl font-semibold sm:text-5xl">{exp.h1}</h1>
           <p className="mt-4 max-w-2xl text-base text-surface-foreground/85">{exp.short}</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <WhatsAppButton experience={exp.title} />
+            <WhatsAppButton experience={exp.title} message={exp.whatsappText} />
             <Link
               to="/experiences"
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/40 px-5 py-3 text-sm font-semibold text-surface-foreground hover:bg-white/10"
@@ -182,7 +182,7 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
             <p className="mt-1 text-xs text-muted-foreground">
               Final price confirmed for your date and group size.
             </p>
-            <WhatsAppButton experience={exp.title} className="mt-5 w-full" />
+            <WhatsAppButton experience={exp.title} message={exp.whatsappText} className="mt-5 w-full" />
             <Link
               to="/contact"
               className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full border border-border px-5 py-3 text-sm font-semibold hover:bg-muted"
