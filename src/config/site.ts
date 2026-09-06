@@ -30,6 +30,8 @@ export type WhatsAppMessageInput = {
   date?: string;
   guests?: string;
   pickup?: string;
+  /** Fully custom message text. When provided, it overrides the default template. */
+  message?: string;
 };
 
 export function buildWhatsAppMessage({
@@ -37,7 +39,9 @@ export function buildWhatsAppMessage({
   date = "",
   guests = "",
   pickup = "",
+  message,
 }: WhatsAppMessageInput = {}) {
+  if (message) return message;
   return [
     `Hello ${siteConfig.name},`,
     "",

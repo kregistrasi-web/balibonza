@@ -2,6 +2,7 @@ import { whatsappLink, trackEvent } from "@/config/site";
 
 type Props = {
   experience?: string | undefined;
+  message?: string | undefined;
   label?: string;
   className?: string;
   variant?: "solid" | "outline" | "ghost";
@@ -26,13 +27,14 @@ export function WhatsAppIcon({ className = "size-5" }: { className?: string }) {
 
 export function WhatsAppButton({
   experience,
+  message,
   label = "Book via WhatsApp",
   className = "",
   variant = "solid",
 }: Props) {
   return (
     <a
-      href={whatsappLink(experience ? { experience } : {})}
+      href={whatsappLink(message ? { message } : experience ? { experience } : {})}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackEvent("whatsapp_click", { experience: experience ?? "general" })}
