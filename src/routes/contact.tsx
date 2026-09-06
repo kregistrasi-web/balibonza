@@ -41,7 +41,7 @@ function ContactPage() {
         date: form.date,
         guests: form.guests,
         pickup: form.pickup,
-        message: whatsappMessage,
+        ...(whatsappMessage ? { message: whatsappMessage } : {}),
       }),
       "_blank",
       "noopener",
