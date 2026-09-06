@@ -32,6 +32,8 @@ export type Experience = {
   suitableFor: string;
   price: string;
   categoryId?: CategoryId;
+  /** Optional custom WhatsApp pre-filled message for this experience. */
+  whatsappText?: string;
   highlights: string[];
   flow: string[];
   included: string[];
