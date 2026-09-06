@@ -17,8 +17,17 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
+function findExperienceByInput(input: string) {
+  const query = input.trim().toLowerCase();
+  if (!query) return undefined;
+  return experiences.find((e) => e.title.toLowerCase().includes(query));
+}
+
 function ContactPage() {
   const [form, setForm] = useState({ name: "", experience: "", date: "", guests: "", pickup: "" });
+
+  const selectedExperience = useMemo(() => findExperienceByInput(form.experience), [form.experience]);
+  const whatsappMessage = selectedExperience?.whatsappText;
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -32,6 +41,7 @@ function ContactPage() {
         date: form.date,
         guests: form.guests,
         pickup: form.pickup,
+        message: whatsappMessage,
       }),
       "_blank",
       "noopener",
