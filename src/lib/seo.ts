@@ -1,18 +1,34 @@
 import type { Experience } from "@/data/experiences";
 import { siteConfig } from "@/config/site";
 
+function absoluteUrl(path: string) {
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    return path;
+  }
+
+  return `${siteConfig.url}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 export function experienceHead(exp: Experience) {
+  const url = absoluteUrl(exp.path);
+  const homeUrl = siteConfig.url;
+  const experiencesUrl = absoluteUrl("/experiences");
+
   return {
     meta: [
       { title: exp.metaTitle },
       { name: "description", content: exp.metaDescription },
+
       { property: "og:title", content: exp.metaTitle },
       { property: "og:description", content: exp.metaDescription },
       { property: "og:type", content: "product" },
-      { property: "og:url", content: exp.path },
+      { property: "og:url", content: url },
+
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: exp.path }],
+
+    links: [{ rel: "canonical", href: url }],
+
     scripts: [
       {
         type: "application/ld+json",
@@ -24,7 +40,12 @@ export function experienceHead(exp: Experience) {
               name: exp.title,
               description: exp.metaDescription,
               touristType: exp.suitableFor,
-              provider: { "@type": "TravelAgency", name: siteConfig.name },
+              url,
+              provider: {
+                "@type": "TravelAgency",
+                name: siteConfig.name,
+                url: homeUrl,
+              },
               itinerary: {
                 "@type": "ItemList",
                 itemListElement: exp.flow.map((step, i) => ({
@@ -34,20 +55,40 @@ export function experienceHead(exp: Experience) {
                 })),
               },
             },
+
             {
               "@type": "FAQPage",
               mainEntity: exp.faq.map((f) => ({
                 "@type": "Question",
                 name: f.q,
-                acceptedAnswer: { "@type": "Answer", text: f.a },
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: f.a,
+                },
               })),
             },
+
             {
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-                { "@type": "ListItem", position: 2, name: "Experiences", item: "/experiences" },
-                { "@type": "ListItem", position: 3, name: exp.title, item: exp.path },
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: homeUrl,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Experiences",
+                  item: experiencesUrl,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: exp.title,
+                  item: url,
+                },
               ],
             },
           ],
@@ -68,16 +109,21 @@ export function pageHead({
   path: string;
   type?: string;
 }) {
+  const url = absoluteUrl(path);
+
   return {
     meta: [
       { title },
       { name: "description", content: description },
+
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: type },
-      { property: "og:url", content: path },
+      { property: "og:url", content: url },
+
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: path }],
+
+    links: [{ rel: "canonical", href: url }],
   };
 }
