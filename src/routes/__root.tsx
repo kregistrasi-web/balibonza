@@ -37,10 +37,23 @@ function NotFoundComponent() {
   );
 }
 
+const STALE_CHUNK_RE =
+  /dynamically imported module|Importing a module script failed|Failed to fetch dynamically|ChunkLoadError/i;
+
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
+    // A new deploy replaces hashed chunk files; a tab loaded from the old build
+    // can no longer fetch them. Reload once to pick up the current build.
+    if (typeof window !== "undefined" && STALE_CHUNK_RE.test(String(error?.message))) {
+      const key = "app:stale-chunk-reloaded";
+      if (!sessionStorage.getItem(key)) {
+        sessionStorage.setItem(key, "1");
+        window.location.reload();
+        return;
+      }
+    }
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
