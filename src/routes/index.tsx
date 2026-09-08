@@ -68,7 +68,7 @@ function Index() {
             {siteConfig.tagline}
           </p>
           <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.05] sm:text-6xl">
-            Experience the Best of Bali
+            Bali Activities, Adventures & Experiences
           </h1>
           <p className="mt-5 max-w-xl text-base text-surface-foreground/85 sm:text-lg">
             Adventure, wildlife, family experiences and private tours — all in one place.
