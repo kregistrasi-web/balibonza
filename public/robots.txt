@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://balibonza.com/sitemap.xml
