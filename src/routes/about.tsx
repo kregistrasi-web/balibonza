@@ -30,9 +30,10 @@ function AboutPage() {
 
       <div className="mt-6 max-w-2xl space-y-4 text-muted-foreground">
         <p>
-          {siteConfig.name} helps travelers discover Bali through adventure,
-          wildlife, family experiences, scenic attractions, private tours,
-          transportation and island days.
+          {siteConfig.name} helps travelers discover Bali through carefully
+          arranged activities and experiences, including ATV adventures,
+          wildlife parks, Bali Swing, scenic attractions, private tours,
+          transportation and Nusa Penida trips.
         </p>
 
         <p>
@@ -50,9 +51,10 @@ function AboutPage() {
         </p>
 
         <p>
-          Most of our guests come from Australia, the USA, the UK, Canada,
-          New Zealand, Singapore, India, the Middle East and Europe — families,
-          couples, solo travelers and groups.
+          Our experiences are suitable for families, couples, solo travelers
+          and groups looking for convenient ways to explore Bali. We can help
+          arrange activities, private Bali tours, transportation and island
+          trips based on your plans and preferred schedule.
         </p>
       </div>
 

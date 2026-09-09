@@ -121,12 +121,12 @@ function PrivateToursPage() {
           <Breadcrumbs items={[{ label: "Private Bali Tours" }]} />
 
           <h1 className="mt-5 max-w-2xl text-4xl font-semibold sm:text-5xl">
-            Private Bali Tours
+            Private Bali Tours & Driver
           </h1>
 
           <p className="mt-4 max-w-xl text-surface-foreground/85">
-            Your own car, driver and route — culture, nature and transport
-            across Bali.
+            Explore Ubud, temples, waterfalls, rice terraces and other Bali
+            highlights with your own private driver and flexible itinerary.
           </p>
 
           <div className="mt-6">
@@ -136,11 +136,11 @@ function PrivateToursPage() {
       </section>
 
       <div className="container-page pb-8">
-        <Group title="Private tours" items={tours} />
+        <Group title="Private Bali Tours" items={tours} />
 
-        <Group title="Transportation" items={transport} />
+        <Group title="Bali Transportation" items={transport} />
 
-        <Group title="Water & ocean experiences" items={water} />
+        <Group title="Water & Ocean Experiences" items={water} />
 
         <p className="mt-10 text-sm text-muted-foreground">
           Prices are confirmed for your dates, group size and pickup area

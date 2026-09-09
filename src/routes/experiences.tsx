@@ -29,8 +29,9 @@ function ExperiencesPage() {
       </h1>
 
       <p className="mt-3 max-w-2xl text-muted-foreground">
-        Explore Bali adventures, wildlife experiences, scenic activities,
-        private tours, island trips and transport. Message us on WhatsApp for
+        Explore the best Bali activities and experiences, including ATV
+        adventures, Bali Zoo, Bali Safari, Bali Swing, buggy rides, private
+        Bali tours and Nusa Penida trips. Message us on WhatsApp for
         availability and pricing.
       </p>
 

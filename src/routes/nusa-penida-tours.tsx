@@ -107,12 +107,12 @@ function NusaPenidaPage() {
           <Breadcrumbs items={[{ label: "Nusa Penida Tours" }]} />
 
           <h1 className="mt-5 max-w-2xl text-4xl font-semibold sm:text-5xl">
-            Nusa Penida Tours
+            Nusa Penida Tours & Snorkeling
           </h1>
 
           <p className="mt-4 max-w-xl text-surface-foreground/85">
-            Island day trips from Bali with fast boat transfer, private car
-            and driver on Nusa Penida.
+            Book Nusa Penida day tours from Bali with fast boat transfers,
+            private island transport and snorkeling options.
           </p>
 
           <div className="mt-6">
@@ -123,7 +123,7 @@ function NusaPenidaPage() {
 
       <div className="container-page py-14">
         <h2 className="font-display text-2xl font-semibold">
-          Choose your Nusa Penida tour
+          Choose Your Nusa Penida Tour
         </h2>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -149,7 +149,7 @@ function NusaPenidaPage() {
         </div>
 
         <h2 className="mt-14 font-display text-2xl font-semibold">
-          Good to know
+          Good to Know
         </h2>
 
         <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
