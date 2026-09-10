@@ -116,7 +116,8 @@ for (const route of ROUTES) {
 
 if (reachable) {
   console.log(`Rendered scan: ${rendered} WhatsApp href(s) across ${ROUTES.length} route(s).`);
-  if (rendered === 0) errors.push("Rendered scan found no WhatsApp links — check the server/routes.");
+  if (rendered === 0)
+    errors.push("Rendered scan found no WhatsApp links — check the server/routes.");
 } else {
   console.log(`Rendered scan skipped — no server at ${BASE_URL}.`);
 }

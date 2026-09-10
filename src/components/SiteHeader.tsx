@@ -55,7 +55,13 @@ export function SiteHeader() {
           className="inline-flex size-11 items-center justify-center rounded-full border border-border lg:hidden"
         >
           <span className="sr-only">Menu</span>
-          <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            viewBox="0 0 24 24"
+            className="size-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
           </svg>
         </button>

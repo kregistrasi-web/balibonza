@@ -14,14 +14,14 @@ Saya akan susun prioritasnya seperti ini:
 
 **Supporting Products**
 
-* Bali Private Driver
-* Ubud Tours
-* Water Sports
-* Snorkeling
-* Nusa Penida Tours
-* Airport Transfer
-* Fast Boat
-* Bali activities lainnya
+- Bali Private Driver
+- Ubud Tours
+- Water Sports
+- Snorkeling
+- Nusa Penida Tours
+- Airport Transfer
+- Fast Boat
+- Bali activities lainnya
 
 Dan untuk website, **5 produk utama tersebut harus mendapatkan posisi paling menonjol di homepage dan struktur SEO**.
 
@@ -55,11 +55,11 @@ Use this exact name consistently throughout the website.
 
 Never use:
 
-* KitKat's Travel
-* Kitkat's Travel
-* KitKat BALI TOUR with inconsistent capitalization
-* OneTravelGo
-* any previous/old brand name
+- KitKat's Travel
+- Kitkat's Travel
+- KitKat BALI TOUR with inconsistent capitalization
+- OneTravelGo
+- any previous/old brand name
 
 Primary positioning:
 
@@ -73,21 +73,21 @@ The website should communicate that customers can discover and book a variety of
 
 Target customers:
 
-* Australia
-* USA
-* UK
-* Canada
-* New Zealand
-* Singapore
-* India
-* UAE
-* Saudi Arabia
-* Qatar
-* European travelers
-* International families
-* Couples
-* Solo travelers
-* Groups
+- Australia
+- USA
+- UK
+- Canada
+- New Zealand
+- Singapore
+- India
+- UAE
+- Saudi Arabia
+- Qatar
+- European travelers
+- International families
+- Couples
+- Solo travelers
+- Groups
 
 ---
 
@@ -105,13 +105,13 @@ Position it as an exciting Bali adventure experience.
 
 Potential highlights:
 
-* Jungle track
-* River track
-* Waterfall
-* Tunnel
-* Rice fields
-* Mud/adventure sections
-* Private or group experience depending on actual product
+- Jungle track
+- River track
+- Waterfall
+- Tunnel
+- Rice fields
+- Mud/adventure sections
+- Private or group experience depending on actual product
 
 Do not invent exact inclusions until actual supplier information is provided.
 
@@ -123,12 +123,12 @@ Create a dedicated product category around Bali Zoo experiences.
 
 Potential experiences may include:
 
-* Bali Zoo visit
-* Animal encounters
-* Family experiences
-* Breakfast with Orangutans, if this product is actually offered
-* Capybara experience, if available
-* Other Bali Zoo activities
+- Bali Zoo visit
+- Animal encounters
+- Family experiences
+- Breakfast with Orangutans, if this product is actually offered
+- Capybara experience, if available
+- Other Bali Zoo activities
 
 Do not claim that KitKat Bali Tour owns or operates Bali Zoo.
 
@@ -144,11 +144,11 @@ Create a dedicated category for:
 
 Potential products:
 
-* Bali Safari admission
-* Safari experiences
-* Family experiences
-* Wildlife experiences
-* Packages with transportation where available
+- Bali Safari admission
+- Safari experiences
+- Family experiences
+- Wildlife experiences
+- Packages with transportation where available
 
 Do not claim ownership of Bali Safari & Marine Park.
 
@@ -168,11 +168,11 @@ Position it as an exciting off-road Bali experience.
 
 Potential highlights:
 
-* Off-road adventure
-* Jungle tracks
-* Rice fields
-* Village scenery
-* Adventure driving
+- Off-road adventure
+- Jungle tracks
+- Rice fields
+- Village scenery
+- Adventure driving
 
 Only use specific track/inclusion claims when confirmed by the actual supplier.
 
@@ -188,12 +188,12 @@ Position it as a scenic and Instagram-friendly Bali experience.
 
 Potential highlights:
 
-* Jungle views
-* Rice terrace views
-* Bali photo opportunities
-* Romantic experience
-* Couple experience
-* Family experience
+- Jungle views
+- Rice terrace views
+- Bali photo opportunities
+- Romantic experience
+- Couple experience
+- Family experience
 
 Do not promise specific views or locations unless confirmed for the actual product.
 
@@ -205,33 +205,33 @@ Create supporting categories:
 
 ### Bali Private Tours
 
-* Ubud Private Tour
-* Bali Cultural Tours
-* Bali Temple Tours
-* Bali Waterfall Tours
-* Bali Nature Tours
-* Bali Instagram Tours
-* Custom Bali Day Tours
+- Ubud Private Tour
+- Bali Cultural Tours
+- Bali Temple Tours
+- Bali Waterfall Tours
+- Bali Nature Tours
+- Bali Instagram Tours
+- Custom Bali Day Tours
 
 ### Transportation
 
-* Bali Private Driver
-* Airport Transfer
-* Hotel Transfer
-* Fast Boat Transfers
+- Bali Private Driver
+- Airport Transfer
+- Hotel Transfer
+- Fast Boat Transfers
 
 ### Water & Ocean Experiences
 
-* Snorkeling
-* Water Sports
-* Nusa Penida Snorkeling
+- Snorkeling
+- Water Sports
+- Nusa Penida Snorkeling
 
 ### Nusa Penida
 
-* West Nusa Penida
-* East Nusa Penida
-* Nusa Penida Combination
-* Nusa Penida Snorkeling
+- West Nusa Penida
+- East Nusa Penida
+- Nusa Penida Combination
+- Nusa Penida Snorkeling
 
 Nusa Penida must remain an important category but NOT the dominant brand positioning.
 
@@ -255,12 +255,12 @@ Use a large premium Bali adventure image.
 
 Prefer imagery related to:
 
-* ATV
-* Bali adventure
-* tropical jungle
-* Bali landscape
-* wildlife
-* family experience
+- ATV
+- Bali adventure
+- tropical jungle
+- Bali landscape
+- wildlife
+- family experience
 
 Headline:
 
@@ -298,15 +298,15 @@ Display the five priority products prominently:
 
 Each card should include:
 
-* high-quality image
-* product title
-* short description
-* location
-* duration
-* starting price placeholder
-* suitable-for badge where appropriate
-* View Experience button
-* WhatsApp Booking button
+- high-quality image
+- product title
+- short description
+- location
+- duration
+- starting price placeholder
+- suitable-for badge where appropriate
+- View Experience button
+- WhatsApp Booking button
 
 Use:
 
@@ -328,44 +328,44 @@ Categories:
 
 ### Adventure
 
-* ATV
-* Buggy
-* Water Sports
-* Tubing
-* Other adventure experiences
+- ATV
+- Buggy
+- Water Sports
+- Tubing
+- Other adventure experiences
 
 ### Wildlife & Family
 
-* Bali Zoo
-* Bali Safari
-* Animal experiences
+- Bali Zoo
+- Bali Safari
+- Animal experiences
 
 ### Scenic & Instagrammable
 
-* Bali Swing
-* Rice Terrace
-* Waterfalls
-* Bali viewpoints
+- Bali Swing
+- Rice Terrace
+- Waterfalls
+- Bali viewpoints
 
 ### Private Tours
 
-* Ubud
-* Cultural
-* Temples
-* Nature
-* Custom tours
+- Ubud
+- Cultural
+- Temples
+- Nature
+- Custom tours
 
 ### Islands & Snorkeling
 
-* Nusa Penida
-* Snorkeling
-* Manta experiences
+- Nusa Penida
+- Snorkeling
+- Manta experiences
 
 ### Transportation
 
-* Airport Transfer
-* Private Driver
-* Fast Boat
+- Airport Transfer
+- Private Driver
+- Fast Boat
 
 ---
 
@@ -377,32 +377,32 @@ Create a dedicated SEO-focused page:
 
 The page should include:
 
-* Hero
-* Why choose this ATV experience
-* Adventure highlights
-* Track information
-* Duration
-* Location
-* What's included
-* What's excluded
-* Pickup information
-* Safety information
-* Requirements
-* Age restrictions placeholder
-* Gallery
-* FAQ
-* Reviews
-* Related activities
-* WhatsApp CTA
+- Hero
+- Why choose this ATV experience
+- Adventure highlights
+- Track information
+- Duration
+- Location
+- What's included
+- What's excluded
+- Pickup information
+- Safety information
+- Requirements
+- Age restrictions placeholder
+- Gallery
+- FAQ
+- Reviews
+- Related activities
+- WhatsApp CTA
 
 Create strong but natural SEO content around:
 
-* Bali ATV
-* Bali ATV Adventure
-* ATV Bali
-* Bali ATV Tour
-* Bali ATV Ride
-* Bali Jungle ATV
+- Bali ATV
+- Bali ATV Adventure
+- ATV Bali
+- Bali ATV Tour
+- Bali ATV Ride
+- Bali Jungle ATV
 
 Do not keyword stuff.
 
@@ -416,26 +416,26 @@ Create:
 
 Include:
 
-* Bali Zoo overview
-* Available experiences
-* Family-friendly information
-* Animal encounters
-* Breakfast experience where applicable
-* Capybara experience where applicable
-* Gallery
-* Pricing placeholder
-* What's included
-* FAQ
-* Booking CTA
+- Bali Zoo overview
+- Available experiences
+- Family-friendly information
+- Animal encounters
+- Breakfast experience where applicable
+- Capybara experience where applicable
+- Gallery
+- Pricing placeholder
+- What's included
+- FAQ
+- Booking CTA
 
 SEO themes:
 
-* Bali Zoo
-* Bali Zoo experience
-* Bali Zoo tickets
-* Bali Zoo activities
-* Bali Zoo family experience
-* Bali Zoo animal experience
+- Bali Zoo
+- Bali Zoo experience
+- Bali Zoo tickets
+- Bali Zoo activities
+- Bali Zoo family experience
+- Bali Zoo animal experience
 
 Do not claim ownership of Bali Zoo.
 
@@ -449,23 +449,23 @@ Create:
 
 Include:
 
-* Overview
-* Safari experience
-* Wildlife
-* Family activities
-* Ticket/package options
-* Transportation options where available
-* Gallery
-* FAQ
-* Booking CTA
+- Overview
+- Safari experience
+- Wildlife
+- Family activities
+- Ticket/package options
+- Transportation options where available
+- Gallery
+- FAQ
+- Booking CTA
 
 SEO themes:
 
-* Bali Safari
-* Bali Safari & Marine Park
-* Bali Safari tickets
-* Bali Safari experience
-* Bali Safari family
+- Bali Safari
+- Bali Safari & Marine Park
+- Bali Safari tickets
+- Bali Safari experience
+- Bali Safari family
 
 Never fabricate ticket prices or operating information.
 
@@ -479,25 +479,25 @@ Create:
 
 Include:
 
-* Hero
-* Adventure overview
-* Track highlights
-* Duration
-* Location
-* Requirements
-* What's included
-* Pickup options
-* Gallery
-* FAQ
-* Booking CTA
+- Hero
+- Adventure overview
+- Track highlights
+- Duration
+- Location
+- Requirements
+- What's included
+- Pickup options
+- Gallery
+- FAQ
+- Booking CTA
 
 SEO themes:
 
-* Bali Buggy
-* Bali Buggy Adventure
-* Buggy Bali
-* Bali off road adventure
-* Bali buggy experience
+- Bali Buggy
+- Bali Buggy Adventure
+- Buggy Bali
+- Bali off road adventure
+- Bali buggy experience
 
 Only include factual supplier information when confirmed.
 
@@ -511,25 +511,25 @@ Create:
 
 Include:
 
-* Hero
-* Scenic experience
-* Photo opportunities
-* Location
-* Duration
-* Package options
-* Dress recommendations
-* Safety information
-* Gallery
-* FAQ
-* Booking CTA
+- Hero
+- Scenic experience
+- Photo opportunities
+- Location
+- Duration
+- Package options
+- Dress recommendations
+- Safety information
+- Gallery
+- FAQ
+- Booking CTA
 
 SEO themes:
 
-* Bali Swing
-* Bali Swing experience
-* Bali Swing tour
-* Bali Instagram swing
-* Bali jungle swing
+- Bali Swing
+- Bali Swing experience
+- Bali Swing tour
+- Bali Instagram swing
+- Bali jungle swing
 
 Avoid misleading claims about specific locations or views.
 
@@ -626,13 +626,13 @@ Create a dedicated section:
 
 Include:
 
-* Ubud
-* Temples
-* Waterfalls
-* Rice terraces
-* Cultural experiences
-* Custom day tours
-* Private driver
+- Ubud
+- Temples
+- Waterfalls
+- Rice terraces
+- Cultural experiences
+- Custom day tours
+- Private driver
 
 Position this as a supporting service, not the main homepage focus.
 
@@ -646,10 +646,10 @@ Create a dedicated category:
 
 Include:
 
-* West Nusa Penida
-* East Nusa Penida
-* Combination tours
-* Snorkeling
+- West Nusa Penida
+- East Nusa Penida
+- Combination tours
+- Snorkeling
 
 However:
 
@@ -691,11 +691,11 @@ Adventure, wildlife, family activities, scenic experiences and private tours in 
 
 Do not make unsupported claims such as:
 
-* #1 in Bali
-* Best in Bali
-* Award-winning
-* Guaranteed cheapest
-* Thousands of customers
+- #1 in Bali
+- Best in Bali
+- Award-winning
+- Guaranteed cheapest
+- Thousands of customers
 
 unless verified data is supplied.
 
@@ -711,17 +711,17 @@ Use placeholders until genuine reviews are connected.
 
 Potential review sources:
 
-* Google
-* Tripadvisor
-* Direct customer testimonials
+- Google
+- Tripadvisor
+- Direct customer testimonials
 
 Each review should contain:
 
-* customer name
-* country
-* experience
-* review
-* rating
+- customer name
+- country
+- experience
+- review
+- rating
 
 Only display ratings/reviews that are genuine and verifiable.
 
@@ -735,67 +735,67 @@ SEO should prioritize the five main commercial product clusters.
 
 Primary:
 
-* Bali ATV
-* Bali ATV Adventure
-* Bali ATV Tour
+- Bali ATV
+- Bali ATV Adventure
+- Bali ATV Tour
 
 Supporting:
 
-* Bali jungle ATV
-* ATV ride Bali
-* ATV adventure Bali
+- Bali jungle ATV
+- ATV ride Bali
+- ATV adventure Bali
 
 ### Cluster 2 — Bali Zoo
 
 Primary:
 
-* Bali Zoo
-* Bali Zoo experience
-* Bali Zoo tickets
+- Bali Zoo
+- Bali Zoo experience
+- Bali Zoo tickets
 
 Supporting:
 
-* Bali Zoo family experience
-* Bali Zoo animal encounter
+- Bali Zoo family experience
+- Bali Zoo animal encounter
 
 ### Cluster 3 — Bali Safari
 
 Primary:
 
-* Bali Safari
-* Bali Safari & Marine Park
-* Bali Safari tickets
+- Bali Safari
+- Bali Safari & Marine Park
+- Bali Safari tickets
 
 Supporting:
 
-* Bali Safari experience
-* Bali Safari family
+- Bali Safari experience
+- Bali Safari family
 
 ### Cluster 4 — Bali Buggy
 
 Primary:
 
-* Bali Buggy Adventure
-* Bali Buggy
-* Buggy Bali
+- Bali Buggy Adventure
+- Bali Buggy
+- Buggy Bali
 
 ### Cluster 5 — Bali Swing
 
 Primary:
 
-* Bali Swing
-* Bali Swing experience
-* Bali Swing tour
+- Bali Swing
+- Bali Swing experience
+- Bali Swing tour
 
 Secondary SEO clusters:
 
-* Bali private tours
-* Bali private driver
-* Ubud tours
-* Bali activities
-* Nusa Penida tours
-* Bali snorkeling
-* Bali airport transfer
+- Bali private tours
+- Bali private driver
+- Ubud tours
+- Bali activities
+- Nusa Penida tours
+- Bali snorkeling
+- Bali airport transfer
 
 ---
 
@@ -803,22 +803,22 @@ Secondary SEO clusters:
 
 Implement:
 
-* semantic HTML
-* correct H1/H2/H3 hierarchy
-* unique page titles
-* unique meta descriptions
-* canonical URLs
-* XML sitemap
-* robots.txt
-* Open Graph
-* Twitter/X metadata
-* breadcrumb navigation
-* internal linking
-* optimized images
-* descriptive alt text
-* WebP/AVIF
-* lazy loading
-* responsive images
+- semantic HTML
+- correct H1/H2/H3 hierarchy
+- unique page titles
+- unique meta descriptions
+- canonical URLs
+- XML sitemap
+- robots.txt
+- Open Graph
+- Twitter/X metadata
+- breadcrumb navigation
+- internal linking
+- optimized images
+- descriptive alt text
+- WebP/AVIF
+- lazy loading
+- responsive images
 
 Create SEO-friendly URLs.
 
@@ -844,24 +844,24 @@ Examples:
 
 Use appropriate JSON-LD where eligible:
 
-* Organization
-* LocalBusiness where appropriate
-* Product
-* Offer
-* TouristTrip
-* FAQPage
-* BreadcrumbList
-* WebSite
-* WebPage
+- Organization
+- LocalBusiness where appropriate
+- Product
+- Offer
+- TouristTrip
+- FAQPage
+- BreadcrumbList
+- WebSite
+- WebPage
 
 Never fabricate:
 
-* reviews
-* ratings
-* prices
-* addresses
-* opening hours
-* awards
+- reviews
+- ratings
+- prices
+- addresses
+- opening hours
+- awards
 
 ---
 
@@ -869,16 +869,16 @@ Never fabricate:
 
 Prioritize:
 
-* Core Web Vitals
-* fast mobile loading
-* optimized photography
-* lazy loading
-* minimal JavaScript
-* minimal unnecessary libraries
-* no unnecessary autoplay video
-* minimal animations
-* stable layout
-* optimized fonts
+- Core Web Vitals
+- fast mobile loading
+- optimized photography
+- lazy loading
+- minimal JavaScript
+- minimal unnecessary libraries
+- no unnecessary autoplay video
+- minimal animations
+- stable layout
+- optimized fonts
 
 The homepage should load quickly even with large tourism photography.
 
@@ -890,14 +890,14 @@ The majority of customers will use smartphones.
 
 Optimize for:
 
-* iPhone
-* Android
-* small screens
-* large touch targets
-* fast navigation
-* sticky WhatsApp button
-* readable typography
-* no horizontal scrolling
+- iPhone
+- Android
+- small screens
+- large touch targets
+- fast navigation
+- sticky WhatsApp button
+- readable typography
+- no horizontal scrolling
 
 ---
 
@@ -907,22 +907,22 @@ Prioritize real KitKat Bali Tour images when supplied.
 
 Use high-quality images showing:
 
-* ATV adventure
-* Bali Zoo
-* Bali Safari
-* Buggy adventure
-* Bali Swing
-* Bali landscapes
-* families
-* couples
-* activities
+- ATV adventure
+- Bali Zoo
+- Bali Safari
+- Buggy adventure
+- Bali Swing
+- Bali landscapes
+- families
+- couples
+- activities
 
 Images must support:
 
-* SEO-friendly filename
-* alt text
-* responsive loading
-* appropriate compression
+- SEO-friendly filename
+- alt text
+- responsive loading
+- appropriate compression
 
 Example:
 
@@ -963,13 +963,13 @@ Create:
 
 Explain that KitKat Bali Tour helps travelers discover Bali through:
 
-* adventure
-* wildlife
-* family experiences
-* scenic attractions
-* private tours
-* transportation
-* island experiences
+- adventure
+- wildlife
+- family experiences
+- scenic attractions
+- private tours
+- transportation
+- island experiences
 
 Position the company as a local Bali travel and experience booking service.
 
@@ -983,12 +983,12 @@ Create:
 
 Include:
 
-* WhatsApp
-* Email
-* Instagram
-* Facebook
-* contact form
-* service area
+- WhatsApp
+- Email
+- Instagram
+- Facebook
+- contact form
+- service area
 
 Primary CTA:
 
@@ -1042,10 +1042,10 @@ Copyright:
 
 Prepare the website for:
 
-* Google Analytics 4
-* Google Search Console
-* Google Tag Manager
-* Meta Pixel
+- Google Analytics 4
+- Google Search Console
+- Google Tag Manager
+- Meta Pixel
 
 Do not use fake IDs.
 
@@ -1053,12 +1053,12 @@ Create a central configuration system for tracking IDs.
 
 Track:
 
-* WhatsApp clicks
-* Booking CTA clicks
-* Experience page views
-* Contact form submissions
-* Phone clicks
-* Email clicks
+- WhatsApp clicks
+- Booking CTA clicks
+- Experience page views
+- Contact form submissions
+- Phone clicks
+- Email clicks
 
 ---
 
@@ -1066,19 +1066,19 @@ Track:
 
 The architecture must allow future integration of:
 
-* online booking
-* payment gateway
-* availability calendar
-* booking database
-* customer database
-* automated email
-* WhatsApp automation
-* Google reviews
-* Tripadvisor integration
-* multilingual pages
-* currency conversion
-* tour comparison
-* customer accounts
+- online booking
+- payment gateway
+- availability calendar
+- booking database
+- customer database
+- automated email
+- WhatsApp automation
+- Google reviews
+- Tripadvisor integration
+- multilingual pages
+- currency conversion
+- tour comparison
+- customer accounts
 
 Do not build unnecessary complexity in version one.
 
@@ -1112,29 +1112,29 @@ The website should look like a premium international Bali experience marketplace
 
 Before considering the website complete:
 
-* Verify brand name everywhere
-* Remove all old brand names
-* Check mobile layout
-* Check desktop layout
-* Check navigation
-* Check WhatsApp buttons
-* Check all links
-* Check image loading
-* Check SEO titles
-* Check meta descriptions
-* Check H1 structure
-* Check schema
-* Check canonical URLs
-* Check sitemap
-* Check robots.txt
-* Check accessibility
-* Check Core Web Vitals
-* Check conversion flow
-* Remove fake testimonials
-* Remove fake prices
-* Remove unsupported claims
-* Ensure all supplier/partner brands are represented accurately
-* Ensure KitKat Bali Tour is clearly presented as the booking/travel service, not the owner of third-party attractions
+- Verify brand name everywhere
+- Remove all old brand names
+- Check mobile layout
+- Check desktop layout
+- Check navigation
+- Check WhatsApp buttons
+- Check all links
+- Check image loading
+- Check SEO titles
+- Check meta descriptions
+- Check H1 structure
+- Check schema
+- Check canonical URLs
+- Check sitemap
+- Check robots.txt
+- Check accessibility
+- Check Core Web Vitals
+- Check conversion flow
+- Remove fake testimonials
+- Remove fake prices
+- Remove unsupported claims
+- Ensure all supplier/partner brands are represented accurately
+- Ensure KitKat Bali Tour is clearly presented as the booking/travel service, not the owner of third-party attractions
 
 The final result should feel like:
 

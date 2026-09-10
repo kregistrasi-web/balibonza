@@ -24,37 +24,31 @@ function AboutPage() {
     <div className="container-page py-10">
       <Breadcrumbs items={[{ label: "About" }]} />
 
-      <h1 className="mt-6 font-display text-4xl font-semibold">
-        About {siteConfig.name}
-      </h1>
+      <h1 className="mt-6 font-display text-4xl font-semibold">About {siteConfig.name}</h1>
 
       <div className="mt-6 max-w-2xl space-y-4 text-muted-foreground">
         <p>
-          {siteConfig.name} helps travelers discover Bali through carefully
-          arranged activities and experiences, including ATV adventures,
-          wildlife parks, Bali Swing, scenic attractions, private tours,
-          transportation and Nusa Penida trips.
+          {siteConfig.name} helps travelers discover Bali through carefully arranged activities and
+          experiences, including ATV adventures, wildlife parks, Bali Swing, scenic attractions,
+          private tours, transportation and Nusa Penida trips.
         </p>
 
         <p>
-          We are a local Bali travel and experience booking service. Instead
-          of running one single activity, we work with trusted operators and
-          attractions across the island so you can plan several experiences
-          with one contact — and one WhatsApp conversation.
+          We are a local Bali travel and experience booking service. Instead of running one single
+          activity, we work with trusted operators and attractions across the island so you can plan
+          several experiences with one contact — and one WhatsApp conversation.
         </p>
 
         <p>
-          Attractions such as Bali Zoo and Bali Safari &amp; Marine Park are
-          operated by their own management. Our role is to arrange your
-          tickets, packages and transport, confirm current pricing, and be
-          reachable before and during your experience.
+          Attractions such as Bali Zoo and Bali Safari &amp; Marine Park are operated by their own
+          management. Our role is to arrange your tickets, packages and transport, confirm current
+          pricing, and be reachable before and during your experience.
         </p>
 
         <p>
-          Our experiences are suitable for families, couples, solo travelers
-          and groups looking for convenient ways to explore Bali. We can help
-          arrange activities, private Bali tours, transportation and island
-          trips based on your plans and preferred schedule.
+          Our experiences are suitable for families, couples, solo travelers and groups looking for
+          convenient ways to explore Bali. We can help arrange activities, private Bali tours,
+          transportation and island trips based on your plans and preferred schedule.
         </p>
       </div>
 

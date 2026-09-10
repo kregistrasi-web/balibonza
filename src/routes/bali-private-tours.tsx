@@ -20,54 +20,24 @@ export const Route = createFileRoute("/bali-private-tours")({
 });
 
 const tours = [
-  [
-    "Ubud Private Tour",
-    "Rice terraces, monkey forest, art villages and Ubud centre at your pace.",
-  ],
-  [
-    "Bali Temple Tour",
-    "Visit iconic temples with a driver who knows the timing and dress code.",
-  ],
-  [
-    "Bali Waterfall Tour",
-    "Chase two or three waterfalls in one relaxed day.",
-  ],
-  [
-    "Bali Nature & Instagram Tour",
-    "Viewpoints, terraces and photo stops arranged around you.",
-  ],
-  [
-    "Custom Bali Day Tour",
-    "Tell us what you want to see and we build the route.",
-  ],
+  ["Ubud Private Tour", "Rice terraces, monkey forest, art villages and Ubud centre at your pace."],
+  ["Bali Temple Tour", "Visit iconic temples with a driver who knows the timing and dress code."],
+  ["Bali Waterfall Tour", "Chase two or three waterfalls in one relaxed day."],
+  ["Bali Nature & Instagram Tour", "Viewpoints, terraces and photo stops arranged around you."],
+  ["Custom Bali Day Tour", "Tell us what you want to see and we build the route."],
 ];
 
 const transport = [
-  [
-    "Bali Private Driver",
-    "Car with driver by the hour or full day, fuel included.",
-  ],
-  [
-    "Airport Transfer",
-    "Meet and greet at Ngurah Rai with fixed pricing.",
-  ],
+  ["Bali Private Driver", "Car with driver by the hour or full day, fuel included."],
+  ["Airport Transfer", "Meet and greet at Ngurah Rai with fixed pricing."],
   ["Hotel Transfer", "Point-to-point transfers anywhere in Bali."],
-  [
-    "Fast Boat Transfers",
-    "Boat tickets to Nusa Penida, Lembongan and the Gilis.",
-  ],
+  ["Fast Boat Transfers", "Boat tickets to Nusa Penida, Lembongan and the Gilis."],
 ];
 
 const water = [
   ["Snorkeling", "Reef snorkeling trips with equipment and guide."],
-  [
-    "Water Sports",
-    "Jet ski, banana boat, parasailing and combo packages.",
-  ],
-  [
-    "Nusa Penida Snorkeling",
-    "Snorkel stops around Nusa Penida on a boat day.",
-  ],
+  ["Water Sports", "Jet ski, banana boat, parasailing and combo packages."],
+  ["Nusa Penida Snorkeling", "Snorkel stops around Nusa Penida on a boat day."],
 ];
 
 function Group({ title, items }: { title: string; items: string[][] }) {
@@ -77,17 +47,12 @@ function Group({ title, items }: { title: string; items: string[][] }) {
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map(([name, desc]) => (
-          <div
-            key={name}
-            className="rounded-2xl border border-border bg-card p-6"
-          >
+          <div key={name} className="rounded-2xl border border-border bg-card p-6">
             <h3 className="font-display text-lg font-semibold">{name}</h3>
 
             <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
 
-            <p className="mt-4 text-sm font-semibold text-accent-foreground/80">
-              Price on request
-            </p>
+            <p className="mt-4 text-sm font-semibold text-accent-foreground/80">Price on request</p>
 
             <WhatsAppButton
               experience={name}
@@ -125,8 +90,8 @@ function PrivateToursPage() {
           </h1>
 
           <p className="mt-4 max-w-xl text-surface-foreground/85">
-            Explore Ubud, temples, waterfalls, rice terraces and other Bali
-            highlights with your own private driver and flexible itinerary.
+            Explore Ubud, temples, waterfalls, rice terraces and other Bali highlights with your own
+            private driver and flexible itinerary.
           </p>
 
           <div className="mt-6">
@@ -143,8 +108,8 @@ function PrivateToursPage() {
         <Group title="Water & Ocean Experiences" items={water} />
 
         <p className="mt-10 text-sm text-muted-foreground">
-          Prices are confirmed for your dates, group size and pickup area
-          before you book. Nothing is charged until you approve the quote.
+          Prices are confirmed for your dates, group size and pickup area before you book. Nothing
+          is charged until you approve the quote.
         </p>
       </div>
     </>

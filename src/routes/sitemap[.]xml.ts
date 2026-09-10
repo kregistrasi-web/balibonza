@@ -4,14 +4,7 @@ import { siteConfig } from "@/config/site";
 
 interface SitemapEntry {
   path: string;
-  changefreq?:
-    | "always"
-    | "hourly"
-    | "daily"
-    | "weekly"
-    | "monthly"
-    | "yearly"
-    | "never";
+  changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
 }
 
@@ -80,12 +73,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           return [
             "  <url>",
             `    <loc>${url}</loc>`,
-            entry.changefreq
-              ? `    <changefreq>${entry.changefreq}</changefreq>`
-              : null,
-            entry.priority
-              ? `    <priority>${entry.priority}</priority>`
-              : null,
+            entry.changefreq ? `    <changefreq>${entry.changefreq}</changefreq>` : null,
+            entry.priority ? `    <priority>${entry.priority}</priority>` : null,
             "  </url>",
           ]
             .filter(Boolean)

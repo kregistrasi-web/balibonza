@@ -55,10 +55,7 @@ const reasons = [
   ["Local Bali Knowledge", "Discover Bali with local expertise."],
   ["Easy Booking", "Book directly through WhatsApp."],
   ["Flexible Experiences", "Choose activities that match your interests."],
-  [
-    "Personalized Service",
-    "Get assistance before and during your experience.",
-  ],
+  ["Personalized Service", "Get assistance before and during your experience."],
   [
     "Multiple Bali Experiences",
     "Adventure, wildlife, family activities, scenic experiences and private tours in one place.",
@@ -90,8 +87,7 @@ function Index() {
           </h1>
 
           <p className="mt-5 max-w-xl text-base text-surface-foreground/85 sm:text-lg">
-            Adventure, wildlife, family experiences and private tours — all in
-            one place.
+            Adventure, wildlife, family experiences and private tours — all in one place.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -115,17 +111,13 @@ function Index() {
         </h2>
 
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Six signature experiences we arrange every week — from jungle quad
-          tracks to wildlife parks and valley swings.
+          Six signature experiences we arrange every week — from jungle quad tracks to wildlife
+          parks and valley swings.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {experiences.map((exp, i) => (
-            <ExperienceCard
-              key={exp.slug}
-              exp={exp}
-              priority={i === 0}
-            />
+            <ExperienceCard key={exp.slug} exp={exp} priority={i === 0} />
           ))}
         </div>
       </section>
@@ -145,17 +137,11 @@ function Index() {
                 to={c.to}
                 className="rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary"
               >
-                <h3 className="font-display text-xl font-semibold">
-                  {c.title}
-                </h3>
+                <h3 className="font-display text-xl font-semibold">{c.title}</h3>
 
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {c.description}
-                </p>
+                <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
 
-                <p className="mt-4 text-xs text-muted-foreground">
-                  {c.items.join(" · ")}
-                </p>
+                <p className="mt-4 text-xs text-muted-foreground">{c.items.join(" · ")}</p>
               </Link>
             ))}
           </div>
@@ -185,9 +171,7 @@ function Index() {
               <div key={t}>
                 <dt className="font-semibold">{t}</dt>
 
-                <dd className="text-sm text-muted-foreground">
-                  {d}
-                </dd>
+                <dd className="text-sm text-muted-foreground">{d}</dd>
               </div>
             ))}
           </dl>
@@ -208,13 +192,11 @@ function Index() {
       <section className="container-page pb-16">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-3xl bg-surface p-8 text-surface-foreground">
-            <h2 className="font-display text-2xl font-semibold">
-              Private Bali Tours
-            </h2>
+            <h2 className="font-display text-2xl font-semibold">Private Bali Tours</h2>
 
             <p className="mt-3 text-sm text-surface-foreground/80">
-              Ubud, temples, waterfalls, rice terraces, cultural days and fully
-              custom itineraries with your own driver.
+              Ubud, temples, waterfalls, rice terraces, cultural days and fully custom itineraries
+              with your own driver.
             </p>
 
             <Link
@@ -226,13 +208,11 @@ function Index() {
           </div>
 
           <div className="rounded-3xl border border-border p-8">
-            <h2 className="font-display text-2xl font-semibold">
-              Nusa Penida Tours
-            </h2>
+            <h2 className="font-display text-2xl font-semibold">Nusa Penida Tours</h2>
 
             <p className="mt-3 text-sm text-muted-foreground">
-              West, east and combination island days with snorkeling options
-              and fast boat transfers.
+              West, east and combination island days with snorkeling options and fast boat
+              transfers.
             </p>
 
             <Link
@@ -246,14 +226,11 @@ function Index() {
       </section>
 
       <section className="container-page pb-20">
-        <h2 className="font-display text-3xl font-semibold">
-          Guest reviews
-        </h2>
+        <h2 className="font-display text-3xl font-semibold">Guest reviews</h2>
 
         <p className="mt-3 max-w-2xl rounded-2xl border border-dashed border-border p-6 text-sm text-muted-foreground">
-          Reviews will be shown here once our Google and Tripadvisor listings
-          are connected. We only publish genuine, verifiable guest feedback —
-          never invented testimonials or ratings.
+          Reviews will be shown here once our Google and Tripadvisor listings are connected. We only
+          publish genuine, verifiable guest feedback — never invented testimonials or ratings.
         </p>
       </section>
     </>

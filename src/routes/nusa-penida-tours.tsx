@@ -74,14 +74,8 @@ const tours = [
     "West Nusa Penida Tour",
     "The classic west-coast day with the island's best-known viewpoints and beaches.",
   ],
-  [
-    "East Nusa Penida Tour",
-    "Quieter east-coast highlights, cliffs and lagoons.",
-  ],
-  [
-    "Nusa Penida Combination Tour",
-    "A longer day covering both sides of the island.",
-  ],
+  ["East Nusa Penida Tour", "Quieter east-coast highlights, cliffs and lagoons."],
+  ["Nusa Penida Combination Tour", "A longer day covering both sides of the island."],
   [
     "Nusa Penida Snorkeling",
     "Boat snorkeling stops with equipment and guide, with manta spots subject to sea conditions.",
@@ -111,8 +105,8 @@ function NusaPenidaPage() {
           </h1>
 
           <p className="mt-4 max-w-xl text-surface-foreground/85">
-            Book Nusa Penida day tours from Bali with fast boat transfers,
-            private island transport and snorkeling options.
+            Book Nusa Penida day tours from Bali with fast boat transfers, private island transport
+            and snorkeling options.
           </p>
 
           <div className="mt-6">
@@ -122,16 +116,11 @@ function NusaPenidaPage() {
       </section>
 
       <div className="container-page py-14">
-        <h2 className="font-display text-2xl font-semibold">
-          Choose Your Nusa Penida Tour
-        </h2>
+        <h2 className="font-display text-2xl font-semibold">Choose Your Nusa Penida Tour</h2>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {tours.map(([name, desc]) => (
-            <div
-              key={name}
-              className="rounded-2xl border border-border bg-card p-6"
-            >
+            <div key={name} className="rounded-2xl border border-border bg-card p-6">
               <h3 className="font-display text-lg font-semibold">{name}</h3>
 
               <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
@@ -148,21 +137,12 @@ function NusaPenidaPage() {
           ))}
         </div>
 
-        <h2 className="mt-14 font-display text-2xl font-semibold">
-          Good to Know
-        </h2>
+        <h2 className="mt-14 font-display text-2xl font-semibold">Good to Know</h2>
 
         <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-          <li>
-            Fast boat departures and island road conditions can change with
-            the weather.
-          </li>
-          <li>
-            Start times are early; we confirm your pickup time the day before.
-          </li>
-          <li>
-            Manta and snorkeling stops depend on sea conditions on the day.
-          </li>
+          <li>Fast boat departures and island road conditions can change with the weather.</li>
+          <li>Start times are early; we confirm your pickup time the day before.</li>
+          <li>Manta and snorkeling stops depend on sea conditions on the day.</li>
         </ul>
       </div>
     </>

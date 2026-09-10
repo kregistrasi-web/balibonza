@@ -16,8 +16,7 @@ export const siteConfig = {
     facebook: "",
     youtube: "", // add only when the official URL is provided
   },
-  serviceArea:
-    "Bali, Indonesia — including Ubud, Kuta, Seminyak, Canggu, Nusa Dua and Sanur",
+  serviceArea: "Bali, Indonesia — including Ubud, Kuta, Seminyak, Canggu, Nusa Dua and Sanur",
   // Analytics — leave empty until real IDs are supplied. No placeholder IDs.
   analytics: {
     ga4MeasurementId: "",
@@ -63,16 +62,11 @@ export function whatsappLink(input: WhatsAppMessageInput = {}) {
   const text = encodeURIComponent(buildWhatsAppMessage(input));
   const number = siteConfig.whatsappNumber.replace(/\D/g, "");
 
-  return number
-    ? `https://wa.me/${number}?text=${text}`
-    : `https://wa.me/?text=${text}`;
+  return number ? `https://wa.me/${number}?text=${text}` : `https://wa.me/?text=${text}`;
 }
 
 /** Lightweight conversion tracking hook — no-ops until analytics IDs are configured. */
-export function trackEvent(
-  event: string,
-  params: Record<string, unknown> = {},
-) {
+export function trackEvent(event: string, params: Record<string, unknown> = {}) {
   if (typeof window === "undefined") return;
 
   const w = window as unknown as {

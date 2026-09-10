@@ -26,9 +26,7 @@ function findExperienceByInput(input: string) {
 
   if (!query) return undefined;
 
-  return experiences.find((e) =>
-    e.title.toLowerCase().includes(query),
-  );
+  return experiences.find((e) => e.title.toLowerCase().includes(query));
 }
 
 function ContactPage() {
@@ -47,13 +45,11 @@ function ContactPage() {
 
   const whatsappMessage = selectedExperience?.whatsappText;
 
-  const set =
-    (key: keyof typeof form) =>
-    (e: React.ChangeEvent<HTMLInputElement>) =>
-      setForm((current) => ({
-        ...current,
-        [key]: e.target.value,
-      }));
+  const set = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) =>
+    setForm((current) => ({
+      ...current,
+      [key]: e.target.value,
+    }));
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,13 +78,11 @@ function ContactPage() {
     <div className="container-page py-10">
       <Breadcrumbs items={[{ label: "Contact" }]} />
 
-      <h1 className="mt-6 font-display text-4xl font-semibold">
-        Contact {siteConfig.name}
-      </h1>
+      <h1 className="mt-6 font-display text-4xl font-semibold">Contact {siteConfig.name}</h1>
 
       <p className="mt-3 max-w-2xl text-muted-foreground">
-        Tell us what you&apos;d like to do in Bali and we&apos;ll reply with
-        availability and the total price.
+        Tell us what you&apos;d like to do in Bali and we&apos;ll reply with availability and the
+        total price.
       </p>
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_18rem]">
@@ -188,16 +182,12 @@ function ContactPage() {
 
         <aside className="space-y-4 rounded-2xl border border-border bg-card p-6 text-sm">
           <div>
-            <h2 className="font-display text-lg font-semibold">
-              Reach us
-            </h2>
+            <h2 className="font-display text-lg font-semibold">Reach us</h2>
 
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
                 <a
-                  href={whatsappLink(
-                    whatsappMessage ? { message: whatsappMessage } : {},
-                  )}
+                  href={whatsappLink(whatsappMessage ? { message: whatsappMessage } : {})}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground"
@@ -208,10 +198,7 @@ function ContactPage() {
 
               {siteConfig.email && (
                 <li>
-                  <a
-                    href={`mailto:${siteConfig.email}`}
-                    className="hover:text-foreground"
-                  >
+                  <a href={`mailto:${siteConfig.email}`} className="hover:text-foreground">
                     {siteConfig.email}
                   </a>
                 </li>
@@ -222,15 +209,10 @@ function ContactPage() {
           <div>
             <h3 className="font-semibold">Service area</h3>
 
-            <p className="mt-1 text-muted-foreground">
-              {siteConfig.serviceArea}
-            </p>
+            <p className="mt-1 text-muted-foreground">{siteConfig.serviceArea}</p>
           </div>
 
-          <WhatsAppButton
-            className="w-full"
-            message={whatsappMessage}
-          />
+          <WhatsAppButton className="w-full" message={whatsappMessage} />
         </aside>
       </div>
     </div>

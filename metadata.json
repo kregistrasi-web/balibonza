@@ -1,0 +1,6 @@
+{
+  "name": "BaliBonza",
+  "description": "Bali activities, adventures, wildlife experiences and private tours booking service.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

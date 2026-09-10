@@ -9,11 +9,7 @@ import buggyImg from "@/assets/bali-buggy-adventure.jpg";
 import swingImg from "@/assets/bali-swing-experience.jpg";
 import jeepImg from "@/assets/bali-jeep-sunrise-mount-batur.webp.asset.json";
 
-export type CategoryId =
-  | "atv-off-road"
-  | "wildlife-animal"
-  | "swing-scenic"
-  | "island-experiences";
+export type CategoryId = "atv-off-road" | "wildlife-animal" | "swing-scenic" | "island-experiences";
 
 export type Experience = {
   slug: string;
@@ -209,8 +205,7 @@ export const experiences: Experience[] = [
     path: "/bali-safari-marine-park",
     title: "Bali Safari & Marine Park",
     h1: "Bali Safari & Marine Park",
-    short:
-      "Safari journeys, wildlife viewing and family attractions at Bali Safari & Marine Park.",
+    short: "Safari journeys, wildlife viewing and family attractions at Bali Safari & Marine Park.",
     metaTitle: "Bali Safari & Marine Park Tickets | BaliBonza",
     metaDescription:
       "Bali Safari & Marine Park tickets and family packages arranged by BaliBonza, with optional private transport. Ask for availability on WhatsApp.",
@@ -282,8 +277,7 @@ export const experiences: Experience[] = [
     path: "/bali-buggy-adventure",
     title: "Bali Buggy Adventure",
     h1: "Bali Buggy Adventure",
-    short:
-      "Off-road buggy driving through jungle tracks, rice fields and village scenery.",
+    short: "Off-road buggy driving through jungle tracks, rice fields and village scenery.",
     metaTitle: "Bali Buggy Adventure | Off Road Buggy Bali | BaliBonza",
     metaDescription:
       "Bali buggy adventure through off-road jungle tracks and rice fields. Two-seat and four-seat buggy options arranged by BaliBonza.",
@@ -354,8 +348,7 @@ export const experiences: Experience[] = [
     path: "/bali-swing",
     title: "Bali Swing Experience",
     h1: "Bali Swing Experience",
-    short:
-      "Jungle swings, nests and photo spots overlooking Bali's valleys and terraces.",
+    short: "Jungle swings, nests and photo spots overlooking Bali's valleys and terraces.",
     metaTitle: "Bali Swing Experience & Tour | BaliBonza",
     metaDescription:
       "Book a Bali Swing experience with jungle and valley views, photo spots and optional private transport, arranged by BaliBonza.",
@@ -469,10 +462,7 @@ export const experiences: Experience[] = [
       "Booking assistance and confirmation",
       "Private transport when added to your package",
     ],
-    excluded: [
-      "Meals and drinks unless part of the chosen package",
-      ...commonExcluded,
-    ],
+    excluded: ["Meals and drinks unless part of the chosen package", ...commonExcluded],
     pickup:
       "Early-morning hotel pickup can be arranged for most areas of South Bali and Ubud. Share your hotel name on WhatsApp and we will confirm the pickup time and any transport surcharge.",
     requirements: [
@@ -513,8 +503,7 @@ export const categories = [
   {
     id: "atv-off-road",
     title: "ATV & Off-Road",
-    description:
-      "Quad and buggy adventures through jungle tracks, rice fields and village trails.",
+    description: "Quad and buggy adventures through jungle tracks, rice fields and village trails.",
     items: ["Bali ATV Adventure", "Bali Buggy Adventure", "Bali Jeep Sunrise – Mount Batur"],
     to: "/bali-atv-adventure",
   },

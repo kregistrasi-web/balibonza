@@ -37,7 +37,9 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
         />
         <div className="absolute inset-0 -z-10 hero-scrim" />
         <div className="container-page flex min-h-[62vh] flex-col justify-end py-14 text-surface-foreground">
-          <Breadcrumbs items={[{ label: "Experiences", to: "/experiences" }, { label: exp.title }]} />
+          <Breadcrumbs
+            items={[{ label: "Experiences", to: "/experiences" }, { label: exp.title }]}
+          />
           <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             {exp.type}
           </p>
@@ -182,7 +184,11 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
             <p className="mt-1 text-xs text-muted-foreground">
               Final price confirmed for your date and group size.
             </p>
-            <WhatsAppButton experience={exp.title} message={exp.whatsappText} className="mt-5 w-full" />
+            <WhatsAppButton
+              experience={exp.title}
+              message={exp.whatsappText}
+              className="mt-5 w-full"
+            />
             <Link
               to="/contact"
               className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-full border border-border px-5 py-3 text-sm font-semibold hover:bg-muted"

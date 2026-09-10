@@ -24,32 +24,23 @@ function ExperiencesPage() {
     <div className="container-page py-10">
       <Breadcrumbs items={[{ label: "Experiences" }]} />
 
-      <h1 className="mt-6 font-display text-4xl font-semibold">
-        Bali Activities & Experiences
-      </h1>
+      <h1 className="mt-6 font-display text-4xl font-semibold">Bali Activities & Experiences</h1>
 
       <p className="mt-3 max-w-2xl text-muted-foreground">
-        Explore the best Bali activities and experiences, including ATV
-        adventures, Bali Zoo, Bali Safari, Bali Swing, buggy rides, private
-        Bali tours and Nusa Penida trips. Message us on WhatsApp for
-        availability and pricing.
+        Explore the best Bali activities and experiences, including ATV adventures, Bali Zoo, Bali
+        Safari, Bali Swing, buggy rides, private Bali tours and Nusa Penida trips. Message us on
+        WhatsApp for availability and pricing.
       </p>
 
       {categories.map((c, categoryIndex) => {
-        const categoryExperiences = experiences.filter(
-          (e) => e.categoryId === c.id,
-        );
+        const categoryExperiences = experiences.filter((e) => e.categoryId === c.id);
 
         return (
           <section key={c.id} className="mt-12">
             <div className="rounded-2xl border border-border bg-card p-6">
-              <h2 className="font-display text-lg font-semibold">
-                {c.title}
-              </h2>
+              <h2 className="font-display text-lg font-semibold">{c.title}</h2>
 
-              <p className="mt-2 text-sm text-muted-foreground">
-                {c.description}
-              </p>
+              <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
             </div>
 
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -67,18 +58,13 @@ function ExperiencesPage() {
                   className="flex flex-col justify-between rounded-2xl border border-border bg-card p-6 transition-colors hover:bg-accent/50"
                 >
                   <div>
-                    <h3 className="font-display text-lg font-semibold">
-                      {c.items[0]}
-                    </h3>
+                    <h3 className="font-display text-lg font-semibold">{c.items[0]}</h3>
 
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {c.description}
-                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
                   </div>
 
                   <span className="mt-4 inline-flex items-center text-sm font-semibold text-primary">
                     Explore {c.title}
-
                     <svg
                       className="ml-1 size-4"
                       fill="none"

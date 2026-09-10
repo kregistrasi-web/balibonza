@@ -1,234 +1,101 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { pageHead } from "@/lib/seo";
-import { siteConfig, whatsappLink, trackEvent } from "@/config/site";
-import { experiences } from "@/data/experiences";
+import { MessageCircle } from "lucide-react";
+import type { ReactNode, MouseEvent } from "react";
+import { siteConfig, whatsappLink, trackEvent, type WhatsAppMessageInput } from "@/config/site";
+import { cn } from "@/lib/utils";
 
-const pageTitle = "Contact BaliBonza | Book Your Bali Experience";
+export interface WhatsAppButtonProps extends WhatsAppMessageInput {
+  label?: string;
+  variant?: "primary" | "outline" | "secondary" | "ghost";
+  className?: string;
+  children?: ReactNode;
+  onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
+}
 
-const pageDescription =
-  "Contact BaliBonza on WhatsApp, email or social media to book Bali activities, private tours, transfers and Nusa Penida trips.";
+export function WhatsAppButton({
+  experience,
+  message,
+  date,
+  guests,
+  pickup,
+  label = "Book via WhatsApp",
+  variant = "primary",
+  className,
+  children,
+  onClick,
+}: WhatsAppButtonProps) {
+  const href = whatsappLink({
+    experience,
+    message,
+    date,
+    guests,
+    pickup,
+  });
 
-export const Route = createFileRoute("/contact")({
-  head: () =>
-    pageHead({
-      title: pageTitle,
-      description: pageDescription,
-      path: "/contact",
-    }),
-  component: ContactPage,
-});
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    trackEvent("whatsapp_click", {
+      experience: experience ?? "general",
+      label,
+    });
+    onClick?.(e);
+  };
 
-function findExperienceByInput(input: string) {
-  const query = input.trim().toLowerCase();
+  const variantStyles = {
+    primary: "bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90 shadow-sm",
+    outline:
+      "border border-border bg-background text-foreground hover:bg-muted hover:text-foreground",
+    secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+    ghost: "text-foreground hover:bg-muted",
+  }[variant];
 
-  if (!query) return undefined;
-
-  return experiences.find((e) =>
-    e.title.toLowerCase().includes(query),
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={handleClick}
+      className={cn(
+        "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2",
+        variantStyles,
+        className,
+      )}
+    >
+      <MessageCircle className="size-4 shrink-0" aria-hidden="true" />
+      <span>{children ?? label}</span>
+    </a>
   );
 }
 
-function ContactPage() {
-  const [form, setForm] = useState({
-    name: "",
-    experience: "",
-    date: "",
-    guests: "",
-    pickup: "",
-  });
+export interface FloatingWhatsAppProps {
+  message?: string;
+  className?: string;
+}
 
-  const selectedExperience = useMemo(
-    () => findExperienceByInput(form.experience),
-    [form.experience],
-  );
+export function FloatingWhatsApp({ message, className }: FloatingWhatsAppProps = {}) {
+  const href = whatsappLink(message ? { message } : {});
 
-  const whatsappMessage = selectedExperience?.whatsappText;
-
-  const set =
-    (key: keyof typeof form) =>
-    (e: React.ChangeEvent<HTMLInputElement>) =>
-      setForm((current) => ({
-        ...current,
-        [key]: e.target.value,
-      }));
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    trackEvent("contact_form_submit", {
-      experience: form.experience,
-    });
-
-    window.location.href = whatsappLink({
-      experience: form.experience,
-      date: form.date,
-      guests: form.guests,
-      pickup: form.pickup,
-      ...(whatsappMessage ? { message: whatsappMessage } : {}),
+  const handleClick = () => {
+    trackEvent("whatsapp_click", {
+      experience: "floating",
+      label: "Floating WhatsApp",
     });
   };
 
-  const field =
-    "mt-1 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30";
-
   return (
-    <div className="container-page py-10">
-      <Breadcrumbs items={[{ label: "Contact" }]} />
-
-      <h1 className="mt-6 font-display text-4xl font-semibold">
-        Contact {siteConfig.name}
-      </h1>
-
-      <p className="mt-3 max-w-2xl text-muted-foreground">
-        Tell us what you&apos;d like to do in Bali and we&apos;ll reply with
-        availability and the total price.
-      </p>
-
-      <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_18rem]">
-        <form onSubmit={onSubmit} className="max-w-xl space-y-4">
-          <div>
-            <label htmlFor="name" className="text-sm font-medium">
-              Your name
-            </label>
-
-            <input
-              id="name"
-              name="name"
-              type="text"
-              autoComplete="name"
-              required
-              className={field}
-              value={form.name}
-              onChange={set("name")}
-            />
-          </div>
-
-          <div>
-            <label htmlFor="experience" className="text-sm font-medium">
-              Experience
-            </label>
-
-            <input
-              id="experience"
-              name="experience"
-              type="text"
-              placeholder="e.g. Bali ATV Adventure"
-              className={field}
-              value={form.experience}
-              onChange={set("experience")}
-            />
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label htmlFor="date" className="text-sm font-medium">
-                Date
-              </label>
-
-              <input
-                id="date"
-                name="date"
-                type="date"
-                className={field}
-                value={form.date}
-                onChange={set("date")}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="guests" className="text-sm font-medium">
-                Number of guests
-              </label>
-
-              <input
-                id="guests"
-                name="guests"
-                inputMode="numeric"
-                className={field}
-                value={form.guests}
-                onChange={set("guests")}
-              />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="pickup" className="text-sm font-medium">
-              Hotel / pickup location
-            </label>
-
-            <input
-              id="pickup"
-              name="pickup"
-              type="text"
-              autoComplete="street-address"
-              className={field}
-              value={form.pickup}
-              onChange={set("pickup")}
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 sm:w-auto"
-          >
-            Book Your Bali Experience
-          </button>
-
-          <p className="text-xs text-muted-foreground">
-            Sending opens WhatsApp with your details pre-filled.
-          </p>
-        </form>
-
-        <aside className="space-y-4 rounded-2xl border border-border bg-card p-6 text-sm">
-          <div>
-            <h2 className="font-display text-lg font-semibold">
-              Reach us
-            </h2>
-
-            <ul className="mt-3 space-y-2 text-muted-foreground">
-              <li>
-                <a
-                  href={whatsappLink(
-                    whatsappMessage ? { message: whatsappMessage } : {},
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground"
-                >
-                  WhatsApp
-                </a>
-              </li>
-
-              {siteConfig.email && (
-                <li>
-                  <a
-                    href={`mailto:${siteConfig.email}`}
-                    className="hover:text-foreground"
-                  >
-                    {siteConfig.email}
-                  </a>
-                </li>
-              )}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold">Service area</h3>
-
-            <p className="mt-1 text-muted-foreground">
-              {siteConfig.serviceArea}
-            </p>
-          </div>
-
-          <WhatsAppButton
-            className="w-full"
-            message={whatsappMessage}
-          />
-        </aside>
-      </div>
-    </div>
+    <aside aria-label="WhatsApp quick contact">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Chat with ${siteConfig.name} on WhatsApp`}
+        onClick={handleClick}
+        className={cn(
+          "fixed bottom-6 right-6 z-50 inline-flex items-center gap-2.5 rounded-full bg-whatsapp px-4 py-3 text-sm font-semibold text-whatsapp-foreground shadow-lg transition-all duration-200 hover:scale-105 hover:bg-whatsapp/90 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-whatsapp focus:ring-offset-2",
+          className,
+        )}
+      >
+        <MessageCircle className="size-5 shrink-0" aria-hidden="true" />
+        <span className="hidden sm:inline">WhatsApp</span>
+      </a>
+    </aside>
   );
 }
