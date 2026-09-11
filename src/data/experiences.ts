@@ -62,7 +62,7 @@ export const experiences: Experience[] = [
     gallery: [atvGallery1.url, atvGallery2.url, atvGallery3.url, atvGallery4.url],
     alt: "Guests on red ATV quad bikes posing in front of a waterfall on a Bali jungle track",
     location: "Ubud area, Bali",
-    duration: "Approx. 2 hours riding (confirm on booking)",
+    duration: "Approx. 1,5 hours riding (confirm on booking)",
     type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families with teens",
     price: "Price on request",
