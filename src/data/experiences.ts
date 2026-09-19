@@ -4,7 +4,7 @@ import atvGallery2 from "@/assets/bali-atv-gallery-jungle-track.webp.asset.json"
 import atvGallery3 from "@/assets/bali-atv-gallery-bridge.webp.asset.json";
 import atvGallery4 from "@/assets/bali-atv-gallery-river-canyon.webp.asset.json";
 import zooImg from "@/assets/bali-zoo-animal-experience.jpg";
-import safariImg from "@/assets/bali-safari-marine-park.jpg";
+import safariImg from "@/assets/bali-safari-dragon-package (1).webp";
 import buggyImg from "@/assets/bali-buggy-adventure.jpg";
 import swingImg from "@/assets/bali-swing-experience.jpg";
 import jeepImg from "@/assets/bali-jeep-sunrise-mount-batur.webp.asset.json";

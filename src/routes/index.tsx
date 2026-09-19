@@ -62,6 +62,9 @@ const reasons = [
   ],
 ];
 
+const baliSafariExperiences = experiences.filter((exp) => exp.title.includes("Bali Safari"));
+const featuredExperiences = experiences.filter((exp) => !exp.title.includes("Bali Safari"));
+
 function Index() {
   return (
     <>
@@ -116,9 +119,25 @@ function Index() {
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {experiences.map((exp, i) => (
+          {featuredExperiences.map((exp, i) => (
             <ExperienceCard key={exp.slug} exp={exp} priority={i === 0} />
           ))}
+        </div>
+      </section>
+
+      <section className="bg-muted/50 py-16">
+        <div className="container-page">
+          <p className="eyebrow">Wildlife & Family</p>
+
+          <h2 className="mt-2 font-display text-3xl font-semibold sm:text-4xl">
+            Bali Safari Experiences
+          </h2>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {baliSafariExperiences.map((exp) => (
+              <ExperienceCard key={exp.slug} exp={exp} />
+            ))}
+          </div>
         </div>
       </section>
 
