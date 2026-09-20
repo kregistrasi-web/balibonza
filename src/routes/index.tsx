@@ -27,17 +27,15 @@ const featuredExperiences = featuredPopularSlugs
 const daySafariExperiences = [
   getExperience("bali-safari-jungle-hopper"),
   getExperience("bali-safari-jungle-hopper-legend"),
+  getExperience("bali-safari-night-safari"),
+];
+const lionDiningExperiences = [
+  getExperience("bali-safari-rhino-package"),
+  getExperience("bali-safari-lion-package"),
+  getExperience("bali-safari-breakfast-with-lion"),
   getExperience("bali-safari-dragon-package"),
 ];
-
-const lionDiningExperiences = [
-  getExperience("bali-safari-breakfast-with-lion"),
-  getExperience("bali-safari-lion-package"),
-  getExperience("bali-safari-rhino-package"),
-];
-
-const nightSafariExperiences = [getExperience("bali-safari-night-safari")];
-
+const nightSafariExperiences = [];
 const varunaExperiences = [
   getExperience("varuna-regular-bali"),
   getExperience("varuna-deluxe-bali"),
@@ -217,8 +215,8 @@ function Index() {
         </h2>
 
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Six signature experiences we arrange every week â€” from jungle quad tracks to wildlife
-          parks and valley swings.
+          Nine signature experiences to explore across Bali - from jungle quad tracks to wildlife parks and valley swings.
+
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -485,6 +483,9 @@ function Index() {
     </>
   );
 }
+
+
+
 
 
 
