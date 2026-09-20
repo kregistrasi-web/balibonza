@@ -1,15 +1,36 @@
-import atvImg from "@/assets/bali-atv-adventure-card.webp.asset.json";
-import atvGallery1 from "@/assets/bali-atv-gallery-waterfall-couple.webp.asset.json";
-import atvGallery2 from "@/assets/bali-atv-gallery-jungle-track.webp.asset.json";
-import atvGallery3 from "@/assets/bali-atv-gallery-bridge.webp.asset.json";
-import atvGallery4 from "@/assets/bali-atv-gallery-river-canyon.webp.asset.json";
+﻿import atvImg from "@/assets/ubud-atv-adventure-bali.webp";
+import atvGalleryJungle from "@/assets/bali-atv-gallery-jungle-track.jpg";
+import atvGalleryRiver from "@/assets/bali-atv-gallery-river-canyon.jpg";
+import atvGalleryCave from "@/assets/bali-atv-gallery-cave-tunnel.jpg";
 import zooImg from "@/assets/bali-zoo-animal-experience.jpg";
-import safariImg from "@/assets/bali-safari-dragon-package (1).webp";
+import zooGalleryBreakfastOrangutan from "@/assets/bali-zoo-gallery-breakfast-with-orangutans.jpg";
+import zooGalleryElephantMudFun from "@/assets/bali-zoo-gallery-elephant-mud-fun.jpg";
+import zooGalleryElephantExplorer from "@/assets/bali-zoo-gallery-elephant-expedition-explorer.jpg";
+import safariImg from "@/assets/bali-safari-marine-park.jpg";
+import safariGalleryNight from "@/assets/bali-safari-gallery-night-safari-tiger.jpg";
+import safariGalleryElephant from "@/assets/bali-safari-gallery-elephant-presentation.jpg";
+import safariGalleryTsavo from "@/assets/bali-safari-gallery-tsavo-lion-restaurant.jpg";
 import buggyImg from "@/assets/bali-buggy-adventure.jpg";
 import swingImg from "@/assets/bali-swing-experience.jpg";
-import jeepImg from "@/assets/bali-jeep-sunrise-mount-batur.webp.asset.json";
+import jeepImg from "@/assets/bali-jeep-sunrise-mount-batur.jpg";
+import { baliSafariExperiences } from "./bali-safari";
+import { baliZooExperiences } from "./bali-zoo";
+import { baliAdventureWaterProducts } from "./bali-adventure-watersports";
 
-export type CategoryId = "atv-off-road" | "wildlife-animal" | "swing-scenic" | "island-experiences";
+export type CategoryId = "atv-off-road" | "wildlife-animal" | "swing-scenic" | "island-experiences" | "bali-adventure" | "tanjung-benoa-water-sports";
+
+export type PriceVariant = {
+  id?: string;
+  label: string;
+  session?: "day" | "evening";
+  packageType?: "regular" | "deluxe" | "premium";
+  adultPublishRate?: number;
+  childPublishRate?: number;
+  adultPrice: number;
+  childPrice?: number;
+  adultCommission?: number;
+  childCommission?: number;
+};
 
 export type Experience = {
   slug: string;
@@ -21,13 +42,21 @@ export type Experience = {
   metaDescription: string;
   image: string;
   gallery?: string[];
+  galleryAlts?: string[];
   alt: string;
   location: string;
   duration: string;
   type: string;
   suitableFor: string;
   price: string;
+  pricing?: {
+    publishRate?: { adult?: number; child?: number };
+    websitePrice?: { adult?: number; child?: number };
+    commission?: { adult?: number; child?: number };
+    variants?: PriceVariant[];
+  };
   categoryId?: CategoryId;
+  subcategory?: string;
   /** Optional custom WhatsApp pre-filled message for this experience. */
   whatsappText?: string;
   highlights: string[];
@@ -47,6 +76,89 @@ const commonExcluded = [
   "Anything not listed under what's included",
 ];
 
+const adventureWaterExperiences: Experience[] =
+  baliAdventureWaterProducts.map((product) => {
+    const isWaterSports =
+      product.category === "Tanjung Benoa Water Sports";
+
+    const categoryId: CategoryId = isWaterSports
+      ? "tanjung-benoa-water-sports"
+      : "bali-adventure";
+
+    return {
+      slug: product.slug,
+      path: `/${product.slug}`,
+      title: product.title,
+      h1: product.title,
+      short: product.short,
+      metaTitle: `${product.title} | BaliBonza`,
+      metaDescription: `${product.title} in Bali. Check availability, pricing and booking details with BaliBonza.`,
+      image: product.image,
+      alt: product.alt,
+      location: isWaterSports
+        ? "Tanjung Benoa, Bali"
+        : "Bali",
+      duration: "Price and duration on request",
+      type: isWaterSports
+        ? "Water Sports"
+        : "Adventure",
+      suitableFor: "Couples, friends and families",
+      price: "Price on request",
+      categoryId,
+      subcategory: product.category,
+      whatsappText:
+        `Hello BaliBonza,\n\nI would like to book the ${product.title}.\n\nPlease send me availability, total price, and booking details.\n\nThank you.`,
+      intro: [
+        `${product.title} is one of the experiences BaliBonza can arrange in Bali.`,
+        "Send us your preferred date and number of guests on WhatsApp and we will confirm availability, price and booking details.",
+      ],
+      highlights: [
+        product.title,
+        isWaterSports
+          ? "Tanjung Benoa water sports location"
+          : "Bali outdoor adventure experience",
+        "Booking assistance and confirmation",
+        "Availability confirmed before booking",
+      ],
+      flow: [
+        "Send your preferred date and number of guests",
+        "BaliBonza checks availability and current price",
+        "Receive booking confirmation and activity details",
+        "Enjoy your Bali experience",
+      ],
+      included: [
+        "Activity according to the selected product",
+        "Booking assistance and confirmation",
+      ],
+      excluded: [...commonExcluded],
+      pickup:
+        "Pickup availability depends on the operator and your hotel location. Share your hotel details on WhatsApp and we will confirm the options.",
+      requirements: [
+        "Follow the operator's safety instructions",
+        "Bring comfortable clothing suitable for the activity",
+        "Final requirements are confirmed before booking",
+      ],
+      important: [
+        "Availability and pricing are confirmed before booking.",
+        "Activity conditions may depend on weather and operator availability.",
+      ],
+      faq: [
+        {
+          q: `How do I book ${product.title}?`,
+          a: "Send us your preferred date, number of guests and hotel location on WhatsApp. We will check availability and confirm the current price.",
+        },
+        {
+          q: "Is hotel pickup included?",
+          a: "Pickup depends on the activity and your location. We confirm available pickup options before booking.",
+        },
+        {
+          q: "Can I check availability before paying?",
+          a: "Yes. BaliBonza confirms availability and booking details before you proceed.",
+        },
+      ],
+    };
+  });
+
 export const experiences: Experience[] = [
   {
     slug: "bali-atv-adventure",
@@ -58,12 +170,17 @@ export const experiences: Experience[] = [
     metaTitle: "Bali ATV Adventure | Jungle ATV Ride | BaliBonza",
     metaDescription:
       "Book a Bali ATV adventure through jungle tracks and rice fields. Single or tandem quad rides arranged by BaliBonza, with pickup available.",
-    image: atvImg.url,
-    gallery: [atvGallery1.url, atvGallery2.url, atvGallery3.url, atvGallery4.url],
-    alt: "Guests on red ATV quad bikes posing in front of a waterfall on a Bali jungle track",
+    image: atvImg,
+    gallery: [atvGalleryJungle, atvGalleryRiver, atvGalleryCave],
+    galleryAlts: [
+      "ATV quad bike riding through tropical jungle tracks in Ubud Bali",
+      "Off-road ATV river canyon water splash trail in Ubud Bali",
+      "ATV rider entering an authentic natural cave tunnel in Bali",
+    ],
+    alt: "Driver and passenger on an orange ATV splashing through a jungle river track in Ubud Bali",
     location: "Ubud area, Bali",
     duration: "Approx. 1,5 hours riding (confirm on booking)",
-    type: "Adventure • Off-road",
+    type: "Adventure â€¢ Off-road",
     suitableFor: "Couples, friends, families with teens",
     price: "Price on request",
     categoryId: "atv-off-road",
@@ -99,7 +216,7 @@ export const experiences: Experience[] = [
     pickup:
       "Hotel pickup can be arranged for most areas of South Bali and Ubud. Share your hotel name on WhatsApp and we will confirm the pickup time and any transport surcharge.",
     requirements: [
-      "Minimum age policy applies — confirmed with the operator at booking",
+      "Minimum age policy applies â€” confirmed with the operator at booking",
       "Riders should be in reasonable physical condition",
       "Closed shoes recommended",
       "Bring a change of clothes; tracks can be muddy",
@@ -138,10 +255,16 @@ export const experiences: Experience[] = [
     metaDescription:
       "Bali Zoo tickets, animal encounters and family experiences arranged by BaliBonza. Tell us your dates on WhatsApp for availability and pricing.",
     image: zooImg,
-    alt: "Family watching an elephant during an animal encounter at a tropical zoo in Bali",
+    gallery: [zooGalleryBreakfastOrangutan, zooGalleryElephantMudFun, zooGalleryElephantExplorer],
+    galleryAlts: [
+      "Bali Zoo Breakfast with Orangutans experience at Gayo Restaurant in Gianyar Bali",
+      "Bali Zoo Elephant Mud Fun interactive bathing and mud spa conservation experience",
+      "Bali Zoo Elephant Explorer expedition walking through tropical jungle sanctuary",
+    ],
+    alt: "Young child happily cuddling with a capybara during an animal encounter at Bali Zoo",
     location: "Gianyar, Bali",
     duration: "Half day (flexible)",
-    type: "Wildlife • Family",
+    type: "Wildlife â€¢ Family",
     suitableFor: "Families with children, first-time visitors",
     price: "Price on request",
     categoryId: "wildlife-animal",
@@ -149,7 +272,7 @@ export const experiences: Experience[] = [
       "Hello BaliBonza,\n\nI would like to book Bali Zoo tickets/experiences.\n\nPlease send me availability, package options, and total price for my group.\n\nThank you.",
     intro: [
       "Bali Zoo is one of the island's most popular family attractions, with tropical gardens, animal habitats and a range of add-on encounters.",
-      "BaliBonza is an independent booking and travel service. We arrange your Bali Zoo tickets and transport — Bali Zoo is owned and operated by its own management.",
+      "BaliBonza is an independent booking and travel service. We arrange your Bali Zoo tickets and transport â€” Bali Zoo is owned and operated by its own management.",
     ],
     highlights: [
       "Bali Zoo admission arranged for your dates",
@@ -206,14 +329,20 @@ export const experiences: Experience[] = [
     title: "Bali Safari & Marine Park",
     h1: "Bali Safari & Marine Park",
     short: "Safari journeys, wildlife viewing and family attractions at Bali Safari & Marine Park.",
-    metaTitle: "Bali Safari & Marine Park Tickets | BaliBonza",
+    metaTitle: "Bali Safari Tickets & Packages | BaliBonza",
     metaDescription:
-      "Bali Safari & Marine Park tickets and family packages arranged by BaliBonza, with optional private transport. Ask for availability on WhatsApp.",
+      "Book Bali Safari tickets and packages. Compare Jungle Hopper, Night Safari, Safari Legend, Breakfast with Lions and Varuna. Instant WhatsApp assistance.",
     image: safariImg,
-    alt: "Guests in a safari vehicle watching zebras in an open savannah enclosure at Bali Safari",
+    gallery: [safariGalleryNight, safariGalleryElephant, safariGalleryTsavo],
+    galleryAlts: [
+      "Bali Safari and Marine Park Night Safari tiger feeding experience from a caged tram",
+      "Bali Safari and Marine Park educational elephant conservation presentation in Gianyar",
+      "Tsavo Lion Restaurant dining experience with close-up lion views at Bali Safari Park",
+    ],
+    alt: "Safari tram bus carrying visitors through lush habitats at Bali Safari and Marine Park",
     location: "Gianyar, Bali",
     duration: "Full or half day",
-    type: "Wildlife • Family",
+    type: "Wildlife â€¢ Family",
     suitableFor: "Families, groups, wildlife lovers",
     price: "Price on request",
     categoryId: "wildlife-animal",
@@ -255,7 +384,7 @@ export const experiences: Experience[] = [
     ],
     important: [
       "Package contents, show times and prices are set by the park and confirmed when you book.",
-      "We never publish estimated ticket prices — you always get the current figure before paying.",
+      "We never publish estimated ticket prices â€” you always get the current figure before paying.",
     ],
     faq: [
       {
@@ -285,7 +414,7 @@ export const experiences: Experience[] = [
     alt: "Off-road buggy driving a dirt track between Bali rice fields with palm trees behind",
     location: "Ubud area, Bali",
     duration: "Approx. 2 hours riding (confirm on booking)",
-    type: "Adventure • Off-road",
+    type: "Adventure â€¢ Off-road",
     suitableFor: "Couples, friends, families driving together",
     price: "Price on request",
     categoryId: "atv-off-road",
@@ -355,15 +484,15 @@ export const experiences: Experience[] = [
     image: swingImg,
     alt: "Woman on a jungle swing above a green Bali valley with terraces and morning mist",
     location: "Ubud area, Bali",
-    duration: "1–2 hours at the park",
-    type: "Scenic • Photo experience",
+    duration: "1â€“2 hours at the park",
+    type: "Scenic â€¢ Photo experience",
     suitableFor: "Couples, families, photo lovers",
     price: "Price on request",
     categoryId: "swing-scenic",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book the Bali Swing Experience.\n\nPlease send me availability, package options, and total price.\n\nThank you.",
     intro: [
-      "Bali Swing parks combine swings of different heights with nests, platforms and viewpoints set above green valleys — the classic Bali photo experience.",
+      "Bali Swing parks combine swings of different heights with nests, platforms and viewpoints set above green valleys â€” the classic Bali photo experience.",
       "We book your entry package, arrange transport if needed, and confirm exactly which swings and props are included at the park you choose.",
     ],
     highlights: [
@@ -413,30 +542,30 @@ export const experiences: Experience[] = [
       },
       {
         q: "Can we combine the swing with other Ubud stops?",
-        a: "Yes. It pairs well with rice terraces, waterfalls or an ATV ride on the same day — ask us for a combined itinerary.",
+        a: "Yes. It pairs well with rice terraces, waterfalls or an ATV ride on the same day â€” ask us for a combined itinerary.",
       },
     ],
   },
   {
     slug: "bali-jeep-sunrise",
     path: "/bali-jeep-sunrise",
-    title: "Bali Jeep Sunrise – Mount Batur",
-    h1: "Bali Jeep Sunrise – Mount Batur",
+    title: "Bali Jeep Sunrise â€“ Mount Batur",
+    h1: "Bali Jeep Sunrise â€“ Mount Batur",
     short:
       "Sunrise adventure by 4WD Jeep around Mount Batur, with volcanic landscapes and scenic viewpoints.",
-    metaTitle: "Bali Jeep Sunrise – Mount Batur | BaliBonza",
+    metaTitle: "Bali Jeep Sunrise â€“ Mount Batur | BaliBonza",
     metaDescription:
       "Book a Bali Jeep sunrise adventure around Mount Batur. 4WD Jeep ride across volcanic landscapes and scenic viewpoints, arranged by BaliBonza.",
-    image: jeepImg.url,
+    image: jeepImg,
     alt: "4WD Jeep on the volcanic slopes of Mount Batur at sunrise in Bali",
     location: "Mount Batur, Bali",
     duration: "Half day",
-    type: "Adventure • Off-road",
+    type: "Adventure â€¢ Off-road",
     suitableFor: "Couples, friends, families, sunrise lovers",
     price: "Price on request",
     categoryId: "atv-off-road",
     whatsappText:
-      "Hello BaliBonza,\n\nI would like to book the Bali Jeep Sunrise – Mount Batur.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
+      "Hello BaliBonza,\n\nI would like to book the Bali Jeep Sunrise â€“ Mount Batur.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
     intro: [
       "The Bali Jeep sunrise experience takes you up the slopes of Mount Batur in a 4WD Jeep, so you can watch the sunrise over the volcano and lake without a strenuous hike.",
       "BaliBonza arranges your Mount Batur Jeep trip with trusted local operators, handles the early-morning pickup, and confirms availability over WhatsApp before you pay anything.",
@@ -445,7 +574,7 @@ export const experiences: Experience[] = [
       "Sunrise from a Mount Batur viewpoint reached by 4WD Jeep",
       "Drive across volcanic black lava fields and sand",
       "Scenic viewpoints over the volcano, lake and caldera",
-      "No hiking required — the Jeep does the climbing",
+      "No hiking required â€” the Jeep does the climbing",
       "Optional hotel pickup from South Bali and Ubud",
     ],
     flow: [
@@ -466,7 +595,7 @@ export const experiences: Experience[] = [
     pickup:
       "Early-morning hotel pickup can be arranged for most areas of South Bali and Ubud. Share your hotel name on WhatsApp and we will confirm the pickup time and any transport surcharge.",
     requirements: [
-      "Warm layer recommended — it is cold before sunrise",
+      "Warm layer recommended â€” it is cold before sunrise",
       "Closed shoes and comfortable clothing",
       "Suitable for most ages; not a strenuous activity",
     ],
@@ -493,6 +622,9 @@ export const experiences: Experience[] = [
       },
     ],
   },
+  ...adventureWaterExperiences,
+  ...baliSafariExperiences,
+  ...baliZooExperiences,
 ];
 
 export function getExperience(slug: string) {
@@ -504,7 +636,7 @@ export const categories = [
     id: "atv-off-road",
     title: "ATV & Off-Road",
     description: "Quad and buggy adventures through jungle tracks, rice fields and village trails.",
-    items: ["Bali ATV Adventure", "Bali Buggy Adventure", "Bali Jeep Sunrise – Mount Batur"],
+    items: ["Bali ATV Adventure", "Bali Buggy Adventure", "Bali Jeep Sunrise â€“ Mount Batur"],
     to: "/bali-atv-adventure",
   },
   {
@@ -528,4 +660,34 @@ export const categories = [
     items: ["Nusa Penida Tours"],
     to: "/nusa-penida-tours",
   },
+  {
+    id: "bali-adventure",
+    title: "Bali Adventure Experiences",
+    description: "River tubing and rafting adventures through Bali's tropical landscapes.",
+    items: [
+      "Lazy River Tubing",
+      "Tubing Adventure",
+      "Ayung River Rafting",
+      "Telaga Waja River Rafting",
+    ],
+    to: "/lazy-river-tubing",
+  },
+  {
+    id: "tanjung-benoa-water-sports",
+    title: "Tanjung Benoa Water Sports",
+    description: "Exciting ocean activities and water sports in Tanjung Benoa.",
+    items: [
+      "Jet Ski",
+      "Parasailing",
+      "Banana Boat",
+      "Flying Fish",
+      "Rolling Donut",
+      "Flyboard",
+      "Sea Walker",
+      "Snorkeling",
+      "Scuba Diving",
+    ],
+    to: "/tanjung-benoa-jet-ski",
+  },
 ];
+

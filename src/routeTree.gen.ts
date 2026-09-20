@@ -11,17 +11,43 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AyungRiverRaftingRouteImport } from './routes/ayung-river-rafting'
+import { Route as BaliAdventureRouteImport } from './routes/bali-adventure'
 import { Route as BaliAtvAdventureRouteImport } from './routes/bali-atv-adventure'
 import { Route as BaliBuggyAdventureRouteImport } from './routes/bali-buggy-adventure'
 import { Route as BaliJeepSunriseRouteImport } from './routes/bali-jeep-sunrise'
 import { Route as BaliPrivateToursRouteImport } from './routes/bali-private-tours'
+import { Route as BaliSafariBreakfastWithLionRouteImport } from './routes/bali-safari-breakfast-with-lion'
+import { Route as BaliSafariDragonPackageRouteImport } from './routes/bali-safari-dragon-package'
+import { Route as BaliSafariJungleHopperRouteImport } from './routes/bali-safari-jungle-hopper'
+import { Route as BaliSafariJungleHopperLegendRouteImport } from './routes/bali-safari-jungle-hopper-legend'
+import { Route as BaliSafariLionPackageRouteImport } from './routes/bali-safari-lion-package'
 import { Route as BaliSafariMarineParkRouteImport } from './routes/bali-safari-marine-park'
+import { Route as BaliSafariNightSafariRouteImport } from './routes/bali-safari-night-safari'
+import { Route as BaliSafariRhinoPackageRouteImport } from './routes/bali-safari-rhino-package'
 import { Route as BaliSwingRouteImport } from './routes/bali-swing'
 import { Route as BaliZooRouteImport } from './routes/bali-zoo'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as LazyRiverTubingRouteImport } from './routes/lazy-river-tubing'
 import { Route as NusaPenidaToursRouteImport } from './routes/nusa-penida-tours'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TanjungBenoaBananaBoatRouteImport } from './routes/tanjung-benoa-banana-boat'
+import { Route as TanjungBenoaFlyboardRouteImport } from './routes/tanjung-benoa-flyboard'
+import { Route as TanjungBenoaFlyingFishRouteImport } from './routes/tanjung-benoa-flying-fish'
+import { Route as TanjungBenoaJetSkiRouteImport } from './routes/tanjung-benoa-jet-ski'
+import { Route as TanjungBenoaParasailingRouteImport } from './routes/tanjung-benoa-parasailing'
+import { Route as TanjungBenoaRollingDonutRouteImport } from './routes/tanjung-benoa-rolling-donut'
+import { Route as TanjungBenoaScubaDivingRouteImport } from './routes/tanjung-benoa-scuba-diving'
+import { Route as TanjungBenoaSeaWalkerRouteImport } from './routes/tanjung-benoa-sea-walker'
+import { Route as TanjungBenoaSnorkelingRouteImport } from './routes/tanjung-benoa-snorkeling'
+import { Route as TanjungBenoaWaterSportsRouteImport } from './routes/tanjung-benoa-water-sports'
+import { Route as TelagaWajaRiverRaftingRouteImport } from './routes/telaga-waja-river-rafting'
+import { Route as TubingAdventureRouteImport } from './routes/tubing-adventure'
+import { Route as VarunaDeluxeBaliRouteImport } from './routes/varuna-deluxe-bali'
+import { Route as VarunaPremiumBaliRouteImport } from './routes/varuna-premium-bali'
+import { Route as VarunaRegularBaliRouteImport } from './routes/varuna-regular-bali'
+import { Route as BaliZooSlugRouteImport } from './routes/bali-zoo_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -31,6 +57,16 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AyungRiverRaftingRoute = AyungRiverRaftingRouteImport.update({
+  id: '/ayung-river-rafting',
+  path: '/ayung-river-rafting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliAdventureRoute = BaliAdventureRouteImport.update({
+  id: '/bali-adventure',
+  path: '/bali-adventure',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BaliAtvAdventureRoute = BaliAtvAdventureRouteImport.update({
@@ -53,9 +89,46 @@ const BaliPrivateToursRoute = BaliPrivateToursRouteImport.update({
   path: '/bali-private-tours',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BaliSafariBreakfastWithLionRoute =
+  BaliSafariBreakfastWithLionRouteImport.update({
+    id: '/bali-safari-breakfast-with-lion',
+    path: '/bali-safari-breakfast-with-lion',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BaliSafariDragonPackageRoute = BaliSafariDragonPackageRouteImport.update({
+  id: '/bali-safari-dragon-package',
+  path: '/bali-safari-dragon-package',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliSafariJungleHopperRoute = BaliSafariJungleHopperRouteImport.update({
+  id: '/bali-safari-jungle-hopper',
+  path: '/bali-safari-jungle-hopper',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliSafariJungleHopperLegendRoute =
+  BaliSafariJungleHopperLegendRouteImport.update({
+    id: '/bali-safari-jungle-hopper-legend',
+    path: '/bali-safari-jungle-hopper-legend',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BaliSafariLionPackageRoute = BaliSafariLionPackageRouteImport.update({
+  id: '/bali-safari-lion-package',
+  path: '/bali-safari-lion-package',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BaliSafariMarineParkRoute = BaliSafariMarineParkRouteImport.update({
   id: '/bali-safari-marine-park',
   path: '/bali-safari-marine-park',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliSafariNightSafariRoute = BaliSafariNightSafariRouteImport.update({
+  id: '/bali-safari-night-safari',
+  path: '/bali-safari-night-safari',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliSafariRhinoPackageRoute = BaliSafariRhinoPackageRouteImport.update({
+  id: '/bali-safari-rhino-package',
+  path: '/bali-safari-rhino-package',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BaliSwingRoute = BaliSwingRouteImport.update({
@@ -78,6 +151,11 @@ const ExperiencesRoute = ExperiencesRouteImport.update({
   path: '/experiences',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LazyRiverTubingRoute = LazyRiverTubingRouteImport.update({
+  id: '/lazy-river-tubing',
+  path: '/lazy-river-tubing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NusaPenidaToursRoute = NusaPenidaToursRouteImport.update({
   id: '/nusa-penida-tours',
   path: '/nusa-penida-tours',
@@ -88,115 +166,378 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TanjungBenoaBananaBoatRoute = TanjungBenoaBananaBoatRouteImport.update({
+  id: '/tanjung-benoa-banana-boat',
+  path: '/tanjung-benoa-banana-boat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TanjungBenoaFlyboardRoute = TanjungBenoaFlyboardRouteImport.update({
+  id: '/tanjung-benoa-flyboard',
+  path: '/tanjung-benoa-flyboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TanjungBenoaFlyingFishRoute = TanjungBenoaFlyingFishRouteImport.update({
+  id: '/tanjung-benoa-flying-fish',
+  path: '/tanjung-benoa-flying-fish',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TanjungBenoaJetSkiRoute = TanjungBenoaJetSkiRouteImport.update({
+  id: '/tanjung-benoa-jet-ski',
+  path: '/tanjung-benoa-jet-ski',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TanjungBenoaParasailingRoute = TanjungBenoaParasailingRouteImport.update({
+  id: '/tanjung-benoa-parasailing',
+  path: '/tanjung-benoa-parasailing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TanjungBenoaRollingDonutRoute =
+  TanjungBenoaRollingDonutRouteImport.update({
+    id: '/tanjung-benoa-rolling-donut',
+    path: '/tanjung-benoa-rolling-donut',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TanjungBenoaScubaDivingRoute = TanjungBenoaScubaDivingRouteImport.update({
+  id: '/tanjung-benoa-scuba-diving',
+  path: '/tanjung-benoa-scuba-diving',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TanjungBenoaSeaWalkerRoute = TanjungBenoaSeaWalkerRouteImport.update({
+  id: '/tanjung-benoa-sea-walker',
+  path: '/tanjung-benoa-sea-walker',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TanjungBenoaSnorkelingRoute = TanjungBenoaSnorkelingRouteImport.update({
+  id: '/tanjung-benoa-snorkeling',
+  path: '/tanjung-benoa-snorkeling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TanjungBenoaWaterSportsRoute = TanjungBenoaWaterSportsRouteImport.update({
+  id: '/tanjung-benoa-water-sports',
+  path: '/tanjung-benoa-water-sports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TelagaWajaRiverRaftingRoute = TelagaWajaRiverRaftingRouteImport.update({
+  id: '/telaga-waja-river-rafting',
+  path: '/telaga-waja-river-rafting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TubingAdventureRoute = TubingAdventureRouteImport.update({
+  id: '/tubing-adventure',
+  path: '/tubing-adventure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VarunaDeluxeBaliRoute = VarunaDeluxeBaliRouteImport.update({
+  id: '/varuna-deluxe-bali',
+  path: '/varuna-deluxe-bali',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VarunaPremiumBaliRoute = VarunaPremiumBaliRouteImport.update({
+  id: '/varuna-premium-bali',
+  path: '/varuna-premium-bali',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VarunaRegularBaliRoute = VarunaRegularBaliRouteImport.update({
+  id: '/varuna-regular-bali',
+  path: '/varuna-regular-bali',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BaliZooSlugRoute = BaliZooSlugRouteImport.update({
+  id: '/bali-zoo_/$slug',
+  path: '/bali-zoo/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ayung-river-rafting': typeof AyungRiverRaftingRoute
+  '/bali-adventure': typeof BaliAdventureRoute
   '/bali-atv-adventure': typeof BaliAtvAdventureRoute
   '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
   '/bali-jeep-sunrise': typeof BaliJeepSunriseRoute
   '/bali-private-tours': typeof BaliPrivateToursRoute
+  '/bali-safari-breakfast-with-lion': typeof BaliSafariBreakfastWithLionRoute
+  '/bali-safari-dragon-package': typeof BaliSafariDragonPackageRoute
+  '/bali-safari-jungle-hopper': typeof BaliSafariJungleHopperRoute
+  '/bali-safari-jungle-hopper-legend': typeof BaliSafariJungleHopperLegendRoute
+  '/bali-safari-lion-package': typeof BaliSafariLionPackageRoute
   '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
+  '/bali-safari-night-safari': typeof BaliSafariNightSafariRoute
+  '/bali-safari-rhino-package': typeof BaliSafariRhinoPackageRoute
   '/bali-swing': typeof BaliSwingRoute
   '/bali-zoo': typeof BaliZooRoute
   '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
+  '/lazy-river-tubing': typeof LazyRiverTubingRoute
   '/nusa-penida-tours': typeof NusaPenidaToursRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/tanjung-benoa-banana-boat': typeof TanjungBenoaBananaBoatRoute
+  '/tanjung-benoa-flyboard': typeof TanjungBenoaFlyboardRoute
+  '/tanjung-benoa-flying-fish': typeof TanjungBenoaFlyingFishRoute
+  '/tanjung-benoa-jet-ski': typeof TanjungBenoaJetSkiRoute
+  '/tanjung-benoa-parasailing': typeof TanjungBenoaParasailingRoute
+  '/tanjung-benoa-rolling-donut': typeof TanjungBenoaRollingDonutRoute
+  '/tanjung-benoa-scuba-diving': typeof TanjungBenoaScubaDivingRoute
+  '/tanjung-benoa-sea-walker': typeof TanjungBenoaSeaWalkerRoute
+  '/tanjung-benoa-snorkeling': typeof TanjungBenoaSnorkelingRoute
+  '/tanjung-benoa-water-sports': typeof TanjungBenoaWaterSportsRoute
+  '/telaga-waja-river-rafting': typeof TelagaWajaRiverRaftingRoute
+  '/tubing-adventure': typeof TubingAdventureRoute
+  '/varuna-deluxe-bali': typeof VarunaDeluxeBaliRoute
+  '/varuna-premium-bali': typeof VarunaPremiumBaliRoute
+  '/varuna-regular-bali': typeof VarunaRegularBaliRoute
+  '/bali-zoo/$slug': typeof BaliZooSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ayung-river-rafting': typeof AyungRiverRaftingRoute
+  '/bali-adventure': typeof BaliAdventureRoute
   '/bali-atv-adventure': typeof BaliAtvAdventureRoute
   '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
   '/bali-jeep-sunrise': typeof BaliJeepSunriseRoute
   '/bali-private-tours': typeof BaliPrivateToursRoute
+  '/bali-safari-breakfast-with-lion': typeof BaliSafariBreakfastWithLionRoute
+  '/bali-safari-dragon-package': typeof BaliSafariDragonPackageRoute
+  '/bali-safari-jungle-hopper': typeof BaliSafariJungleHopperRoute
+  '/bali-safari-jungle-hopper-legend': typeof BaliSafariJungleHopperLegendRoute
+  '/bali-safari-lion-package': typeof BaliSafariLionPackageRoute
   '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
+  '/bali-safari-night-safari': typeof BaliSafariNightSafariRoute
+  '/bali-safari-rhino-package': typeof BaliSafariRhinoPackageRoute
   '/bali-swing': typeof BaliSwingRoute
   '/bali-zoo': typeof BaliZooRoute
   '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
+  '/lazy-river-tubing': typeof LazyRiverTubingRoute
   '/nusa-penida-tours': typeof NusaPenidaToursRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/tanjung-benoa-banana-boat': typeof TanjungBenoaBananaBoatRoute
+  '/tanjung-benoa-flyboard': typeof TanjungBenoaFlyboardRoute
+  '/tanjung-benoa-flying-fish': typeof TanjungBenoaFlyingFishRoute
+  '/tanjung-benoa-jet-ski': typeof TanjungBenoaJetSkiRoute
+  '/tanjung-benoa-parasailing': typeof TanjungBenoaParasailingRoute
+  '/tanjung-benoa-rolling-donut': typeof TanjungBenoaRollingDonutRoute
+  '/tanjung-benoa-scuba-diving': typeof TanjungBenoaScubaDivingRoute
+  '/tanjung-benoa-sea-walker': typeof TanjungBenoaSeaWalkerRoute
+  '/tanjung-benoa-snorkeling': typeof TanjungBenoaSnorkelingRoute
+  '/tanjung-benoa-water-sports': typeof TanjungBenoaWaterSportsRoute
+  '/telaga-waja-river-rafting': typeof TelagaWajaRiverRaftingRoute
+  '/tubing-adventure': typeof TubingAdventureRoute
+  '/varuna-deluxe-bali': typeof VarunaDeluxeBaliRoute
+  '/varuna-premium-bali': typeof VarunaPremiumBaliRoute
+  '/varuna-regular-bali': typeof VarunaRegularBaliRoute
+  '/bali-zoo/$slug': typeof BaliZooSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ayung-river-rafting': typeof AyungRiverRaftingRoute
+  '/bali-adventure': typeof BaliAdventureRoute
   '/bali-atv-adventure': typeof BaliAtvAdventureRoute
   '/bali-buggy-adventure': typeof BaliBuggyAdventureRoute
   '/bali-jeep-sunrise': typeof BaliJeepSunriseRoute
   '/bali-private-tours': typeof BaliPrivateToursRoute
+  '/bali-safari-breakfast-with-lion': typeof BaliSafariBreakfastWithLionRoute
+  '/bali-safari-dragon-package': typeof BaliSafariDragonPackageRoute
+  '/bali-safari-jungle-hopper': typeof BaliSafariJungleHopperRoute
+  '/bali-safari-jungle-hopper-legend': typeof BaliSafariJungleHopperLegendRoute
+  '/bali-safari-lion-package': typeof BaliSafariLionPackageRoute
   '/bali-safari-marine-park': typeof BaliSafariMarineParkRoute
+  '/bali-safari-night-safari': typeof BaliSafariNightSafariRoute
+  '/bali-safari-rhino-package': typeof BaliSafariRhinoPackageRoute
   '/bali-swing': typeof BaliSwingRoute
   '/bali-zoo': typeof BaliZooRoute
   '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
+  '/lazy-river-tubing': typeof LazyRiverTubingRoute
   '/nusa-penida-tours': typeof NusaPenidaToursRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/tanjung-benoa-banana-boat': typeof TanjungBenoaBananaBoatRoute
+  '/tanjung-benoa-flyboard': typeof TanjungBenoaFlyboardRoute
+  '/tanjung-benoa-flying-fish': typeof TanjungBenoaFlyingFishRoute
+  '/tanjung-benoa-jet-ski': typeof TanjungBenoaJetSkiRoute
+  '/tanjung-benoa-parasailing': typeof TanjungBenoaParasailingRoute
+  '/tanjung-benoa-rolling-donut': typeof TanjungBenoaRollingDonutRoute
+  '/tanjung-benoa-scuba-diving': typeof TanjungBenoaScubaDivingRoute
+  '/tanjung-benoa-sea-walker': typeof TanjungBenoaSeaWalkerRoute
+  '/tanjung-benoa-snorkeling': typeof TanjungBenoaSnorkelingRoute
+  '/tanjung-benoa-water-sports': typeof TanjungBenoaWaterSportsRoute
+  '/telaga-waja-river-rafting': typeof TelagaWajaRiverRaftingRoute
+  '/tubing-adventure': typeof TubingAdventureRoute
+  '/varuna-deluxe-bali': typeof VarunaDeluxeBaliRoute
+  '/varuna-premium-bali': typeof VarunaPremiumBaliRoute
+  '/varuna-regular-bali': typeof VarunaRegularBaliRoute
+  '/bali-zoo_/$slug': typeof BaliZooSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/ayung-river-rafting'
+    | '/bali-adventure'
     | '/bali-atv-adventure'
     | '/bali-buggy-adventure'
     | '/bali-jeep-sunrise'
     | '/bali-private-tours'
+    | '/bali-safari-breakfast-with-lion'
+    | '/bali-safari-dragon-package'
+    | '/bali-safari-jungle-hopper'
+    | '/bali-safari-jungle-hopper-legend'
+    | '/bali-safari-lion-package'
     | '/bali-safari-marine-park'
+    | '/bali-safari-night-safari'
+    | '/bali-safari-rhino-package'
     | '/bali-swing'
     | '/bali-zoo'
     | '/contact'
     | '/experiences'
+    | '/lazy-river-tubing'
     | '/nusa-penida-tours'
     | '/sitemap.xml'
+    | '/tanjung-benoa-banana-boat'
+    | '/tanjung-benoa-flyboard'
+    | '/tanjung-benoa-flying-fish'
+    | '/tanjung-benoa-jet-ski'
+    | '/tanjung-benoa-parasailing'
+    | '/tanjung-benoa-rolling-donut'
+    | '/tanjung-benoa-scuba-diving'
+    | '/tanjung-benoa-sea-walker'
+    | '/tanjung-benoa-snorkeling'
+    | '/tanjung-benoa-water-sports'
+    | '/telaga-waja-river-rafting'
+    | '/tubing-adventure'
+    | '/varuna-deluxe-bali'
+    | '/varuna-premium-bali'
+    | '/varuna-regular-bali'
+    | '/bali-zoo/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/ayung-river-rafting'
+    | '/bali-adventure'
     | '/bali-atv-adventure'
     | '/bali-buggy-adventure'
     | '/bali-jeep-sunrise'
     | '/bali-private-tours'
+    | '/bali-safari-breakfast-with-lion'
+    | '/bali-safari-dragon-package'
+    | '/bali-safari-jungle-hopper'
+    | '/bali-safari-jungle-hopper-legend'
+    | '/bali-safari-lion-package'
     | '/bali-safari-marine-park'
+    | '/bali-safari-night-safari'
+    | '/bali-safari-rhino-package'
     | '/bali-swing'
     | '/bali-zoo'
     | '/contact'
     | '/experiences'
+    | '/lazy-river-tubing'
     | '/nusa-penida-tours'
     | '/sitemap.xml'
+    | '/tanjung-benoa-banana-boat'
+    | '/tanjung-benoa-flyboard'
+    | '/tanjung-benoa-flying-fish'
+    | '/tanjung-benoa-jet-ski'
+    | '/tanjung-benoa-parasailing'
+    | '/tanjung-benoa-rolling-donut'
+    | '/tanjung-benoa-scuba-diving'
+    | '/tanjung-benoa-sea-walker'
+    | '/tanjung-benoa-snorkeling'
+    | '/tanjung-benoa-water-sports'
+    | '/telaga-waja-river-rafting'
+    | '/tubing-adventure'
+    | '/varuna-deluxe-bali'
+    | '/varuna-premium-bali'
+    | '/varuna-regular-bali'
+    | '/bali-zoo/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/ayung-river-rafting'
+    | '/bali-adventure'
     | '/bali-atv-adventure'
     | '/bali-buggy-adventure'
     | '/bali-jeep-sunrise'
     | '/bali-private-tours'
+    | '/bali-safari-breakfast-with-lion'
+    | '/bali-safari-dragon-package'
+    | '/bali-safari-jungle-hopper'
+    | '/bali-safari-jungle-hopper-legend'
+    | '/bali-safari-lion-package'
     | '/bali-safari-marine-park'
+    | '/bali-safari-night-safari'
+    | '/bali-safari-rhino-package'
     | '/bali-swing'
     | '/bali-zoo'
     | '/contact'
     | '/experiences'
+    | '/lazy-river-tubing'
     | '/nusa-penida-tours'
     | '/sitemap.xml'
+    | '/tanjung-benoa-banana-boat'
+    | '/tanjung-benoa-flyboard'
+    | '/tanjung-benoa-flying-fish'
+    | '/tanjung-benoa-jet-ski'
+    | '/tanjung-benoa-parasailing'
+    | '/tanjung-benoa-rolling-donut'
+    | '/tanjung-benoa-scuba-diving'
+    | '/tanjung-benoa-sea-walker'
+    | '/tanjung-benoa-snorkeling'
+    | '/tanjung-benoa-water-sports'
+    | '/telaga-waja-river-rafting'
+    | '/tubing-adventure'
+    | '/varuna-deluxe-bali'
+    | '/varuna-premium-bali'
+    | '/varuna-regular-bali'
+    | '/bali-zoo_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AyungRiverRaftingRoute: typeof AyungRiverRaftingRoute
+  BaliAdventureRoute: typeof BaliAdventureRoute
   BaliAtvAdventureRoute: typeof BaliAtvAdventureRoute
   BaliBuggyAdventureRoute: typeof BaliBuggyAdventureRoute
   BaliJeepSunriseRoute: typeof BaliJeepSunriseRoute
   BaliPrivateToursRoute: typeof BaliPrivateToursRoute
+  BaliSafariBreakfastWithLionRoute: typeof BaliSafariBreakfastWithLionRoute
+  BaliSafariDragonPackageRoute: typeof BaliSafariDragonPackageRoute
+  BaliSafariJungleHopperRoute: typeof BaliSafariJungleHopperRoute
+  BaliSafariJungleHopperLegendRoute: typeof BaliSafariJungleHopperLegendRoute
+  BaliSafariLionPackageRoute: typeof BaliSafariLionPackageRoute
   BaliSafariMarineParkRoute: typeof BaliSafariMarineParkRoute
+  BaliSafariNightSafariRoute: typeof BaliSafariNightSafariRoute
+  BaliSafariRhinoPackageRoute: typeof BaliSafariRhinoPackageRoute
   BaliSwingRoute: typeof BaliSwingRoute
   BaliZooRoute: typeof BaliZooRoute
   ContactRoute: typeof ContactRoute
   ExperiencesRoute: typeof ExperiencesRoute
+  LazyRiverTubingRoute: typeof LazyRiverTubingRoute
   NusaPenidaToursRoute: typeof NusaPenidaToursRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TanjungBenoaBananaBoatRoute: typeof TanjungBenoaBananaBoatRoute
+  TanjungBenoaFlyboardRoute: typeof TanjungBenoaFlyboardRoute
+  TanjungBenoaFlyingFishRoute: typeof TanjungBenoaFlyingFishRoute
+  TanjungBenoaJetSkiRoute: typeof TanjungBenoaJetSkiRoute
+  TanjungBenoaParasailingRoute: typeof TanjungBenoaParasailingRoute
+  TanjungBenoaRollingDonutRoute: typeof TanjungBenoaRollingDonutRoute
+  TanjungBenoaScubaDivingRoute: typeof TanjungBenoaScubaDivingRoute
+  TanjungBenoaSeaWalkerRoute: typeof TanjungBenoaSeaWalkerRoute
+  TanjungBenoaSnorkelingRoute: typeof TanjungBenoaSnorkelingRoute
+  TanjungBenoaWaterSportsRoute: typeof TanjungBenoaWaterSportsRoute
+  TelagaWajaRiverRaftingRoute: typeof TelagaWajaRiverRaftingRoute
+  TubingAdventureRoute: typeof TubingAdventureRoute
+  VarunaDeluxeBaliRoute: typeof VarunaDeluxeBaliRoute
+  VarunaPremiumBaliRoute: typeof VarunaPremiumBaliRoute
+  VarunaRegularBaliRoute: typeof VarunaRegularBaliRoute
+  BaliZooSlugRoute: typeof BaliZooSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -213,6 +554,20 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ayung-river-rafting': {
+      id: '/ayung-river-rafting'
+      path: '/ayung-river-rafting'
+      fullPath: '/ayung-river-rafting'
+      preLoaderRoute: typeof AyungRiverRaftingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-adventure': {
+      id: '/bali-adventure'
+      path: '/bali-adventure'
+      fullPath: '/bali-adventure'
+      preLoaderRoute: typeof BaliAdventureRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bali-atv-adventure': {
@@ -243,11 +598,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BaliPrivateToursRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bali-safari-breakfast-with-lion': {
+      id: '/bali-safari-breakfast-with-lion'
+      path: '/bali-safari-breakfast-with-lion'
+      fullPath: '/bali-safari-breakfast-with-lion'
+      preLoaderRoute: typeof BaliSafariBreakfastWithLionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-safari-dragon-package': {
+      id: '/bali-safari-dragon-package'
+      path: '/bali-safari-dragon-package'
+      fullPath: '/bali-safari-dragon-package'
+      preLoaderRoute: typeof BaliSafariDragonPackageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-safari-jungle-hopper': {
+      id: '/bali-safari-jungle-hopper'
+      path: '/bali-safari-jungle-hopper'
+      fullPath: '/bali-safari-jungle-hopper'
+      preLoaderRoute: typeof BaliSafariJungleHopperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-safari-jungle-hopper-legend': {
+      id: '/bali-safari-jungle-hopper-legend'
+      path: '/bali-safari-jungle-hopper-legend'
+      fullPath: '/bali-safari-jungle-hopper-legend'
+      preLoaderRoute: typeof BaliSafariJungleHopperLegendRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-safari-lion-package': {
+      id: '/bali-safari-lion-package'
+      path: '/bali-safari-lion-package'
+      fullPath: '/bali-safari-lion-package'
+      preLoaderRoute: typeof BaliSafariLionPackageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/bali-safari-marine-park': {
       id: '/bali-safari-marine-park'
       path: '/bali-safari-marine-park'
       fullPath: '/bali-safari-marine-park'
       preLoaderRoute: typeof BaliSafariMarineParkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-safari-night-safari': {
+      id: '/bali-safari-night-safari'
+      path: '/bali-safari-night-safari'
+      fullPath: '/bali-safari-night-safari'
+      preLoaderRoute: typeof BaliSafariNightSafariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-safari-rhino-package': {
+      id: '/bali-safari-rhino-package'
+      path: '/bali-safari-rhino-package'
+      fullPath: '/bali-safari-rhino-package'
+      preLoaderRoute: typeof BaliSafariRhinoPackageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bali-swing': {
@@ -278,6 +682,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lazy-river-tubing': {
+      id: '/lazy-river-tubing'
+      path: '/lazy-river-tubing'
+      fullPath: '/lazy-river-tubing'
+      preLoaderRoute: typeof LazyRiverTubingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/nusa-penida-tours': {
       id: '/nusa-penida-tours'
       path: '/nusa-penida-tours'
@@ -292,23 +703,161 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tanjung-benoa-banana-boat': {
+      id: '/tanjung-benoa-banana-boat'
+      path: '/tanjung-benoa-banana-boat'
+      fullPath: '/tanjung-benoa-banana-boat'
+      preLoaderRoute: typeof TanjungBenoaBananaBoatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tanjung-benoa-flyboard': {
+      id: '/tanjung-benoa-flyboard'
+      path: '/tanjung-benoa-flyboard'
+      fullPath: '/tanjung-benoa-flyboard'
+      preLoaderRoute: typeof TanjungBenoaFlyboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tanjung-benoa-flying-fish': {
+      id: '/tanjung-benoa-flying-fish'
+      path: '/tanjung-benoa-flying-fish'
+      fullPath: '/tanjung-benoa-flying-fish'
+      preLoaderRoute: typeof TanjungBenoaFlyingFishRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tanjung-benoa-jet-ski': {
+      id: '/tanjung-benoa-jet-ski'
+      path: '/tanjung-benoa-jet-ski'
+      fullPath: '/tanjung-benoa-jet-ski'
+      preLoaderRoute: typeof TanjungBenoaJetSkiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tanjung-benoa-parasailing': {
+      id: '/tanjung-benoa-parasailing'
+      path: '/tanjung-benoa-parasailing'
+      fullPath: '/tanjung-benoa-parasailing'
+      preLoaderRoute: typeof TanjungBenoaParasailingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tanjung-benoa-rolling-donut': {
+      id: '/tanjung-benoa-rolling-donut'
+      path: '/tanjung-benoa-rolling-donut'
+      fullPath: '/tanjung-benoa-rolling-donut'
+      preLoaderRoute: typeof TanjungBenoaRollingDonutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tanjung-benoa-scuba-diving': {
+      id: '/tanjung-benoa-scuba-diving'
+      path: '/tanjung-benoa-scuba-diving'
+      fullPath: '/tanjung-benoa-scuba-diving'
+      preLoaderRoute: typeof TanjungBenoaScubaDivingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tanjung-benoa-sea-walker': {
+      id: '/tanjung-benoa-sea-walker'
+      path: '/tanjung-benoa-sea-walker'
+      fullPath: '/tanjung-benoa-sea-walker'
+      preLoaderRoute: typeof TanjungBenoaSeaWalkerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tanjung-benoa-snorkeling': {
+      id: '/tanjung-benoa-snorkeling'
+      path: '/tanjung-benoa-snorkeling'
+      fullPath: '/tanjung-benoa-snorkeling'
+      preLoaderRoute: typeof TanjungBenoaSnorkelingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tanjung-benoa-water-sports': {
+      id: '/tanjung-benoa-water-sports'
+      path: '/tanjung-benoa-water-sports'
+      fullPath: '/tanjung-benoa-water-sports'
+      preLoaderRoute: typeof TanjungBenoaWaterSportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/telaga-waja-river-rafting': {
+      id: '/telaga-waja-river-rafting'
+      path: '/telaga-waja-river-rafting'
+      fullPath: '/telaga-waja-river-rafting'
+      preLoaderRoute: typeof TelagaWajaRiverRaftingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tubing-adventure': {
+      id: '/tubing-adventure'
+      path: '/tubing-adventure'
+      fullPath: '/tubing-adventure'
+      preLoaderRoute: typeof TubingAdventureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/varuna-deluxe-bali': {
+      id: '/varuna-deluxe-bali'
+      path: '/varuna-deluxe-bali'
+      fullPath: '/varuna-deluxe-bali'
+      preLoaderRoute: typeof VarunaDeluxeBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/varuna-premium-bali': {
+      id: '/varuna-premium-bali'
+      path: '/varuna-premium-bali'
+      fullPath: '/varuna-premium-bali'
+      preLoaderRoute: typeof VarunaPremiumBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/varuna-regular-bali': {
+      id: '/varuna-regular-bali'
+      path: '/varuna-regular-bali'
+      fullPath: '/varuna-regular-bali'
+      preLoaderRoute: typeof VarunaRegularBaliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bali-zoo_/$slug': {
+      id: '/bali-zoo_/$slug'
+      path: '/bali-zoo/$slug'
+      fullPath: '/bali-zoo/$slug'
+      preLoaderRoute: typeof BaliZooSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AyungRiverRaftingRoute: AyungRiverRaftingRoute,
+  BaliAdventureRoute: BaliAdventureRoute,
   BaliAtvAdventureRoute: BaliAtvAdventureRoute,
   BaliBuggyAdventureRoute: BaliBuggyAdventureRoute,
   BaliJeepSunriseRoute: BaliJeepSunriseRoute,
   BaliPrivateToursRoute: BaliPrivateToursRoute,
+  BaliSafariBreakfastWithLionRoute: BaliSafariBreakfastWithLionRoute,
+  BaliSafariDragonPackageRoute: BaliSafariDragonPackageRoute,
+  BaliSafariJungleHopperRoute: BaliSafariJungleHopperRoute,
+  BaliSafariJungleHopperLegendRoute: BaliSafariJungleHopperLegendRoute,
+  BaliSafariLionPackageRoute: BaliSafariLionPackageRoute,
   BaliSafariMarineParkRoute: BaliSafariMarineParkRoute,
+  BaliSafariNightSafariRoute: BaliSafariNightSafariRoute,
+  BaliSafariRhinoPackageRoute: BaliSafariRhinoPackageRoute,
   BaliSwingRoute: BaliSwingRoute,
   BaliZooRoute: BaliZooRoute,
   ContactRoute: ContactRoute,
   ExperiencesRoute: ExperiencesRoute,
+  LazyRiverTubingRoute: LazyRiverTubingRoute,
   NusaPenidaToursRoute: NusaPenidaToursRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TanjungBenoaBananaBoatRoute: TanjungBenoaBananaBoatRoute,
+  TanjungBenoaFlyboardRoute: TanjungBenoaFlyboardRoute,
+  TanjungBenoaFlyingFishRoute: TanjungBenoaFlyingFishRoute,
+  TanjungBenoaJetSkiRoute: TanjungBenoaJetSkiRoute,
+  TanjungBenoaParasailingRoute: TanjungBenoaParasailingRoute,
+  TanjungBenoaRollingDonutRoute: TanjungBenoaRollingDonutRoute,
+  TanjungBenoaScubaDivingRoute: TanjungBenoaScubaDivingRoute,
+  TanjungBenoaSeaWalkerRoute: TanjungBenoaSeaWalkerRoute,
+  TanjungBenoaSnorkelingRoute: TanjungBenoaSnorkelingRoute,
+  TanjungBenoaWaterSportsRoute: TanjungBenoaWaterSportsRoute,
+  TelagaWajaRiverRaftingRoute: TelagaWajaRiverRaftingRoute,
+  TubingAdventureRoute: TubingAdventureRoute,
+  VarunaDeluxeBaliRoute: VarunaDeluxeBaliRoute,
+  VarunaPremiumBaliRoute: VarunaPremiumBaliRoute,
+  VarunaRegularBaliRoute: VarunaRegularBaliRoute,
+  BaliZooSlugRoute: BaliZooSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

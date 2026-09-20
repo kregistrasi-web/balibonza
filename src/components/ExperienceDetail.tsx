@@ -4,6 +4,7 @@ import { experiences } from "@/data/experiences";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { ExperienceCard } from "./ExperienceCard";
+import { FaqAccordion } from "./FaqAccordion";
 
 function List({ title, items }: { title: string; items: string[] }) {
   return (
@@ -21,8 +22,83 @@ function List({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-export function ExperienceDetail({ exp }: { exp: Experience }) {
-  const related = experiences.filter((e) => e.slug !== exp.slug).slice(0, 3);
+function getRelatedZooExperiences(current: Experience, allZoo: Experience[]): Experience[] {
+  const candidates = allZoo.filter((e) => e.slug !== current.slug && e.slug !== "bali-zoo");
+
+  if (current.slug === "bali-zoo-tickets") {
+    const signatureSlugs = ["breakfast-with-orangutan", "elephant-mud-fun", "capybara-connection"];
+    const signatureMap = new Map(candidates.map((c) => [c.slug, c]));
+    return signatureSlugs
+      .map((slug) => signatureMap.get(slug))
+      .filter((e): e is Experience => Boolean(e));
+  }
+
+  const keywords = [
+    "capybara",
+    "orangutan",
+    "elephant",
+    "behind-closed-doors",
+    "breakfast",
+    "brunch",
+    "mud-fun",
+  ].filter((kw) => current.slug.includes(kw));
+
+  const scored = candidates.map((cand, index) => {
+    let score = 0;
+    for (const kw of keywords) {
+      if (cand.slug.includes(kw)) score += 3;
+    }
+    if (current.slug.includes(cand.slug)) score += 5;
+    if (cand.slug.includes(current.slug)) score += 4;
+    return { cand, score, index };
+  });
+
+  scored.sort((a, b) => b.score - a.score || a.index - b.index);
+  return scored.slice(0, 3).map((s) => s.cand);
+}
+
+export function ExperienceDetail({
+  exp,
+  children,
+}: {
+  exp: Experience;
+  children?: React.ReactNode;
+}) {
+  const isSafari = exp.path.startsWith("/bali-safari") || exp.path.startsWith("/varuna");
+  const isZoo = exp.path.startsWith("/bali-zoo");
+
+  const isLandingPage = exp.slug === "bali-safari-marine-park" || exp.slug === "bali-zoo";
+
+  const zooExperiences = isZoo
+    ? experiences.filter(
+        (e) => e.path.startsWith("/bali-zoo") && e.slug !== exp.slug && e.slug !== "bali-zoo",
+      )
+    : [];
+
+  const related = isSafari
+    ? experiences
+        .filter(
+          (e) =>
+            (e.path.startsWith("/bali-safari") || e.path.startsWith("/varuna")) &&
+            e.slug !== exp.slug &&
+            e.slug !== "bali-safari-marine-park",
+        )
+        .slice(0, isLandingPage ? 11 : 3)
+    : isZoo
+      ? isLandingPage
+        ? zooExperiences.slice(0, 11)
+        : getRelatedZooExperiences(
+            exp,
+            experiences.filter((e) => e.path.startsWith("/bali-zoo")),
+          )
+      : experiences.filter((e) => e.slug !== exp.slug).slice(0, 3);
+
+  const breadcrumbs =
+    isSafari && !isLandingPage
+      ? [{ label: "Bali Safari", to: "/bali-safari-marine-park" }, { label: exp.title }]
+      : isZoo && !isLandingPage
+        ? [{ label: "Bali Zoo", to: "/bali-zoo" }, { label: exp.title }]
+        : [{ label: "Experiences", to: "/experiences" }, { label: exp.title }];
 
   return (
     <>
@@ -37,9 +113,7 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
         />
         <div className="absolute inset-0 -z-10 hero-scrim" />
         <div className="container-page flex min-h-[62vh] flex-col justify-end py-14 text-surface-foreground">
-          <Breadcrumbs
-            items={[{ label: "Experiences", to: "/experiences" }, { label: exp.title }]}
-          />
+          <Breadcrumbs items={breadcrumbs} />
           <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             {exp.type}
           </p>
@@ -48,10 +122,14 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
           <div className="mt-7 flex flex-wrap gap-3">
             <WhatsAppButton experience={exp.title} message={exp.whatsappText} />
             <Link
-              to="/experiences"
+              to={isSafari ? "/bali-safari-marine-park" : isZoo ? "/bali-zoo" : "/experiences"}
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/40 px-5 py-3 text-sm font-semibold text-surface-foreground hover:bg-white/10"
             >
-              Explore Experiences
+              {isSafari
+                ? "View All Bali Safari Packages"
+                : isZoo
+                  ? "View All Bali Zoo Experiences"
+                  : "Explore Experiences"}
             </Link>
           </div>
         </div>
@@ -138,33 +216,89 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
             <p className="mt-2 text-sm text-muted-foreground">
               Photos of {exp.title} and the surrounding area in Bali.
             </p>
-            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
               {(exp.gallery ?? [exp.image, exp.image, exp.image]).map((src, i) => (
                 <img
                   key={i}
                   src={src}
-                  alt={`${exp.title} in Bali — photo ${i + 1}`}
+                  alt={exp.galleryAlts?.[i] ?? `${exp.title} in Bali — photo ${i + 1}`}
                   width={1600}
                   height={1000}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[4/3] w-full rounded-xl object-cover"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.dataset.fallbackApplied) return;
+                    target.dataset.fallbackApplied = "true";
+                    // Fallback to SVG placeholder
+                    target.src =
+                      "data:image/svg+xml;utf8," +
+                      encodeURIComponent(
+                        `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none"><rect width="800" height="600" fill="%231b261b"/><rect x="20" y="20" width="760" height="560" rx="16" fill="%23223122" stroke="%23344d34" stroke-width="2"/><g transform="translate(360, 240)" stroke="%2348bb78" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="0" width="80" height="60" rx="8"/><circle cx="25" cy="20" r="8"/><path d="m5 50 25-25 15 15 20-20 10 10"/></g><text x="400" y="340" fill="%23a0aec0" font-family="sans-serif" font-size="16" text-anchor="middle">${exp.title}</text><text x="400" y="365" fill="%23718096" font-family="sans-serif" font-size="13" text-anchor="middle">Bali Adventure</text></svg>`,
+                      );
+                  }}
+                  className="aspect-[4/3] w-full rounded-xl object-cover shadow-sm transition hover:scale-[1.02]"
                 />
               ))}
             </div>
           </section>
 
+          <section className="rounded-2xl border border-border bg-card p-6">
+            <h2 className="font-display text-xl font-semibold">
+              Why book {exp.title} with BaliBonza?
+            </h2>
+            <div className="mt-4 grid gap-4 sm:grid-cols-3 text-sm">
+              <div className="space-y-1">
+                <p className="font-medium text-foreground">Official Ticket Vouchers</p>
+                <p className="text-muted-foreground">
+                  Direct voucher confirmation from official operators, guaranteed entry upon
+                  arrival.
+                </p>
+              </div>
+              <div className="space-y-1">
+                <p className="font-medium text-foreground">Transparent Pricing</p>
+                <p className="text-muted-foreground">
+                  Published rates in IDR with zero surprise booking surcharges or hidden card fees.
+                </p>
+              </div>
+              <div className="space-y-1">
+                <p className="font-medium text-foreground">WhatsApp Local Team</p>
+                <p className="text-muted-foreground">
+                  Direct support from our local Bali team for scheduling, package advice, and
+                  optional private transport.
+                </p>
+              </div>
+            </div>
+            {isSafari && exp.slug !== "bali-safari-marine-park" && (
+              <p className="mt-4 text-xs text-muted-foreground border-t border-border pt-3">
+                Looking for other packages or ticket comparisons? Explore our comprehensive{" "}
+                <Link
+                  to="/bali-safari-marine-park"
+                  className="font-medium text-accent underline underline-offset-4 hover:text-accent/80"
+                >
+                  Bali Safari & Marine Park Packages Guide
+                </Link>
+                .
+              </p>
+            )}
+            {isZoo && exp.slug !== "bali-zoo" && (
+              <p className="mt-4 text-xs text-muted-foreground border-t border-border pt-3">
+                Looking for other packages or ticket comparisons? Explore our comprehensive{" "}
+                <Link
+                  to="/bali-zoo"
+                  className="font-medium text-accent underline underline-offset-4 hover:text-accent/80"
+                >
+                  Bali Zoo Experiences Guide
+                </Link>
+                .
+              </p>
+            )}
+          </section>
+
           <section>
             <h2 className="font-display text-2xl font-semibold">Frequently asked questions</h2>
-            <div className="mt-4 divide-y divide-border rounded-2xl border border-border bg-card">
-              {exp.faq.map((f) => (
-                <details key={f.q} className="group p-5">
-                  <summary className="cursor-pointer list-none text-sm font-semibold">
-                    {f.q}
-                  </summary>
-                  <p className="mt-2 text-sm text-muted-foreground">{f.a}</p>
-                </details>
-              ))}
+            <div className="mt-4">
+              <FaqAccordion items={exp.faq} />
             </div>
           </section>
 
@@ -199,14 +333,69 @@ export function ExperienceDetail({ exp }: { exp: Experience }) {
         </aside>
       </div>
 
-      <section className="container-page pb-6">
-        <h2 className="font-display text-2xl font-semibold">Related Bali experiences</h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {related.map((e) => (
-            <ExperienceCard key={e.slug} exp={e} />
-          ))}
-        </div>
-      </section>
+      {children ? (
+        children
+      ) : exp.slug === "bali-safari-marine-park" ? (
+        <>
+          <section className="container-page pb-12">
+            <h2 className="font-display text-2xl font-semibold">Safari Experiences</h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                "bali-safari-jungle-hopper",
+                "bali-safari-night-safari",
+                "bali-safari-jungle-hopper-legend",
+              ].map((slug) => {
+                const item = experiences.find((e) => e.slug === slug);
+                return item ? <ExperienceCard key={item.slug} exp={item} /> : null;
+              })}
+            </div>
+          </section>
+
+          <section className="container-page pb-12">
+            <h2 className="font-display text-2xl font-semibold">Wildlife & Premium Experiences</h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                "bali-safari-rhino-package",
+                "bali-safari-lion-package",
+                "bali-safari-breakfast-with-lion",
+                "bali-safari-dragon-package",
+              ].map((slug) => {
+                const item = experiences.find((e) => e.slug === slug);
+                return item ? <ExperienceCard key={item.slug} exp={item} /> : null;
+              })}
+            </div>
+          </section>
+
+          <section className="container-page pb-6">
+            <h2 className="font-display text-2xl font-semibold">
+              Varuna — Underwater Dining & Theatrical Show
+            </h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {["varuna-regular-bali", "varuna-deluxe-bali", "varuna-premium-bali"].map((slug) => {
+                const item = experiences.find((e) => e.slug === slug);
+                return item ? <ExperienceCard key={item.slug} exp={item} /> : null;
+              })}
+            </div>
+          </section>
+        </>
+      ) : (
+        <section className="container-page pb-6">
+          <h2 className="font-display text-2xl font-semibold">
+            {exp.slug === "bali-zoo"
+              ? "Explore All Bali Zoo Experiences"
+              : isSafari
+                ? "Other Bali Safari Packages"
+                : isZoo
+                  ? "Other Bali Zoo Experiences"
+                  : "Related Bali experiences"}
+          </h2>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {related.map((e) => (
+              <ExperienceCard key={e.slug} exp={e} />
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }
