@@ -57,6 +57,36 @@ function getRelatedZooExperiences(current: Experience, allZoo: Experience[]): Ex
   return scored.slice(0, 3).map((s) => s.cand);
 }
 
+const categoryLinks = {
+  "adventure-off-road": { slug: "adventure-off-road", label: "Adventure & Off-Road" },
+  "rafting-river-adventures": {
+    slug: "rafting-river-adventures",
+    label: "Rafting & River Adventures",
+  },
+  "tanjung-benoa-water-sports": { slug: "water-sports", label: "Water Sports" },
+  "wildlife-animal": { slug: "wildlife", label: "Wildlife & Animal Experiences" },
+  "island-cultural": { slug: "island-cultural", label: "Island & Cultural Experiences" },
+  "scenic-sunrise": { slug: "scenic-sunrise", label: "Scenic & Sunrise Tours" },
+} as const;
+
+const intentLinkSlugs: Record<string, string[]> = {
+  "bali-zoo-tickets": ["breakfast-with-orangutan", "elephant-mud-fun"],
+  "capybara-connection": ["breakfast-with-orangutan-brunch-with-capybara"],
+  "elephant-mud-fun": ["breakfast-with-orangutan-elephant-mud-fun"],
+  "bali-safari-jungle-hopper": ["bali-safari-night-safari", "varuna-regular-bali"],
+  "bali-safari-jungle-hopper-legend": ["bali-safari-night-safari", "varuna-regular-bali"],
+  "bali-safari-marine-park": ["bali-safari-night-safari", "varuna-regular-bali"],
+};
+
+const intentLinkPaths: Record<string, string> = {
+  "breakfast-with-orangutan": "/experiences/bali-zoo-breakfast-with-orangutan",
+  "elephant-mud-fun": "/experiences/bali-zoo-elephant-mud-fun",
+  "breakfast-with-orangutan-brunch-with-capybara":
+    "/experiences/bali-zoo-breakfast-with-orangutan-and-brunch-with-capybara",
+  "breakfast-with-orangutan-elephant-mud-fun":
+    "/experiences/bali-zoo-breakfast-with-orangutan-and-elephant-mud-fun",
+};
+
 export function ExperienceDetail({
   exp,
   children,
@@ -65,7 +95,7 @@ export function ExperienceDetail({
   children?: React.ReactNode;
 }) {
   const isSafari = exp.path.startsWith("/bali-safari") || exp.path.startsWith("/varuna");
-  const isZoo = exp.path.startsWith("/bali-zoo");
+  const isZoo = exp.path.startsWith("/bali-zoo") || exp.slug === "bali-zoo-park-experience";
 
   const isLandingPage = exp.slug === "bali-safari-marine-park" || exp.slug === "bali-zoo";
 
@@ -93,12 +123,19 @@ export function ExperienceDetail({
           )
       : experiences.filter((e) => e.slug !== exp.slug).slice(0, 3);
 
-  const breadcrumbs =
-    isSafari && !isLandingPage
-      ? [{ label: "Bali Safari", to: "/bali-safari-marine-park" }, { label: exp.title }]
-      : isZoo && !isLandingPage
-        ? [{ label: "Bali Zoo", to: "/bali-zoo" }, { label: exp.title }]
-        : [{ label: "Experiences", to: "/experiences" }, { label: exp.title }];
+  const category = exp.categoryId ? categoryLinks[exp.categoryId] : undefined;
+  const categoryBreadcrumb = category
+    ? [{ label: category.label, to: `/category/${category.slug}` }]
+    : [{ label: "Experiences", to: "/experiences" }];
+
+  const breadcrumbs = [
+    ...categoryBreadcrumb,
+    ...(isZoo ? [{ label: "Bali Zoo", to: "/bali-zoo" }] : []),
+    { label: exp.title },
+  ];
+  const relatedIntent = (intentLinkSlugs[exp.slug] ?? [related[0]?.slug])
+    .map((slug) => experiences.find((experience) => experience.slug === slug))
+    .filter((experience): experience is Experience => Boolean(experience));
 
   return (
     <>
@@ -162,6 +199,43 @@ export function ExperienceDetail({
                 {p}
               </p>
             ))}
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              Explore more in{" "}
+              {category ? (
+                <Link
+                  to={`/category/${category.slug}`}
+                  className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  {category.label}
+                </Link>
+              ) : (
+                <Link
+                  to="/experiences"
+                  className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Bali experiences
+                </Link>
+              )}
+              {relatedIntent.length > 0 ? (
+                <>
+                  <span> Related options include </span>
+                  {relatedIntent.map((experience, index) => (
+                    <span key={experience.slug}>
+                      {index > 0 ? " and " : ""}
+                      <Link
+                        to={intentLinkPaths[experience.slug] ?? experience.path}
+                        className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                      >
+                        {experience.title}
+                      </Link>
+                    </span>
+                  ))}
+                  .
+                </>
+              ) : (
+                "."
+              )}
+            </p>
           </section>
 
           <section>

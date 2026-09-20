@@ -48,6 +48,8 @@ import { Route as VarunaDeluxeBaliRouteImport } from './routes/varuna-deluxe-bal
 import { Route as VarunaPremiumBaliRouteImport } from './routes/varuna-premium-bali'
 import { Route as VarunaRegularBaliRouteImport } from './routes/varuna-regular-bali'
 import { Route as BaliZooSlugRouteImport } from './routes/bali-zoo_.$slug'
+import { Route as CategoryCategoryRouteImport } from './routes/category.$category'
+import { Route as ExperiencesSlugRouteImport } from './routes/experiences.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -247,6 +249,16 @@ const BaliZooSlugRoute = BaliZooSlugRouteImport.update({
   path: '/bali-zoo/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CategoryCategoryRoute = CategoryCategoryRouteImport.update({
+  id: '/category/$category',
+  path: '/category/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesSlugRoute = ExperiencesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ExperiencesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -268,7 +280,7 @@ export interface FileRoutesByFullPath {
   '/bali-swing': typeof BaliSwingRoute
   '/bali-zoo': typeof BaliZooRoute
   '/contact': typeof ContactRoute
-  '/experiences': typeof ExperiencesRoute
+  '/experiences': typeof ExperiencesRouteWithChildren
   '/lazy-river-tubing': typeof LazyRiverTubingRoute
   '/nusa-penida-tours': typeof NusaPenidaToursRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -288,6 +300,8 @@ export interface FileRoutesByFullPath {
   '/varuna-premium-bali': typeof VarunaPremiumBaliRoute
   '/varuna-regular-bali': typeof VarunaRegularBaliRoute
   '/bali-zoo/$slug': typeof BaliZooSlugRoute
+  '/category/$category': typeof CategoryCategoryRoute
+  '/experiences/$slug': typeof ExperiencesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -309,7 +323,7 @@ export interface FileRoutesByTo {
   '/bali-swing': typeof BaliSwingRoute
   '/bali-zoo': typeof BaliZooRoute
   '/contact': typeof ContactRoute
-  '/experiences': typeof ExperiencesRoute
+  '/experiences': typeof ExperiencesRouteWithChildren
   '/lazy-river-tubing': typeof LazyRiverTubingRoute
   '/nusa-penida-tours': typeof NusaPenidaToursRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -329,6 +343,8 @@ export interface FileRoutesByTo {
   '/varuna-premium-bali': typeof VarunaPremiumBaliRoute
   '/varuna-regular-bali': typeof VarunaRegularBaliRoute
   '/bali-zoo/$slug': typeof BaliZooSlugRoute
+  '/category/$category': typeof CategoryCategoryRoute
+  '/experiences/$slug': typeof ExperiencesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -351,7 +367,7 @@ export interface FileRoutesById {
   '/bali-swing': typeof BaliSwingRoute
   '/bali-zoo': typeof BaliZooRoute
   '/contact': typeof ContactRoute
-  '/experiences': typeof ExperiencesRoute
+  '/experiences': typeof ExperiencesRouteWithChildren
   '/lazy-river-tubing': typeof LazyRiverTubingRoute
   '/nusa-penida-tours': typeof NusaPenidaToursRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -371,6 +387,8 @@ export interface FileRoutesById {
   '/varuna-premium-bali': typeof VarunaPremiumBaliRoute
   '/varuna-regular-bali': typeof VarunaRegularBaliRoute
   '/bali-zoo_/$slug': typeof BaliZooSlugRoute
+  '/category/$category': typeof CategoryCategoryRoute
+  '/experiences/$slug': typeof ExperiencesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -414,6 +432,8 @@ export interface FileRouteTypes {
     | '/varuna-premium-bali'
     | '/varuna-regular-bali'
     | '/bali-zoo/$slug'
+    | '/category/$category'
+    | '/experiences/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -455,6 +475,8 @@ export interface FileRouteTypes {
     | '/varuna-premium-bali'
     | '/varuna-regular-bali'
     | '/bali-zoo/$slug'
+    | '/category/$category'
+    | '/experiences/$slug'
   id:
     | '__root__'
     | '/'
@@ -496,6 +518,8 @@ export interface FileRouteTypes {
     | '/varuna-premium-bali'
     | '/varuna-regular-bali'
     | '/bali-zoo_/$slug'
+    | '/category/$category'
+    | '/experiences/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -518,7 +542,7 @@ export interface RootRouteChildren {
   BaliSwingRoute: typeof BaliSwingRoute
   BaliZooRoute: typeof BaliZooRoute
   ContactRoute: typeof ContactRoute
-  ExperiencesRoute: typeof ExperiencesRoute
+  ExperiencesRoute: typeof ExperiencesRouteWithChildren
   LazyRiverTubingRoute: typeof LazyRiverTubingRoute
   NusaPenidaToursRoute: typeof NusaPenidaToursRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -538,6 +562,7 @@ export interface RootRouteChildren {
   VarunaPremiumBaliRoute: typeof VarunaPremiumBaliRoute
   VarunaRegularBaliRoute: typeof VarunaRegularBaliRoute
   BaliZooSlugRoute: typeof BaliZooSlugRoute
+  CategoryCategoryRoute: typeof CategoryCategoryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -815,8 +840,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BaliZooSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/category/$category': {
+      id: '/category/$category'
+      path: '/category/$category'
+      fullPath: '/category/$category'
+      preLoaderRoute: typeof CategoryCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences/$slug': {
+      id: '/experiences/$slug'
+      path: '/$slug'
+      fullPath: '/experiences/$slug'
+      preLoaderRoute: typeof ExperiencesSlugRouteImport
+      parentRoute: typeof ExperiencesRoute
+    }
   }
 }
+
+interface ExperiencesRouteChildren {
+  ExperiencesSlugRoute: typeof ExperiencesSlugRoute
+}
+
+const ExperiencesRouteChildren: ExperiencesRouteChildren = {
+  ExperiencesSlugRoute: ExperiencesSlugRoute,
+}
+
+const ExperiencesRouteWithChildren = ExperiencesRoute._addFileChildren(
+  ExperiencesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -838,7 +889,7 @@ const rootRouteChildren: RootRouteChildren = {
   BaliSwingRoute: BaliSwingRoute,
   BaliZooRoute: BaliZooRoute,
   ContactRoute: ContactRoute,
-  ExperiencesRoute: ExperiencesRoute,
+  ExperiencesRoute: ExperiencesRouteWithChildren,
   LazyRiverTubingRoute: LazyRiverTubingRoute,
   NusaPenidaToursRoute: NusaPenidaToursRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
@@ -858,6 +909,7 @@ const rootRouteChildren: RootRouteChildren = {
   VarunaPremiumBaliRoute: VarunaPremiumBaliRoute,
   VarunaRegularBaliRoute: VarunaRegularBaliRoute,
   BaliZooSlugRoute: BaliZooSlugRoute,
+  CategoryCategoryRoute: CategoryCategoryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

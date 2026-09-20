@@ -2,45 +2,24 @@
 import heroImg from "@/assets/bali-hero.jpg";
 import logoImg from "@/assets/Vertical_Logo.svg";
 import atvImg from "@/assets/bali-atv-gallery-river-canyon.jpg";
-import { experiences, categories, getExperience } from "@/data/experiences";
+import { experiences, categories } from "@/data/experiences";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { siteConfig } from "@/config/site";
 
-const featuredPopularSlugs = [
-  "bali-atv-adventure",
-  "bali-buggy-adventure",
-  "bali-jeep-sunrise",
-  "lazy-river-tubing",
-  "ayung-river-rafting",
-  "telaga-waja-river-rafting",
-  "tanjung-benoa-jet-ski",
-  "tanjung-benoa-parasailing",
-  "tanjung-benoa-banana-boat",
-] as const;
+const featuredSlugs = [
+  "bali-atv-ride-adventure",
+  "bali-buggy-tour",
+  "bali-jeep-sunrise-tour-mount-batur",
+  "ayung-river-rafting-ubud",
+  "bali-lazy-river-tubing",
+  "jet-ski-ride-bali",
+];
 
-const featuredExperiences = featuredPopularSlugs
-  .map((slug) => experiences.find((exp) => exp.slug === slug))
-  .filter((exp): exp is (typeof experiences)[number] => Boolean(exp));
-
-const daySafariExperiences = [
-  getExperience("bali-safari-jungle-hopper"),
-  getExperience("bali-safari-jungle-hopper-legend"),
-  getExperience("bali-safari-night-safari"),
-];
-const lionDiningExperiences = [
-  getExperience("bali-safari-rhino-package"),
-  getExperience("bali-safari-lion-package"),
-  getExperience("bali-safari-breakfast-with-lion"),
-  getExperience("bali-safari-dragon-package"),
-];
-const nightSafariExperiences = [];
-const varunaExperiences = [
-  getExperience("varuna-regular-bali"),
-  getExperience("varuna-deluxe-bali"),
-  getExperience("varuna-premium-bali"),
-];
+const featuredExperiences = featuredSlugs.map(
+  (slug) => experiences.find((experience) => experience.slug === slug)!,
+);
 
 const title = "BaliBonza | Bali Activities, Adventures & Experiences";
 
@@ -51,7 +30,7 @@ const homepageFaqs = [
   {
     question: "How do I book Bali activities and adventures through BaliBonza?",
     answer:
-      "Booking is fast and easy directly through WhatsApp with our local team. Simply let us know your preferred activity, target date, and number of guests. We verify live availability with our trusted operators, confirm package inclusions, and arrange your schedule and pickupâ€”with no hidden fees.",
+      "Booking is fast and easy directly through WhatsApp with our local team. Simply let us know your preferred activity, target date, and number of guests. We verify live availability with our trusted operators, confirm package inclusions, and arrange your schedule and pickup—with no hidden fees.",
   },
   {
     question: "Can I combine multiple activities or adventures on the same day?",
@@ -76,7 +55,7 @@ const homepageFaqs = [
   {
     question: "What happens if it rains or my travel plans change?",
     answer:
-      "Outdoor activities continue in light or passing tropical rainâ€”in fact, quad biking through muddy jungle tracks and water splashes is a guest favorite! If extreme weather causes safety concerns, we will reschedule your activity to another day at no extra charge. Let us know as early as possible if you need to adjust your dates.",
+      "Outdoor activities continue in light or passing tropical rain—in fact, quad biking through muddy jungle tracks and water splashes is a guest favorite! If extreme weather causes safety concerns, we will reschedule your activity to another day at no extra charge. Let us know as early as possible if you need to adjust your dates.",
   },
 ];
 
@@ -215,130 +194,14 @@ function Index() {
         </h2>
 
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Nine signature experiences to explore across Bali - from jungle quad tracks to wildlife parks and valley swings.
-
+          Six signature experiences we arrange every week — from jungle quad tracks to wildlife
+          parks and valley swings.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featuredExperiences.map((exp, i) => (
             <ExperienceCard key={exp.slug} exp={exp} priority={i === 0} />
           ))}
-        </div>
-      </section>
-
-      {/* Dedicated Bali Safari & Marine Park Section */}
-      <section className="container-page pb-16" id="bali-safari">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="eyebrow">Official Ticket Packages</p>
-            <h2 className="mt-2 font-display text-3xl font-semibold sm:text-4xl">
-              Bali Safari & Marine Park
-            </h2>
-            <p className="mt-3 max-w-2xl text-muted-foreground">
-              Explore open-range wildlife safari journeys, premium lion dining, and Indonesia&apos;s
-              first underwater theatrical show with instant WhatsApp booking confirmation.
-            </p>
-          </div>
-          <Link
-            to="/bali-safari-marine-park"
-            className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold transition-colors hover:border-primary hover:bg-muted"
-          >
-            View Safari Hub â†’
-          </Link>
-        </div>
-
-        <div className="mt-12 space-y-12">
-          {/* Day Safari & Cultural Packages */}
-          <div>
-            <div className="border-b border-border pb-3">
-              <div className="flex items-center justify-between">
-                <h3 className="font-display text-2xl font-semibold text-foreground">
-                  Day Safari & Cultural Packages
-                </h3>
-                <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">
-                  3 Packages
-                </span>
-              </div>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Classic daytime tram journeys, educational animal presentations, cultural
-                performances, and family buffet options.
-              </p>
-            </div>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {daySafariExperiences.map((exp) => (
-                <ExperienceCard key={exp.slug} exp={exp} />
-              ))}
-            </div>
-          </div>
-
-          {/* Tsavo Lion Dining & VIP Packages */}
-          <div>
-            <div className="border-b border-border pb-3">
-              <div className="flex items-center justify-between">
-                <h3 className="font-display text-2xl font-semibold text-foreground">
-                  Tsavo Lion Dining & VIP Packages
-                </h3>
-                <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">
-                  3 Packages
-                </span>
-              </div>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Dine alongside roaming lions at Tsavo Lion Restaurant, enjoy morning lion
-                breakfasts, or upgrade to all-inclusive VIP with elephant rides.
-              </p>
-            </div>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {lionDiningExperiences.map((exp) => (
-                <ExperienceCard key={exp.slug} exp={exp} />
-              ))}
-            </div>
-          </div>
-
-          {/* Night Safari & Nocturnal Adventure */}
-          <div>
-            <div className="border-b border-border pb-3">
-              <div className="flex items-center justify-between">
-                <h3 className="font-display text-2xl font-semibold text-foreground">
-                  Night Safari & Nocturnal Adventure
-                </h3>
-                <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">
-                  Evening Experience
-                </span>
-              </div>
-              <p className="mt-1 text-sm text-muted-foreground">
-                After-dark caged tram predator expedition, live Afrika! Rhythm of Fire dance show,
-                and BBQ dinner.
-              </p>
-            </div>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {nightSafariExperiences.map((exp) => (
-                <ExperienceCard key={exp.slug} exp={exp} />
-              ))}
-            </div>
-          </div>
-
-          {/* Varuna â€” Underwater Theatre */}
-          <div>
-            <div className="border-b border-border pb-3">
-              <div className="flex items-center justify-between">
-                <h3 className="font-display text-2xl font-semibold text-foreground">
-                  Varuna â€” Underwater Theatre
-                </h3>
-                <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">
-                  3 Tiers
-                </span>
-              </div>
-              <p className="mt-1 text-sm text-muted-foreground">
-                World-class underwater dining and theatrical performances in regular, deluxe, and
-                premium tiers.
-              </p>
-            </div>
-            <div className="mt-6 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-              {varunaExperiences.map((exp) => (
-                <ExperienceCard key={exp.slug} exp={exp} />
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -354,14 +217,14 @@ function Index() {
             {categories.map((c) => (
               <Link
                 key={c.title}
-                to={c.to}
+                to={`/category/${c.slug}`}
                 className="rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary"
               >
                 <h3 className="font-display text-xl font-semibold">{c.title}</h3>
 
                 <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
 
-                <p className="mt-4 text-xs text-muted-foreground">{c.items.join(" Â· ")}</p>
+                <p className="mt-4 text-xs text-muted-foreground">{c.items.join(" · ")}</p>
               </Link>
             ))}
           </div>
@@ -483,10 +346,4 @@ function Index() {
     </>
   );
 }
-
-
-
-
-
-
 

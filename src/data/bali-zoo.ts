@@ -1,7 +1,7 @@
-import zooImg from "@/assets/bali-zoo-animal-experience.jpg";
-import zooGalleryBreakfastOrangutan from "@/assets/bali-zoo-gallery-breakfast-with-orangutans.jpg";
-import zooGalleryElephantMudFun from "@/assets/bali-zoo-gallery-elephant-mud-fun.jpg";
-import zooGalleryElephantExplorer from "@/assets/bali-zoo-gallery-elephant-expedition-explorer.jpg";
+import zooImg from "@/assets/images/bali_zoo_capybara_1789048952498.jpg";
+import zooGalleryBreakfastOrangutan from "@/assets/images/zoo_breakfast_orangutan_1789050512143.jpg";
+import zooGalleryElephantMudFun from "@/assets/images/zoo_elephant_mud_fun_1789050537553.jpg";
+import zooGalleryElephantExplorer from "@/assets/images/zoo_elephant_exp_1789050556609.jpg";
 import type { Experience } from "./experiences";
 
 /**
@@ -17,10 +17,10 @@ export const BALI_ZOO_IMAGES = {
 } as const;
 
 export const BALI_ZOO_IMAGE_ALTS = {
-  animalExperience: "Bali Zoo capybara encounter",
-  breakfastOrangutan: "Bali Zoo breakfast with orangutans",
-  elephantMudFun: "Bali Zoo elephant mud fun experience",
-  elephantExplorer: "Bali Zoo Elephant Explorer experience",
+  animalExperience: "Interaksi seru dengan capybara di Bali Zoo Park Experience Gianyar",
+  breakfastOrangutan: "Sarapan pagi favorit bersama orangutan ramah di Gayo Restaurant Bali Zoo",
+  elephantMudFun: "Aktivitas mandikan gajah Bali Zoo Elephant Mud Fun di kolam lumpur alami",
+  elephantExplorer: "Pengalaman Bali Zoo Elephant Explorer menyusuri jalur hijau Kampung Sumatra",
 } as const;
 
 export const baliZooExperiences: Experience[] = [
@@ -46,13 +46,14 @@ export const baliZooExperiences: Experience[] = [
       BALI_ZOO_IMAGE_ALTS.elephantMudFun,
       BALI_ZOO_IMAGE_ALTS.elephantExplorer,
     ],
-    alt: "Bali Zoo capybara encounter and animal experience",
+    alt: "Interaksi seru dengan capybara di Bali Zoo Park Experience Gianyar",
     location: "Singapadu, Gianyar, Bali",
     duration: "Flexible (Full day, open 09:00 – 17:00)",
     type: "Wildlife • General Admission",
     suitableFor: "Families, couples, nature lovers, and travelers of all ages",
     price: "Adult: IDR 375,250 • Child: IDR 266,000",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-general",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Tickets (General Admission).\n\nPlease share availability and ticket details for our group.\n\nThank you.",
     intro: [
@@ -150,13 +151,14 @@ export const baliZooExperiences: Experience[] = [
       BALI_ZOO_IMAGE_ALTS.elephantMudFun,
       BALI_ZOO_IMAGE_ALTS.animalExperience,
     ],
-    alt: "Bali Zoo breakfast with orangutans at Gayo Restaurant",
+    alt: "Sarapan pagi favorit bersama orangutan ramah di Gayo Restaurant Bali Zoo",
     location: "Singapadu, Gianyar, Bali",
     duration: "Morning session (08:00 – 10:00) + Full-day zoo admission",
     type: "Wildlife • Dining Encounter",
     suitableFor: "Couples, families with children, photography lovers, and wildlife enthusiasts",
     price: "Adult: IDR 783,750 • Child: IDR 551,000",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-signature",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Breakfast with Orangutan.\n\nPlease check morning availability and send me details for our group.\n\nThank you.",
     intro: [
@@ -252,13 +254,14 @@ export const baliZooExperiences: Experience[] = [
       BALI_ZOO_IMAGE_ALTS.elephantMudFun,
       BALI_ZOO_IMAGE_ALTS.animalExperience,
     ],
-    alt: "Bali Zoo Elephant Explorer experience through tropical trails",
+    alt: "Pengalaman Bali Zoo Elephant Explorer menyusuri jalur hijau Kampung Sumatra",
     location: "Singapadu, Gianyar, Bali",
     duration: "Expedition ride approx. 20 minutes + Full-day zoo admission",
     type: "Wildlife • Elephant Expedition",
     suitableFor: "Couples, families with children, nature enthusiasts",
     price: "Adult: IDR 1,425,000 • Child: IDR 997,500",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-elephant",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Elephant Explorer.\n\nPlease check date availability and send me details for our group.\n\nThank you.",
     intro: [
@@ -351,13 +354,14 @@ export const baliZooExperiences: Experience[] = [
       BALI_ZOO_IMAGE_ALTS.elephantExplorer,
       BALI_ZOO_IMAGE_ALTS.breakfastOrangutan,
     ],
-    alt: "Bali Zoo elephant mud fun experience at Kampung Sumatra",
+    alt: "Aktivitas mandikan gajah Bali Zoo Elephant Mud Fun di kolam lumpur alami",
     location: "Singapadu, Gianyar, Bali",
     duration: "Half-day program (approx. 4.5 hours) + Full-day zoo admission",
     type: "Wildlife • Mud Spa & Bathing",
     suitableFor: "Adults, couples, wildlife conservationists, and adventure seekers (Adult only)",
     price: "Adult: IDR 1,425,000",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-elephant",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Elephant Mud Fun.\n\nPlease check session availability and send details for our booking.\n\nThank you.",
     intro: [
@@ -460,6 +464,7 @@ export const baliZooExperiences: Experience[] = [
     suitableFor: "Couples, families with children, capybara enthusiasts, and nature lovers",
     price: "Adult: IDR 712,500 • Child: IDR 498,750",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-capybara",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Brunch with Capybara.\n\nPlease check session availability and send details for our group.\n\nThank you.",
     intro: [
@@ -564,6 +569,7 @@ export const baliZooExperiences: Experience[] = [
     suitableFor: "All ages, families with kids, couples, and capybara fans",
     price: "Adult: IDR 574,750 • Child: IDR 408,500",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-capybara",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Capybara Connection.\n\nPlease check session availability and send details for our group.\n\nThank you.",
     intro: [
@@ -663,6 +669,7 @@ export const baliZooExperiences: Experience[] = [
       "Wildlife enthusiasts, conservation-minded travelers, biology students, and older children",
     price: "Adult: IDR 855,000 • Child: IDR 598,500",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-signature",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Behind Closed Doors.\n\nPlease check schedule availability and send details for our group.\n\nThank you.",
     intro: [
@@ -762,6 +769,7 @@ export const baliZooExperiences: Experience[] = [
       "Adults, couples, wildlife enthusiasts, and special occasion celebrations (Adult only)",
     price: "Adult: IDR 1,781,250",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-elephant",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Breakfast with Orangutan & Elephant Mud Fun.\n\nPlease check combo availability and send details for our group.\n\nThank you.",
     intro: [
@@ -863,6 +871,7 @@ export const baliZooExperiences: Experience[] = [
     suitableFor: "Couples, families with children, animal lovers, and food enthusiasts",
     price: "Adult: IDR 1,258,750 • Child: IDR 883,500",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-capybara",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Breakfast with Orangutan & Brunch with Capybara.\n\nPlease check combo availability and send details for our group.\n\nThank you.",
     intro: [
@@ -961,6 +970,7 @@ export const baliZooExperiences: Experience[] = [
     suitableFor: "Conservation enthusiasts, animal lovers, curious families, and older children",
     price: "Adult: IDR 1,116,250 • Child: IDR 788,500",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-capybara",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Capybara Connection & Behind Closed Doors.\n\nPlease check combo availability and send details for our group.\n\nThank you.",
     intro: [
@@ -1058,6 +1068,7 @@ export const baliZooExperiences: Experience[] = [
     suitableFor: "Adults, wildlife conservationists, and elephant lovers (Adult only)",
     price: "Adult: IDR 1,852,500",
     categoryId: "wildlife-animal",
+    subcategory: "bali-zoo-elephant",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Zoo Elephant Mud Fun & Behind Closed Doors.\n\nPlease check combo availability and send details for our group.\n\nThank you.",
     intro: [

@@ -1,18 +1,20 @@
-import safariImg from "@/assets/bali-safari-marine-park.jpg";
+import safariImg from "@/assets/images/bali_safari_tram_1789049772966.jpg";
+import safariTsavoImg from "@/assets/images/safari_tsavo_lion_1789050179195.jpg";
+import safariNightFeedingImg from "@/assets/images/safari_night_feeding_1789050140809.jpg";
 import safariGalleryNight from "@/assets/bali-safari-gallery-night-safari-tiger.jpg";
 import safariGalleryElephant from "@/assets/bali-safari-gallery-elephant-presentation.jpg";
 import safariGalleryTsavo from "@/assets/bali-safari-gallery-tsavo-lion-restaurant.jpg";
-import varunaRegularHero from "@/assets/varuna-regular-bali-hero.jpg";
+import varunaRegularHero from "@/assets/varuna-regular-bali-card.jpg";
 import varunaRegularCard from "@/assets/varuna-regular-bali-card.jpg";
 import varunaRegularGallery1 from "@/assets/varuna-regular-bali-gallery-1.jpg";
 import varunaRegularGallery2 from "@/assets/varuna-regular-bali-gallery-2.jpg";
 import varunaRegularGallery3 from "@/assets/varuna-regular-bali-gallery-3.jpg";
-import varunaDeluxeHero from "@/assets/varuna-deluxe-bali-hero.jpg";
+import varunaDeluxeHero from "@/assets/varuna-deluxe-bali-card.jpg";
 import varunaDeluxeCard from "@/assets/varuna-deluxe-bali-card.jpg";
 import varunaDeluxeGallery1 from "@/assets/varuna-deluxe-bali-gallery-1.jpg";
 import varunaDeluxeGallery2 from "@/assets/varuna-deluxe-bali-gallery-2.jpg";
 import varunaDeluxeGallery3 from "@/assets/varuna-deluxe-bali-gallery-3.jpg";
-import varunaPremiumHero from "@/assets/varuna-premium-bali-hero.jpg";
+import varunaPremiumHero from "@/assets/varuna-premium-bali-card.jpg";
 import varunaPremiumCard from "@/assets/varuna-premium-bali-card.jpg";
 import varunaPremiumGallery1 from "@/assets/varuna-premium-bali-gallery-1.jpg";
 import varunaPremiumGallery2 from "@/assets/varuna-premium-bali-gallery-2.jpg";
@@ -36,14 +38,14 @@ export const baliSafariExperiences: Experience[] = [
     metaTitle: "Bali Safari Rhino Package VIP Tickets & Tour | BaliBonza",
     metaDescription:
       "Book the VIP Bali Safari Rhino Package. Includes unlimited safari tram rides, elephant ride, Tsavo Lion Restaurant lunch, show seats, and Bali hotel transfers.",
-    image: safariGalleryTsavo,
+    image: safariTsavoImg,
     gallery: [safariGalleryTsavo, safariImg, safariGalleryElephant],
     galleryAlts: [
       "Tsavo Lion Restaurant gourmet lunch overlooking majestic lions at Bali Safari",
       "Air-conditioned safari tram touring open savannah habitats",
       "Elephant safari ride and educational presentation Gianyar",
     ],
-    alt: "VIP dining next to lions at Tsavo Lion Restaurant in Bali Safari Park",
+    alt: "Sensasi makan siang unik bersama singa di Tsavo Lion Restaurant Bali Safari",
     location: "Gianyar, Bali",
     duration: "09:00–17:00 WITA",
     type: "Wildlife • All-Inclusive VIP",
@@ -55,6 +57,7 @@ export const baliSafariExperiences: Experience[] = [
       commission: { adult: 87500, child: 75000 },
     },
     categoryId: "wildlife-animal",
+    subcategory: "vip-inclusive-dining",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book the Bali Safari Rhino Package.\n\nPlease send me VIP inclusions, availability, and total pricing.\n\nThank you.",
     intro: [
@@ -130,14 +133,14 @@ export const baliSafariExperiences: Experience[] = [
     metaTitle: "Bali Safari Lion Package Tickets with Tsavo Lunch | BaliBonza",
     metaDescription:
       "Book the Bali Safari Lion Package. Includes full park admission, safari journey tram, animal presentations, and lunch at Tsavo Lion Restaurant. WhatsApp booking.",
-    image: safariGalleryTsavo,
+    image: safariTsavoImg,
     gallery: [safariGalleryTsavo, safariImg, safariGalleryNight],
     galleryAlts: [
       "Tsavo Lion Restaurant dining room with lion enclosure views at Bali Safari",
       "Safari tram exploring wilderness zones with free-roaming wildlife",
       "Night safari tiger encounter cage vehicle at Bali Safari",
     ],
-    alt: "Lion pride relaxing outside the panoramic glass of Tsavo Lion Restaurant",
+    alt: "Sensasi makan siang unik bersama singa di Tsavo Lion Restaurant Bali Safari",
     location: "Gianyar, Bali",
     duration: "09:00–17:00 WITA",
     type: "Wildlife • Dining Experience",
@@ -149,6 +152,7 @@ export const baliSafariExperiences: Experience[] = [
       commission: { adult: 55000, child: 42500 },
     },
     categoryId: "wildlife-animal",
+    subcategory: "vip-inclusive-dining",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book the Bali Safari Lion Package.\n\nPlease check date availability and send me total ticket price with lunch.\n\nThank you.",
     intro: [
@@ -219,14 +223,14 @@ export const baliSafariExperiences: Experience[] = [
     metaTitle: "Bali Safari Night Safari Tickets & BBQ Dinner | BaliBonza",
     metaDescription:
       "Experience Bali Safari Night Safari: caged tram predator feeding, live Afrika! Rhythm of Fire show, and BBQ dinner. Book with BaliBonza on WhatsApp.",
-    image: safariGalleryNight,
+    image: safariNightFeedingImg,
     gallery: [safariGalleryNight, safariImg, safariGalleryTsavo],
     galleryAlts: [
       "Night safari specially caged vehicle with meat tongs feeding tigers after dark",
       "Safari park daytime habitat view in Gianyar Bali",
       "Tsavo restaurant ambient dining area at Bali Safari",
     ],
-    alt: "Exciting nocturnal tiger encounter inside the caged tram during Bali Night Safari",
+    alt: "Atraksi Bali Night Safari memberi makan harimau di malam hari dari trem khusus",
     location: "Gianyar, Bali",
     duration: "Starts 18:00 WITA (Last Walking Night Safari: 19:15)",
     type: "Wildlife • Nocturnal Adventure",
@@ -238,6 +242,7 @@ export const baliSafariExperiences: Experience[] = [
       commission: { adult: 60000, child: 49000 },
     },
     categoryId: "wildlife-animal",
+    subcategory: "special-evening-encounters",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Safari Night Safari.\n\nPlease check evening availability and send me pricing with BBQ dinner.\n\nThank you.",
     intro: [
@@ -319,7 +324,7 @@ export const baliSafariExperiences: Experience[] = [
       "Varuna Premium dining table setting overlooking the illuminated underwater spectacle",
       "Varuna Premium underwater stage production with mermaid performers and marine staging",
     ],
-    alt: "Varuna Premium dining and show experience at Bali Safari",
+    alt: "Pertunjukan teater bawah air spektakuler Varuna Dining Experience di Bali Safari",
     location: "Gianyar, Bali",
     duration:
       "Tuesday–Sunday (Closed Monday) • Day: doors 12:30 WITA, lunch 13:00, show ends 14:35 WITA • Evening: doors 18:30 WITA, dinner 19:00, show 19:30–20:35 WITA",
@@ -355,7 +360,7 @@ export const baliSafariExperiences: Experience[] = [
       ],
     },
     categoryId: "wildlife-animal",
-    subcategory: "varuna",
+    subcategory: "varuna-shows",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Varuna Premium at Bali Safari.\n\nPlease check date availability and send me current pricing and menu details.\n\nThank you.",
     intro: [
@@ -434,14 +439,14 @@ export const baliSafariExperiences: Experience[] = [
     metaTitle: "Bali Safari Breakfast with Lions Tickets | BaliBonza",
     metaDescription:
       "Enjoy a breakfast buffet right next to lions at Tsavo Lion Restaurant Bali Safari. Includes safari tram ride and animal presentations. Book easily on WhatsApp.",
-    image: safariGalleryTsavo,
+    image: safariTsavoImg,
     gallery: [safariGalleryTsavo, safariImg, safariGalleryElephant],
     galleryAlts: [
       "Breakfast dining table next to the glass wall facing lions at Tsavo Lion Restaurant",
       "Safari park tram driving through scenic grasslands Gianyar",
       "Elephant conservation and presentation grounds at Bali Safari",
     ],
-    alt: "Morning dining at Tsavo Lion Restaurant with lions visible just beyond the glass",
+    alt: "Sensasi makan siang unik bersama singa di Tsavo Lion Restaurant Bali Safari",
     location: "Gianyar, Bali",
     duration: "Starts 07:30 WITA (last check-in 09:30 WITA)",
     type: "Wildlife • Morning Dining",
@@ -453,6 +458,7 @@ export const baliSafariExperiences: Experience[] = [
       commission: { adult: 39500, child: 28500 },
     },
     categoryId: "wildlife-animal",
+    subcategory: "vip-inclusive-dining",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Safari Breakfast with Lions.\n\nPlease check morning availability and send me prices with transport options.\n\nThank you.",
     intro: [
@@ -529,7 +535,7 @@ export const baliSafariExperiences: Experience[] = [
       "Elephant presentation showcasing conservation efforts at Bali Safari",
       "Night safari experience habitat lighting and tiger feeding cage",
     ],
-    alt: "Visitors enjoying the open safari journey tram ride through Bali Safari Park",
+    alt: "Pengalaman Bali Safari Tram Tour melihat satwa liar dari dekat",
     location: "Gianyar, Bali",
     duration: "09:00–17:00 WITA",
     type: "Wildlife • Family Day",
@@ -541,6 +547,7 @@ export const baliSafariExperiences: Experience[] = [
       commission: { adult: 45000, child: 36000 },
     },
     categoryId: "wildlife-animal",
+    subcategory: "vip-inclusive-dining",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book the Bali Safari Dragon Package.\n\nPlease check ticket availability and send me pricing for our group.\n\nThank you.",
     intro: [
@@ -615,10 +622,9 @@ export const baliSafariExperiences: Experience[] = [
       "Varuna Deluxe dining experience positioned close to the expansive underwater glass",
       "Varuna Deluxe underwater spectacle featuring acrobatic artists and marine life",
     ],
-    alt: "Varuna Deluxe dining and show experience at Bali Safari",
+    alt: "Pertunjukan teater bawah air spektakuler Varuna Dining Experience di Bali Safari",
     location: "Gianyar, Bali",
-    duration:
-      "Tuesday–Sunday (Closed Monday) • Day: doors 12:30 WITA, lunch 13:00, show ends 14:35 WITA • Evening: doors 18:30 WITA, dinner 19:00, show 19:30–20:35 WITA",
+    duration: "Tuesday–Sunday (Closed Monday)",
     type: "Theatrical • Deluxe Dining",
     suitableFor: "Couples, anniversary celebrations, luxury seekers",
     price: "Day from Rp1.398.875 • Evening from Rp940.500",
@@ -651,7 +657,7 @@ export const baliSafariExperiences: Experience[] = [
       ],
     },
     categoryId: "wildlife-animal",
-    subcategory: "varuna",
+    subcategory: "varuna-shows",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Varuna Deluxe at Bali Safari.\n\nPlease check seating availability and send me package prices and menu choices.\n\nThank you.",
     intro: [
@@ -724,7 +730,7 @@ export const baliSafariExperiences: Experience[] = [
       "Elephant conservation presentation amphitheater",
       "Nocturnal tiger feeding vehicle at night safari",
     ],
-    alt: "Scenic safari tram journey through the tropical animal habitats at Bali Safari",
+    alt: "Pengalaman Bali Safari Tram Tour melihat satwa liar dari dekat",
     location: "Gianyar, Bali",
     duration: "Tuesday–Sunday • 09:00–17:00 WITA (Bali Agung: 15:00–16:00)",
     type: "Wildlife • Cultural Show",
@@ -736,6 +742,7 @@ export const baliSafariExperiences: Experience[] = [
       commission: { adult: 12500, child: 10000 },
     },
     categoryId: "wildlife-animal",
+    subcategory: "core-safari-admission",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Safari Legend.\n\nPlease send me schedule details, show dates, and pricing for our group.\n\nThank you.",
     intro: [
@@ -810,7 +817,7 @@ export const baliSafariExperiences: Experience[] = [
       "Elephant presentation highlighting gentle giants and mahout bonds",
       "Tsavo Lion restaurant exterior overlooking the savannah",
     ],
-    alt: "Safari visitors enjoying animal sightings from the Jungle Hopper safari tram",
+    alt: "Pengalaman Bali Safari Tram Tour melihat satwa liar dari dekat",
     location: "Gianyar, Bali",
     duration: "09:00–17:00 WITA",
     type: "Wildlife • Best Seller",
@@ -822,6 +829,7 @@ export const baliSafariExperiences: Experience[] = [
       commission: { adult: 37500, child: 31000 },
     },
     categoryId: "wildlife-animal",
+    subcategory: "core-safari-admission",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Bali Safari Jungle Hopper.\n\nPlease check date availability and send me current promotional ticket rates.\n\nThank you.",
     intro: [
@@ -900,7 +908,7 @@ export const baliSafariExperiences: Experience[] = [
       "Varuna Regular theatrical performance featuring synchronized aquatic artists",
       "Varuna Regular underwater theater ambiance and storytelling production",
     ],
-    alt: "Varuna Regular underwater show and theatre performance at Bali Safari",
+    alt: "Pertunjukan teater bawah air spektakuler Varuna Dining Experience di Bali Safari",
     location: "Gianyar, Bali",
     duration:
       "Tuesday–Sunday (Closed Monday) • Day: doors 12:30 WITA, show 13:00–14:35 WITA • Evening: doors 18:30 WITA, show 19:30–20:35 WITA",
@@ -936,7 +944,7 @@ export const baliSafariExperiences: Experience[] = [
       ],
     },
     categoryId: "wildlife-animal",
-    subcategory: "varuna",
+    subcategory: "varuna-shows",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book Varuna Regular at Bali Safari.\n\nPlease send me available dates, show times, and pricing.\n\nThank you.",
     intro: [

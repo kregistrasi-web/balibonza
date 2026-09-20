@@ -2,10 +2,21 @@ import { Link } from "@tanstack/react-router";
 import type { Experience } from "@/data/experiences";
 import { WhatsAppButton } from "./WhatsAppButton";
 
-export function ExperienceCard({ exp, priority = false }: { exp: Experience; priority?: boolean }) {
+export function ExperienceCard({
+  exp,
+  priority = false,
+  landscape = false,
+}: {
+  exp: Experience;
+  priority?: boolean;
+  landscape?: boolean;
+}) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
-      <Link to={exp.path} className="relative block aspect-[4/3] overflow-hidden">
+      <Link
+        to={exp.path}
+        className={`relative block overflow-hidden ${landscape ? "aspect-video" : "aspect-[4/3]"}`}
+      >
         <img
           src={exp.image}
           alt={exp.alt}
