@@ -12,7 +12,7 @@ export const Route = createFileRoute("/bali-zoo_/$slug")({
     return { exp };
   },
   head: ({ loaderData }) => {
-    return experienceHead(loaderData?.exp);
+     return loaderData?.exp ? experienceHead(loaderData.exp) : {};
   },
   component: ZooProductComponent,
 });

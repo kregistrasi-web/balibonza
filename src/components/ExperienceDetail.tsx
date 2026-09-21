@@ -121,7 +121,13 @@ export function ExperienceDetail({
             exp,
             experiences.filter((e) => e.path.startsWith("/bali-zoo")),
           )
-      : experiences.filter((e) => e.slug !== exp.slug).slice(0, 3);
+      : experiences
+          .filter(
+            (e) =>
+              e.slug !== exp.slug &&
+              (!exp.categoryId || e.categoryId === exp.categoryId),
+          )
+          .slice(0, 3);
 
   const category = exp.categoryId ? categoryLinks[exp.categoryId] : undefined;
   const categoryBreadcrumb = category
@@ -143,9 +149,10 @@ export function ExperienceDetail({
         <img
           src={exp.image}
           alt={exp.alt}
-          width={1600}
-          height={1000}
+          width={1920}
+          height={1280}
           fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 -z-10 size-full object-cover"
         />
         <div className="absolute inset-0 -z-10 hero-scrim" />
@@ -192,7 +199,9 @@ export function ExperienceDetail({
         <div className="space-y-12">
           <section>
             <h2 className="font-display text-2xl font-semibold">
-              Why choose this {exp.title.toLowerCase()}
+              {exp.slug === "ayung-river-rafting"
+                ? "Why Choose This Ayung River Rafting Bali"
+                : `Why choose ${exp.title}?`}
             </h2>
             {exp.intro.map((p) => (
               <p key={p} className="mt-4 text-base leading-relaxed text-muted-foreground">
@@ -203,7 +212,8 @@ export function ExperienceDetail({
               Explore more in{" "}
               {category ? (
                 <Link
-                  to={`/category/${category.slug}`}
+                  to="/category/$category"
+                  params={{ category: category.slug }}
                   className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
                 >
                   {category.label}
@@ -270,10 +280,10 @@ export function ExperienceDetail({
 
           <section className="grid gap-8 sm:grid-cols-2">
             <div>
-              <h3 className="font-display text-lg font-semibold">Pickup information</h3>
+              <h3 className="font-display text-lg font-semibold">Pickup & transportation</h3>
               <p className="mt-3 text-sm text-muted-foreground">{exp.pickup}</p>
             </div>
-            <List title="Requirements & safety" items={exp.requirements} />
+            <List title="Experience & safety" items={exp.requirements} />
           </section>
 
           <section className="rounded-2xl border border-accent/40 bg-accent/10 p-6">
@@ -288,7 +298,7 @@ export function ExperienceDetail({
           <section>
             <h2 className="font-display text-2xl font-semibold">Gallery</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Photos of {exp.title} and the surrounding area in Bali.
+              Photos from {exp.title}.
             </p>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
               {(exp.gallery ?? [exp.image, exp.image, exp.image]).map((src, i) => (
@@ -296,9 +306,10 @@ export function ExperienceDetail({
                   key={i}
                   src={src}
                   alt={exp.galleryAlts?.[i] ?? `${exp.title} in Bali — photo ${i + 1}`}
-                  width={1600}
-                  height={1000}
+                  width={1920}
+                  height={1280}
                   loading="lazy"
+                  fetchPriority="low"
                   decoding="async"
                   onError={(e) => {
                     const target = e.currentTarget;
@@ -311,7 +322,7 @@ export function ExperienceDetail({
                         `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none"><rect width="800" height="600" fill="%231b261b"/><rect x="20" y="20" width="760" height="560" rx="16" fill="%23223122" stroke="%23344d34" stroke-width="2"/><g transform="translate(360, 240)" stroke="%2348bb78" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="0" width="80" height="60" rx="8"/><circle cx="25" cy="20" r="8"/><path d="m5 50 25-25 15 15 20-20 10 10"/></g><text x="400" y="340" fill="%23a0aec0" font-family="sans-serif" font-size="16" text-anchor="middle">${exp.title}</text><text x="400" y="365" fill="%23718096" font-family="sans-serif" font-size="13" text-anchor="middle">Bali Adventure</text></svg>`,
                       );
                   }}
-                  className="aspect-[4/3] w-full rounded-xl object-cover shadow-sm transition hover:scale-[1.02]"
+                  className="aspect-[3/2] w-full rounded-xl object-cover shadow-sm transition hover:scale-[1.02]"
                 />
               ))}
             </div>
@@ -323,10 +334,15 @@ export function ExperienceDetail({
             </h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-3 text-sm">
               <div className="space-y-1">
-                <p className="font-medium text-foreground">Official Ticket Vouchers</p>
+                <p className="font-medium text-foreground">
+                  {exp.categoryId === "rafting-river-adventures"
+                    ? "Trusted Local Operators"
+                    : "Official Ticket Vouchers"}
+                </p>
                 <p className="text-muted-foreground">
-                  Direct voucher confirmation from official operators, guaranteed entry upon
-                  arrival.
+                  {exp.categoryId === "rafting-river-adventures"
+                    ? "We confirm the selected rafting operator, activity package and availability before you book."
+                    : "Direct voucher confirmation from official operators, guaranteed entry upon arrival."}
                 </p>
               </div>
               <div className="space-y-1">
@@ -372,17 +388,13 @@ export function ExperienceDetail({
           <section>
             <h2 className="font-display text-2xl font-semibold">Frequently asked questions</h2>
             <div className="mt-4">
-              <FaqAccordion items={exp.faq} />
+              <FaqAccordion
+                items={exp.faq}
+                defaultValue={exp.slug === "ayung-river-rafting" ? "ayung-beginners" : undefined}
+              />
             </div>
           </section>
 
-          <section>
-            <h2 className="font-display text-2xl font-semibold">Reviews</h2>
-            <p className="mt-3 rounded-2xl border border-dashed border-border p-6 text-sm text-muted-foreground">
-              Verified guest reviews for this experience will appear here once our Google and
-              Tripadvisor listings are connected. We do not publish unverified testimonials.
-            </p>
-          </section>
         </div>
 
         <aside className="lg:sticky lg:top-24 lg:h-fit">
@@ -392,6 +404,9 @@ export function ExperienceDetail({
             <p className="mt-1 text-xs text-muted-foreground">
               Final price confirmed for your date and group size.
             </p>
+            {exp.priceNote && (
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{exp.priceNote}</p>
+            )}
             <WhatsAppButton
               experience={exp.title}
               message={exp.whatsappText}
@@ -406,6 +421,22 @@ export function ExperienceDetail({
           </div>
         </aside>
       </div>
+
+      <section className="container-page pb-12">
+        <div className="rounded-2xl border border-accent/40 bg-accent/10 p-6 sm:flex sm:items-center sm:justify-between sm:gap-8">
+          <div>
+            <h2 className="font-display text-2xl font-semibold">Ready to book {exp.title}?</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Check availability, final pricing and pickup options with our local Bali team.
+            </p>
+          </div>
+          <WhatsAppButton
+            experience={exp.title}
+            message={exp.whatsappText}
+            className="mt-5 shrink-0 sm:mt-0"
+          />
+        </div>
+      </section>
 
       {children ? (
         children

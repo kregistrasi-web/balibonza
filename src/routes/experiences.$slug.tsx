@@ -13,7 +13,8 @@ export const Route = createFileRoute("/experiences/$slug")({
 
     return { experience };
   },
-  head: ({ loaderData }) => experienceHead(loaderData?.experience),
+  head: ({ loaderData }) =>
+    loaderData?.experience ? experienceHead(loaderData.experience) : {},
   component: ExperienceSlugPage,
 });
 

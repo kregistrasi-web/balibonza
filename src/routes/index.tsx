@@ -1,7 +1,12 @@
 ﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/bali-hero.jpg";
-import logoImg from "@/assets/Vertical_Logo.svg";
+import logoImg from "@/assets/02_Logo_Without_Tagline.transparent.png";
 import atvImg from "@/assets/bali-atv-gallery-river-canyon.jpg";
+import raftingImg from "@/assets/ayung-river-rafting-bali.hero.webp";
+import waterSportsImg from "@/assets/bali-hero.jpg";
+import wildlifeImg from "@/assets/bali-safari-marine-park.jpg";
+import islandImg from "@/assets/bali agung show (8).jpg";
+import scenicImg from "@/assets/bali-swing-experience.jpg";
 import { experiences, categories } from "@/data/experiences";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -12,7 +17,7 @@ const featuredSlugs = [
   "bali-atv-ride-adventure",
   "bali-buggy-tour",
   "bali-jeep-sunrise-tour-mount-batur",
-  "ayung-river-rafting-ubud",
+  "ayung-river-rafting",
   "bali-lazy-river-tubing",
   "jet-ski-ride-bali",
 ];
@@ -20,6 +25,15 @@ const featuredSlugs = [
 const featuredExperiences = featuredSlugs.map(
   (slug) => experiences.find((experience) => experience.slug === slug)!,
 );
+
+const categoryCoverImages: Record<string, string> = {
+  "adventure-off-road": atvImg,
+  "rafting-river-adventures": raftingImg,
+  "tanjung-benoa-water-sports": waterSportsImg,
+  "wildlife-animal": wildlifeImg,
+  "island-cultural": islandImg,
+  "scenic-sunrise": scenicImg,
+};
 
 const title = "BaliBonza | Bali Activities, Adventures & Experiences";
 
@@ -148,14 +162,14 @@ function Index() {
 
         <div className="absolute inset-0 -z-10 hero-scrim" />
 
-        {/* Master BaliBonza Vertical_Logo.svg (transparent background) in upper-left area */}
+        {/* BaliBonza logo in the upper-left hero area */}
         <div className="container-page pt-6 sm:pt-8 md:pt-10">
           <img
             src={logoImg}
             alt="BaliBonza"
-            width={120}
-            height={179}
-            className="h-20 w-auto object-contain sm:h-24 md:h-28"
+            width={1024}
+            height={1024}
+            className="size-24 object-contain sm:size-28 md:size-32"
           />
         </div>
 
@@ -217,14 +231,27 @@ function Index() {
             {categories.map((c) => (
               <Link
                 key={c.title}
-                to={`/category/${c.slug}`}
-                className="rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary"
+                to="/category/$category"
+                params={{ category: c.slug }}
+                className="overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-primary"
               >
-                <h3 className="font-display text-xl font-semibold">{c.title}</h3>
+                <img
+                  src={categoryCoverImages[c.id]}
+                  alt={`${c.title} experiences in Bali`}
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[3/2] w-full object-cover"
+                />
 
-                <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
+                <div className="p-6">
+                  <h3 className="font-display text-xl font-semibold">{c.title}</h3>
 
-                <p className="mt-4 text-xs text-muted-foreground">{c.items.join(" · ")}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>
+
+                  <p className="mt-4 text-xs text-muted-foreground">{c.items.join(" · ")}</p>
+                </div>
               </Link>
             ))}
           </div>

@@ -1,6 +1,6 @@
 ﻿import atvRiverSplashImg from "@/assets/images/atv_river_splash_1789047538920.jpg";
 import atvJungleMudImg from "@/assets/images/atv_jungle_mud_1789047509415.jpg";
-import atvRaftingHelmetImg from "@/assets/images/atv_rafting_helmet_1789048277202.jpg";
+import ayungRiverRaftingImg from "@/assets/ayung-river-rafting-bali (5).webp";
 import atvWaterfallCoupleImg from "@/assets/images/atv_waterfall_couple_1789047494046.jpg";
 
 export type AdventureWaterProduct = {
@@ -30,11 +30,11 @@ export const baliAdventureWaterProducts: AdventureWaterProduct[] = [
     short: "An exciting tubing adventure through Bali's natural river scenery.",
   },
   {
-    slug: "ayung-river-rafting-ubud",
-    title: "Ayung River Rafting Ubud",
+    slug: "ayung-river-rafting",
+    title: "Ayung River Rafting Bali",
     category: "Bali Adventure Experiences",
-    image: atvRaftingHelmetImg,
-    alt: "Keseruan Ayung River Rafting Ubud dengan pemandangan tebing dan hutan tropis",
+    image: ayungRiverRaftingImg,
+    alt: "Ayung River rafting through Bali's tropical jungle and river valley",
     short: "White-water rafting through the scenic Ayung River valley.",
   },
   {

@@ -103,10 +103,10 @@ export function experienceHead(exp: Experience) {
       "@type": "FAQPage",
       mainEntity: exp.faq.map((f) => ({
         "@type": "Question",
-        name: f.q,
+        name: f.q ?? f.question ?? "",
         acceptedAnswer: {
           "@type": "Answer",
-          text: f.a,
+          text: f.a ?? f.answer ?? "",
         },
       })),
     },
@@ -117,9 +117,12 @@ export function experienceHead(exp: Experience) {
   ];
 
   // If concrete pricing is available in data, add standard Product/Offer metadata
+  const adultPrice = exp.pricing?.websitePrice?.adult;
+  const childPrice = exp.pricing?.websitePrice?.child;
   const priceMatch = exp.price && exp.price.match(/Rp\s*([\d.]+)/i);
   if (priceMatch) {
     const rawNumber = priceMatch[1].replace(/\./g, "");
+    const hasAdultAndChildPrice = adultPrice !== undefined && childPrice !== undefined;
     schemaGraph.push({
       "@type": "Product",
       name: exp.title,
@@ -130,19 +133,34 @@ export function experienceHead(exp: Experience) {
         "@type": "Brand",
         name: isSafariProduct ? "Bali Safari & Marine Park" : siteConfig.name,
       },
-      offers: {
-        "@type": "Offer",
-        url,
-        priceCurrency: "IDR",
-        price: rawNumber,
-        availability: "https://schema.org/InStock",
-        itemCondition: "https://schema.org/NewCondition",
-        seller: {
-          "@type": "TravelAgency",
-          name: siteConfig.name,
-          url: homeUrl,
-        },
-      },
+      offers: hasAdultAndChildPrice
+        ? {
+            "@type": "AggregateOffer",
+            url,
+            priceCurrency: "IDR",
+            lowPrice: childPrice,
+            highPrice: adultPrice,
+            offerCount: 2,
+            availability: "https://schema.org/InStock",
+            seller: {
+              "@type": "TravelAgency",
+              name: siteConfig.name,
+              url: homeUrl,
+            },
+          }
+        : {
+            "@type": "Offer",
+            url,
+            priceCurrency: "IDR",
+            price: rawNumber,
+            availability: "https://schema.org/InStock",
+            itemCondition: "https://schema.org/NewCondition",
+            seller: {
+              "@type": "TravelAgency",
+              name: siteConfig.name,
+              url: homeUrl,
+            },
+          },
     });
   } else {
     // For Price on Request

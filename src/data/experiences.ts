@@ -2,6 +2,10 @@
 import atvGalleryJungle from "@/assets/bali-atv-gallery-jungle-track.jpg";
 import atvGalleryRiver from "@/assets/bali-atv-gallery-river-canyon.jpg";
 import atvGalleryCave from "@/assets/bali-atv-gallery-cave-tunnel.jpg";
+import ayungRiverHero from "@/assets/ayung-river-rafting-bali.hero.webp";
+import ayungRiverGallery1 from "@/assets/ayung-river-rafting-bali (2).webp";
+import ayungRiverGallery2 from "@/assets/ayung-river-rafting-bali (3).webp";
+import ayungRiverGallery3 from "@/assets/ayung-river-rafting-bali (5).webp";
 import zooImg from "@/assets/images/bali_zoo_capybara_1789048952498.jpg";
 import zooGalleryBreakfastOrangutan from "@/assets/bali-zoo-gallery-breakfast-with-orangutans.jpg";
 import zooGalleryElephantMudFun from "@/assets/bali-zoo-gallery-elephant-mud-fun.jpg";
@@ -55,6 +59,7 @@ export type Experience = {
   type: string;
   suitableFor: string;
   price: string;
+  priceNote?: string;
   pricing?: {
     publishRate?: { adult?: number; child?: number };
     websitePrice?: { adult?: number; child?: number };
@@ -72,7 +77,13 @@ export type Experience = {
   pickup: string;
   requirements: string[];
   important: string[];
-  faq: { q: string; a: string }[];
+  faq: {
+    id?: string;
+    q?: string;
+    a?: string;
+    question?: string;
+    answer?: string;
+  }[];
   intro: string[];
 };
 
@@ -162,6 +173,122 @@ const adventureWaterExperiences: Experience[] =
           a: "Yes. BaliBonza confirms availability and booking details before you proceed.",
         },
       ],
+      ...(product.slug === "ayung-river-rafting"
+        ? {
+            path: "/ayung-river-rafting",
+            title: "Ayung River Rafting Bali",
+            h1: "Ayung River Rafting Bali",
+            short:
+              "Paddle through jungle gorges, river rapids and lush tropical scenery on Bali's classic Ayung River rafting adventure.",
+            metaTitle: "Ayung River Rafting Bali | Price & Booking | BaliBonza",
+            metaDescription:
+              "Enjoy Ayung River Rafting Bali in Ubud with a professional guide, full equipment and family-friendly options. Adult Rp500.000, Child Rp450.000. Book via WhatsApp.",
+            image: ayungRiverHero,
+            gallery: [ayungRiverGallery1, ayungRiverGallery2, ayungRiverGallery3],
+            galleryAlts: [
+              "Rafting boat navigating the Ayung River rapids in Bali",
+              "Ayung River rafting surrounded by Ubud jungle and rocky cliffs",
+              "Guests enjoying an Ayung River rafting adventure in Bali",
+            ],
+            alt: "Ayung River rafting through Bali's tropical jungle and river valley",
+            location: "Ubud, Bali",
+            duration: "Approx. 2 hours on the river (confirm on booking)",
+            type: "Adventure - White-water rafting",
+            suitableFor: "Couples, friends and active families",
+            price: "Adult: Rp500.000 | Child (5-12 years): Rp450.000",
+            priceNote:
+              "Final payment is charged in IDR. Foreign currency estimates are for reference only and may vary with the daily exchange rate.",
+            pricing: {
+              websitePrice: { adult: 500000, child: 450000 },
+            },
+            whatsappText:
+              "Hello BaliBonza,\n\nI would like to book Ayung River Rafting Bali.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
+            intro: [
+              "Ayung River Rafting Bali is a guided white-water adventure through the jungle valley north of Ubud. Paddle past carved river cliffs, tropical forest and waterfalls while your river guide leads the boat through a sequence of rapids.",
+              "BaliBonza checks the latest operator availability, rafting package and transport options for your date, then confirms the final price and booking details through WhatsApp.",
+            ],
+            highlights: [
+              "Guided white-water rafting on the Ayung River",
+              "Jungle valley, river cliffs and waterfall scenery",
+              "Professional river guide and safety briefing",
+              "Rafting equipment supplied by the operator",
+              "Optional hotel pickup from Ubud and South Bali",
+              "Family and group booking support",
+            ],
+            flow: [
+              "Pickup from your hotel or meet at the rafting base",
+              "Registration, changing and safety briefing",
+              "Walk down to the river and board the raft",
+              "Paddle through guided rapids and jungle scenery",
+              "Finish the river route, shower and change at the base",
+              "Return transfer to your hotel if selected",
+            ],
+            included: [
+              "Rafting activity for the booked duration",
+              "Professional rafting guide",
+              "Raft, paddle, helmet and life jacket",
+              "Safety briefing and changing facilities",
+              "Shower and basic refreshment at the base",
+              "Lunch after the rafting activity; vegetarian options may be available upon request",
+              "Booking assistance and confirmation",
+            ],
+            excluded: [
+              "Starter/operator accident coverage is not automatically included; confirm whether it is included in the selected package before booking",
+              "Personal travel and medical insurance, including optional upgrades",
+              "Hotel pickup unless selected and confirmed",
+              ...commonExcluded,
+            ],
+            pickup:
+              "Hotel pickup can be arranged from Ubud and selected areas of South Bali. Share your hotel name on WhatsApp and we will confirm the pickup time, route and any transport surcharge.",
+            requirements: [
+              "Participants should be comfortable in moving water and able to follow guide instructions",
+              "Minimum age is 5 years old; final eligibility and weight limits depend on the operator and river conditions",
+              "Wear swimwear or quick-dry clothing and secure footwear",
+              "Bring sunscreen, a change of clothes and a towel",
+            ],
+            important: [
+              "Rafting routes and departure times may change because of weather and river conditions.",
+              "Starter safety coverage is operator- and package-dependent, so we confirm its status before booking. Consider personal travel insurance that covers white-water rafting.",
+              "The exact operator package, price and pickup coverage are confirmed before booking.",
+              "Family and group rates are available on request via WhatsApp.",
+              "Final payment is charged in IDR. Any foreign currency estimate is for reference only and may vary with the daily exchange rate.",
+              "Guests with halal, vegetarian, Jain or other dietary requirements should inform us before booking so availability can be confirmed with the operator.",
+              "Guests should disclose relevant medical conditions or pregnancy before booking.",
+            ],
+            faq: [
+              {
+                id: "ayung-beginners",
+                question: "Is Ayung River Rafting suitable for beginners?",
+                answer: "Yes. The activity is guided and begins with a safety briefing and equipment check. Previous rafting experience is not required, but you should be comfortable following instructions and being in moving water.",
+              },
+              {
+                id: "ayung-what-to-wear",
+                question: "What should I wear for Ayung River Rafting Bali?",
+                answer: "Wear swimwear or quick-dry clothing with secure footwear that can get wet. Bring sunscreen, a towel and dry clothes for after the river trip. Avoid loose jewellery and valuables.",
+              },
+              {
+                id: "ayung-insurance",
+                question: "Is starter safety or accident coverage included?",
+                answer: "It is not automatically assumed to be included. Coverage depends on the rafting operator and package, so BaliBonza confirms whether starter operator coverage is included before booking. Personal travel and medical insurance for rafting remains the guest's responsibility.",
+              },
+              {
+                id: "ayung-pickup",
+                question: "Is hotel pickup included?",
+                answer: "Pickup is available from Ubud and selected Bali areas, depending on the operator and package. We confirm the coverage and any extra transport cost before booking.",
+              },
+              {
+                id: "ayung-children",
+                question: "Can children join Ayung River Rafting?",
+                answer: "Children aged 5 and above may be accepted, subject to the operator's final age, height and weight requirements and the river conditions on the day. Send us the ages in your group so we can confirm the suitable package.",
+              },
+              {
+                id: "ayung-group-booking",
+                question: "Are family and group rates available?",
+                answer: "Yes. Family and group rates may be available depending on the date, group size and selected package. Send us your number of adults, children and preferred date on WhatsApp so we can check the best available option.",
+              },
+            ],
+          }
+        : {}),
     };
   });
 
@@ -643,7 +770,7 @@ export function getExperience(slug: string) {
     "bali-jeep-sunrise": "bali-jeep-sunrise-tour-mount-batur",
     "lazy-river-tubing": "bali-lazy-river-tubing",
     "tubing-adventure": "ubud-river-tubing-adventure",
-    "ayung-river-rafting": "ayung-river-rafting-ubud",
+    "ayung-river-rafting-ubud": "ayung-river-rafting",
     "tanjung-benoa-jet-ski": "jet-ski-ride-bali",
     "tanjung-benoa-parasailing": "parasailing-adventure-bali",
     "tanjung-benoa-banana-boat": "banana-boat-ride",
@@ -686,12 +813,12 @@ export const categories = [
     title: "Rafting & River Adventures",
     description: "Ubud and Bali river trips with rafting, tubing and scenic jungle water experiences.",
     items: [
-      "Ayung River Rafting Ubud",
+      "Ayung River Rafting Bali",
       "Telaga Waja River Rafting",
       "Bali Lazy River Tubing",
       "Ubud River Tubing Adventure",
     ],
-    to: "/experiences/ayung-river-rafting-ubud",
+    to: "/ayung-river-rafting",
   },
   {
     id: "tanjung-benoa-water-sports",
