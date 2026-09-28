@@ -151,6 +151,81 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.9",
           },
           {
+            path: "/bali-adventure",
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/ayung-river-rafting",
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/telaga-waja-river-rafting",
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/lazy-river-tubing",
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/tubing-adventure",
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/tanjung-benoa-water-sports",
+            changefreq: "weekly",
+            priority: "0.9",
+          },
+          {
+            path: "/tanjung-benoa-jet-ski",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
+            path: "/tanjung-benoa-parasailing",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
+            path: "/tanjung-benoa-banana-boat",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
+            path: "/tanjung-benoa-flying-fish",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
+            path: "/tanjung-benoa-rolling-donut",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
+            path: "/tanjung-benoa-flyboard",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
+            path: "/tanjung-benoa-sea-walker",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
+            path: "/tanjung-benoa-snorkeling",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
+            path: "/tanjung-benoa-scuba-diving",
+            changefreq: "weekly",
+            priority: "0.8",
+          },
+          {
             path: "/bali-private-tours",
             changefreq: "monthly",
             priority: "0.8",
