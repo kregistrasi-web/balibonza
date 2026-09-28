@@ -87,12 +87,12 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:image",
-        content: "https://balibonza.com/src/assets/bali-hero.jpg",
+        content: heroImg,
       },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:image",
-        content: "https://balibonza.com/src/assets/bali-hero.jpg",
+        content: heroImg,
       },
     ],
 

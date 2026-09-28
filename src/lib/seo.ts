@@ -1,5 +1,6 @@
 import type { Experience } from "@/data/experiences";
 import { siteConfig } from "@/config/site";
+import heroImg from "@/assets/bali-hero.jpg";
 
 function absoluteUrl(path: string) {
   if (path.startsWith("http://") || path.startsWith("https://")) {
@@ -219,7 +220,7 @@ export function pageHead({
   description,
   path,
   type = "website",
-  image = "/src/assets/bali-hero.jpg",
+  image = heroImg,
 }: {
   title: string;
   description: string;
