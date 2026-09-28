@@ -1,4 +1,4 @@
-﻿import atvImg from "@/assets/images/ubud_atv_hero_1789047247321.jpg";
+import atvImg from "@/assets/images/ubud_atv_hero_1789047247321.jpg";
 import atvGalleryJungle from "@/assets/bali-atv-gallery-jungle-track.jpg";
 import atvGalleryRiver from "@/assets/bali-atv-gallery-river-canyon.jpg";
 import atvGalleryCave from "@/assets/bali-atv-gallery-cave-tunnel.jpg";
@@ -313,7 +313,7 @@ export const experiences: Experience[] = [
     alt: "Bali ATV Ride Adventure through muddy tracks and caves in Ubud",
     location: "Ubud area, Bali",
     duration: "Approx. 1,5 hours riding (confirm on booking)",
-    type: "Adventure â€¢ Off-road",
+    type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families with teens",
     price: "Price on request",
     categoryId: "adventure-off-road",
@@ -349,7 +349,7 @@ export const experiences: Experience[] = [
     pickup:
       "Hotel pickup can be arranged for most areas of South Bali and Ubud. Share your hotel name on WhatsApp and we will confirm the pickup time and any transport surcharge.",
     requirements: [
-      "Minimum age policy applies â€” confirmed with the operator at booking",
+      "Minimum age policy applies — confirmed with the operator at booking",
       "Riders should be in reasonable physical condition",
       "Closed shoes recommended",
       "Bring a change of clothes; tracks can be muddy",
@@ -397,7 +397,7 @@ export const experiences: Experience[] = [
     alt: "Capybara encounter at Bali Zoo Park Experience in Gianyar",
     location: "Gianyar, Bali",
     duration: "Half day (flexible)",
-    type: "Wildlife â€¢ Family",
+    type: "Wildlife • Family",
     suitableFor: "Families with children, first-time visitors",
     price: "Price on request",
     categoryId: "wildlife-animal",
@@ -406,7 +406,7 @@ export const experiences: Experience[] = [
       "Hello BaliBonza,\n\nI would like to book Bali Zoo tickets/experiences.\n\nPlease send me availability, package options, and total price for my group.\n\nThank you.",
     intro: [
       "Bali Zoo is one of the island's most popular family attractions, with tropical gardens, animal habitats and a range of add-on encounters.",
-      "BaliBonza is an independent booking and travel service. We arrange your Bali Zoo tickets and transport â€” Bali Zoo is owned and operated by its own management.",
+      "BaliBonza is an independent booking and travel service. We arrange your Bali Zoo tickets and transport — Bali Zoo is owned and operated by its own management.",
     ],
     highlights: [
       "Bali Zoo admission arranged for your dates",
@@ -476,7 +476,7 @@ export const experiences: Experience[] = [
     alt: "Bali Safari tram tour viewing wildlife up close",
     location: "Gianyar, Bali",
     duration: "Full or half day",
-    type: "Wildlife â€¢ Family",
+    type: "Wildlife • Family",
     suitableFor: "Families, groups, wildlife lovers",
     price: "Price on request",
     categoryId: "wildlife-animal",
@@ -519,7 +519,7 @@ export const experiences: Experience[] = [
     ],
     important: [
       "Package contents, show times and prices are set by the park and confirmed when you book.",
-      "We never publish estimated ticket prices â€” you always get the current figure before paying.",
+      "We never publish estimated ticket prices — you always get the current figure before paying.",
     ],
     faq: [
       {
@@ -549,7 +549,7 @@ export const experiences: Experience[] = [
     alt: "Bali Buggy Tour adventure through off-road tracks and Bali countryside",
     location: "Ubud area, Bali",
     duration: "Approx. 2 hours riding (confirm on booking)",
-    type: "Adventure â€¢ Off-road",
+    type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families driving together",
     price: "Price on request",
     categoryId: "adventure-off-road",
@@ -619,15 +619,15 @@ export const experiences: Experience[] = [
     image: swingImg,
     alt: "Bali Swing Experience above a green tropical valley",
     location: "Ubud area, Bali",
-    duration: "1â€“2 hours at the park",
-    type: "Scenic â€¢ Photo experience",
+    duration: "1–2 hours at the park",
+    type: "Scenic • Photo experience",
     suitableFor: "Couples, families, photo lovers",
     price: "Price on request",
     categoryId: "scenic-sunrise",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book the Bali Swing Experience.\n\nPlease send me availability, package options, and total price.\n\nThank you.",
     intro: [
-      "Bali Swing parks combine swings of different heights with nests, platforms and viewpoints set above green valleys â€” the classic Bali photo experience.",
+      "Bali Swing parks combine swings of different heights with nests, platforms and viewpoints set above green valleys — the classic Bali photo experience.",
       "We book your entry package, arrange transport if needed, and confirm exactly which swings and props are included at the park you choose.",
     ],
     highlights: [
@@ -677,7 +677,7 @@ export const experiences: Experience[] = [
       },
       {
         q: "Can we combine the swing with other Ubud stops?",
-        a: "Yes. It pairs well with rice terraces, waterfalls or an ATV ride on the same day â€” ask us for a combined itinerary.",
+        a: "Yes. It pairs well with rice terraces, waterfalls or an ATV ride on the same day — ask us for a combined itinerary.",
       },
     ],
   },
@@ -695,12 +695,12 @@ export const experiences: Experience[] = [
     alt: "Bali Jeep Sunrise Tour watching sunrise from a 4WD jeep on Mount Batur",
     location: "Mount Batur, Bali",
     duration: "Half day",
-    type: "Adventure â€¢ Off-road",
+    type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families, sunrise lovers",
     price: "Price on request",
     categoryId: "adventure-off-road",
     whatsappText:
-      "Hello BaliBonza,\n\nI would like to book the Bali Jeep Sunrise â€“ Mount Batur.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
+      "Hello BaliBonza,\n\nI would like to book the Bali Jeep Sunrise – Mount Batur.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
     intro: [
       "The Bali Jeep sunrise experience takes you up the slopes of Mount Batur in a 4WD Jeep, so you can watch the sunrise over the volcano and lake without a strenuous hike.",
       "BaliBonza arranges your Mount Batur Jeep trip with trusted local operators, handles the early-morning pickup, and confirms availability over WhatsApp before you pay anything.",
@@ -709,7 +709,7 @@ export const experiences: Experience[] = [
       "Sunrise from a Mount Batur viewpoint reached by 4WD Jeep",
       "Drive across volcanic black lava fields and sand",
       "Scenic viewpoints over the volcano, lake and caldera",
-      "No hiking required â€” the Jeep does the climbing",
+      "No hiking required — the Jeep does the climbing",
       "Optional hotel pickup from South Bali and Ubud",
     ],
     flow: [
@@ -730,7 +730,7 @@ export const experiences: Experience[] = [
     pickup:
       "Early-morning hotel pickup can be arranged for most areas of South Bali and Ubud. Share your hotel name on WhatsApp and we will confirm the pickup time and any transport surcharge.",
     requirements: [
-      "Warm layer recommended â€” it is cold before sunrise",
+      "Warm layer recommended — it is cold before sunrise",
       "Closed shoes and comfortable clothing",
       "Suitable for most ages; not a strenuous activity",
     ],

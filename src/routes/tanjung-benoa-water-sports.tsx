@@ -36,7 +36,7 @@ function TanjungBenoaWaterSportsPage() {
           {waterSportsProducts.map((experience) => (
             <ExperienceCard
               key={experience.slug}
-              experience={experience}
+              exp={experience}
             />
           ))}
         </section>
