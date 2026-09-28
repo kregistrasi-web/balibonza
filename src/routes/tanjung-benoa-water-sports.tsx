@@ -1,12 +1,24 @@
 ﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { experiences } from "@/data/experiences";
 import { ExperienceCard } from "@/components/ExperienceCard";
+import { pageHead } from "@/lib/seo";
 
 const waterSportsProducts = experiences.filter(
   (exp) => exp.categoryId === "tanjung-benoa-water-sports"
 );
 
+const pageTitle = "Tanjung Benoa Water Sports | BaliBonza";
+
+const pageDescription =
+  "Exciting water sports in Tanjung Benoa, including jet ski, parasailing, banana boat, flyboard, sea walker and more.";
+
 export const Route = createFileRoute("/tanjung-benoa-water-sports")({
+  head: () =>
+    pageHead({
+      title: pageTitle,
+      description: pageDescription,
+      path: "/tanjung-benoa-water-sports",
+    }),
   component: TanjungBenoaWaterSportsPage,
 });
 
