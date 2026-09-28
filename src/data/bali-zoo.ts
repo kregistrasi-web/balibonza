@@ -17,10 +17,10 @@ export const BALI_ZOO_IMAGES = {
 } as const;
 
 export const BALI_ZOO_IMAGE_ALTS = {
-  animalExperience: "Interaksi seru dengan capybara di Bali Zoo Park Experience Gianyar",
-  breakfastOrangutan: "Sarapan pagi favorit bersama orangutan ramah di Gayo Restaurant Bali Zoo",
-  elephantMudFun: "Aktivitas mandikan gajah Bali Zoo Elephant Mud Fun di kolam lumpur alami",
-  elephantExplorer: "Pengalaman Bali Zoo Elephant Explorer menyusuri jalur hijau Kampung Sumatra",
+  animalExperience: "Capybara encounter at Bali Zoo in Gianyar",
+  breakfastOrangutan: "Breakfast with orangutans at Gayo Restaurant in Bali Zoo",
+  elephantMudFun: "Bali Zoo Elephant Mud Fun experience in a natural mud pool",
+  elephantExplorer: "Bali Zoo Elephant Explorer journey through Kampung Sumatra's green trails",
 } as const;
 
 export const baliZooExperiences: Experience[] = [
@@ -46,7 +46,7 @@ export const baliZooExperiences: Experience[] = [
       BALI_ZOO_IMAGE_ALTS.elephantMudFun,
       BALI_ZOO_IMAGE_ALTS.elephantExplorer,
     ],
-    alt: "Interaksi seru dengan capybara di Bali Zoo Park Experience Gianyar",
+    alt: "Capybara encounter at Bali Zoo Park Experience in Gianyar",
     location: "Singapadu, Gianyar, Bali",
     duration: "Flexible (Full day, open 09:00 – 17:00)",
     type: "Wildlife • General Admission",
@@ -151,7 +151,7 @@ export const baliZooExperiences: Experience[] = [
       BALI_ZOO_IMAGE_ALTS.elephantMudFun,
       BALI_ZOO_IMAGE_ALTS.animalExperience,
     ],
-    alt: "Sarapan pagi favorit bersama orangutan ramah di Gayo Restaurant Bali Zoo",
+    alt: "Breakfast with orangutans at Gayo Restaurant in Bali Zoo",
     location: "Singapadu, Gianyar, Bali",
     duration: "Morning session (08:00 – 10:00) + Full-day zoo admission",
     type: "Wildlife • Dining Encounter",
@@ -254,7 +254,7 @@ export const baliZooExperiences: Experience[] = [
       BALI_ZOO_IMAGE_ALTS.elephantMudFun,
       BALI_ZOO_IMAGE_ALTS.animalExperience,
     ],
-    alt: "Pengalaman Bali Zoo Elephant Explorer menyusuri jalur hijau Kampung Sumatra",
+    alt: "Bali Zoo Elephant Explorer journey through Kampung Sumatra's green trails",
     location: "Singapadu, Gianyar, Bali",
     duration: "Expedition ride approx. 20 minutes + Full-day zoo admission",
     type: "Wildlife • Elephant Expedition",
@@ -354,7 +354,7 @@ export const baliZooExperiences: Experience[] = [
       BALI_ZOO_IMAGE_ALTS.elephantExplorer,
       BALI_ZOO_IMAGE_ALTS.breakfastOrangutan,
     ],
-    alt: "Aktivitas mandikan gajah Bali Zoo Elephant Mud Fun di kolam lumpur alami",
+    alt: "Bali Zoo Elephant Mud Fun experience in a natural mud pool",
     location: "Singapadu, Gianyar, Bali",
     duration: "Half-day program (approx. 4.5 hours) + Full-day zoo admission",
     type: "Wildlife • Mud Spa & Bathing",

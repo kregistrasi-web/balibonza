@@ -18,7 +18,7 @@ export const baliAdventureWaterProducts: AdventureWaterProduct[] = [
     title: "Bali Lazy River Tubing",
     category: "Bali Adventure Experiences",
     image: atvRiverSplashImg,
-    alt: "Aktivitas Bali Lazy River Tubing menyusuri sungai jernih di tengah alam Ubud",
+    alt: "Bali Lazy River Tubing through a clear river surrounded by Ubud's tropical landscape",
     short: "A relaxed river tubing experience surrounded by Bali's tropical landscape.",
   },
   {

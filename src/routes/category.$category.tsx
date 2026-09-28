@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useState } from "react";
 import zooImage from "@/assets/images/bali_zoo_capybara_1789048952498.jpg";
 import safariImage from "@/assets/images/bali_safari_tram_1789049772966.jpg";
 import { categories, experiences } from "@/data/experiences";
@@ -68,13 +69,20 @@ export const Route = createFileRoute("/category/$category")({
 function CategoryPage() {
   const { category, products } = Route.useLoaderData();
   const isWildlifeCategory = category.slug === "wildlife";
+  const [selectedWildlifeSection, setSelectedWildlifeSection] = useState<"zoo" | "safari" | null>(
+    null,
+  );
 
   const wildlifeGroups = wildlifeSubcategories.map((subcategory) => ({
     ...subcategory,
     products: products.filter((product) => product.subcategory === subcategory.subcategory),
   }));
   const zooGroups = wildlifeGroups.filter((group) => group.subcategory.startsWith("bali-zoo-"));
-  const safariGroups = wildlifeGroups.filter((group) => group.subcategory !== "bali-zoo-general");
+  const safariGroups = wildlifeGroups.filter(
+    (group) => !group.subcategory.startsWith("bali-zoo-"),
+  );
+  const zooProductCount = zooGroups.reduce((total, group) => total + group.products.length, 0);
+  const safariProductCount = safariGroups.reduce((total, group) => total + group.products.length, 0);
 
   const renderProductGroup = (group: (typeof wildlifeGroups)[number]) => (
     <section key={group.title} className="scroll-mt-24">
@@ -132,16 +140,14 @@ function CategoryPage() {
       {isWildlifeCategory ? (
         <>
           <section className="mt-10 grid gap-6 md:grid-cols-2" aria-label="Wildlife experience categories">
-            <a
-              href="#bali-zoo-products"
-              onClick={(event) => {
-                event.preventDefault();
-                document
-                  .getElementById("bali-zoo-products")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
-                window.history.replaceState(null, "", "#bali-zoo-products");
-              }}
-              className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
+            <button
+              type="button"
+              onClick={() => setSelectedWildlifeSection("zoo")}
+              className={`group overflow-hidden rounded-2xl border bg-card shadow-sm transition-all hover:shadow-md ${
+                selectedWildlifeSection === "zoo"
+                  ? "border-primary ring-2 ring-primary/20"
+                  : "border-border"
+              }`}
             >
               <div className="aspect-[16/9] overflow-hidden">
                 <img
@@ -159,18 +165,16 @@ function CategoryPage() {
                 </p>
                 <span className="mt-4 inline-flex font-semibold text-primary">Explore Bali Zoo</span>
               </div>
-            </a>
+            </button>
 
-            <a
-              href="#bali-safari-products"
-              onClick={(event) => {
-                event.preventDefault();
-                document
-                  .getElementById("bali-safari-products")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
-                window.history.replaceState(null, "", "#bali-safari-products");
-              }}
-              className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
+            <button
+              type="button"
+              onClick={() => setSelectedWildlifeSection("safari")}
+              className={`group overflow-hidden rounded-2xl border bg-card shadow-sm transition-all hover:shadow-md ${
+                selectedWildlifeSection === "safari"
+                  ? "border-primary ring-2 ring-primary/20"
+                  : "border-border"
+              }`}
             >
               <div className="aspect-[16/9] overflow-hidden">
                 <img
@@ -190,24 +194,59 @@ function CategoryPage() {
                 </p>
                 <span className="mt-4 inline-flex font-semibold text-primary">Explore Bali Safari</span>
               </div>
-            </a>
+            </button>
           </section>
 
-          <div className="mt-14 space-y-16">
-            <section id="bali-zoo-products" className="scroll-mt-24">
-              <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-                BALI ZOO EXPERIENCES
+          {!selectedWildlifeSection && (
+            <section className="mt-10 rounded-2xl border border-border bg-card p-6 text-center sm:p-8">
+              <h2 className="font-display text-2xl font-semibold">
+                Choose your Bali wildlife experience
               </h2>
-              <div className="mt-8 space-y-14">{zooGroups.map(renderProductGroup)}</div>
+              <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                Select Bali Zoo for interactive animal encounters and family-friendly visits, or
+                choose Bali Safari for guided safari journeys, shows and dining experiences.
+              </p>
+              <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-primary">
+                <span>Family-friendly options</span>
+                <span>Clear IDR pricing</span>
+                <span>WhatsApp booking support</span>
+              </div>
             </section>
+          )}
 
-            <section id="bali-safari-products" className="scroll-mt-24">
-              <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-                BALI SAFARI & MARINE PARK EXPERIENCE
-              </h2>
-              <div className="mt-8 space-y-14">{safariGroups.map(renderProductGroup)}</div>
-            </section>
-          </div>
+          {selectedWildlifeSection && (
+            <div className="mt-14">
+              <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
+                <p className="text-sm font-medium text-muted-foreground">
+                  {selectedWildlifeSection === "zoo"
+                    ? `${zooProductCount} Bali Zoo experiences`
+                    : `${safariProductCount} Bali Safari experiences`}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSelectedWildlifeSection(null)}
+                  className="text-sm font-semibold text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Change category
+                </button>
+              </div>
+              {selectedWildlifeSection === "zoo" ? (
+                <section id="bali-zoo-products" className="scroll-mt-24">
+                  <h2 className="font-display text-3xl font-semibold sm:text-4xl">
+                    BALI ZOO EXPERIENCES
+                  </h2>
+                  <div className="mt-8 space-y-14">{zooGroups.map(renderProductGroup)}</div>
+                </section>
+              ) : (
+                <section id="bali-safari-products" className="scroll-mt-24">
+                  <h2 className="font-display text-3xl font-semibold sm:text-4xl">
+                    BALI SAFARI & MARINE PARK EXPERIENCE
+                  </h2>
+                  <div className="mt-8 space-y-14">{safariGroups.map(renderProductGroup)}</div>
+                </section>
+              )}
+            </div>
+          )}
         </>
       ) : products.length > 0 ? (
         <section className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
