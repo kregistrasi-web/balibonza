@@ -363,7 +363,7 @@ priceNote:
     faq: [
       {
         q: "Do I need a driving licence for a Bali ATV tour?",
-        a: "A licence is not normally required as the ride is on private tracks, but operator policies vary. We confirm the rules for your chosen operator before booking.",
+        a: "Driving licence requirements vary by operator. We confirm the rules for your chosen operator before booking.",
       },
       {
         q: "Can two people share one ATV?",
