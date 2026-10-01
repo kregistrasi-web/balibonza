@@ -375,7 +375,7 @@ priceNote:
       },
       {
         q: "Is hotel pickup included?",
-        a: "Pickup is available in many areas. Availability and any extra cost depend on your location, so we confirm it when you book.",
+        a: "Hotel pickup may be available from selected areas of South Bali and Ubud. Availability, pickup time and any transport surcharge are confirmed when you book.",
       },
     ],
   },
