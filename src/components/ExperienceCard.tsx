@@ -2,6 +2,30 @@ import { Link } from "@tanstack/react-router";
 import type { Experience } from "@/data/experiences";
 import { WhatsAppButton } from "./WhatsAppButton";
 
+const publicExperiencePaths: Record<string, string> = {
+  "bali-atv-ride-adventure": "/bali-atv-adventure",
+  "bali-zoo-park-experience": "/bali-zoo",
+  "bali-safari-marine-park": "/bali-safari-marine-park",
+  "bali-buggy-tour": "/bali-buggy-adventure",
+  "bali-jeep-sunrise-tour-mount-batur": "/bali-jeep-sunrise",
+  "bali-lazy-river-tubing": "/lazy-river-tubing",
+  "ubud-river-tubing-adventure": "/tubing-adventure",
+  "telaga-waja-river-rafting": "/telaga-waja-river-rafting",
+  "jet-ski-ride-bali": "/tanjung-benoa-jet-ski",
+  "parasailing-adventure-bali": "/tanjung-benoa-parasailing",
+  "banana-boat-ride": "/tanjung-benoa-banana-boat",
+  "flying-fish-water-sport": "/tanjung-benoa-flying-fish",
+  "rolling-donut-ride": "/tanjung-benoa-rolling-donut",
+  "flyboard-bali-experience": "/tanjung-benoa-flyboard",
+  "sea-walker-bali": "/tanjung-benoa-sea-walker",
+  "snorkeling-tour-bali": "/tanjung-benoa-snorkeling",
+  "scuba-diving-bali": "/tanjung-benoa-scuba-diving",
+};
+
+function getExperienceLinkPath(exp: Experience) {
+  return publicExperiencePaths[exp.slug] ?? exp.path;
+}
+
 export function ExperienceCard({
   exp,
   priority = false,
@@ -14,7 +38,7 @@ export function ExperienceCard({
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
       <Link
-        to={exp.path}
+        to={getExperienceLinkPath(exp)}
         className={`relative block overflow-hidden ${landscape ? "aspect-video" : "aspect-[4/3]"}`}
       >
         <img
@@ -33,7 +57,7 @@ export function ExperienceCard({
 
       <div className="flex flex-1 flex-col p-5">
         <h3 className="font-display text-xl font-semibold">
-          <Link to={exp.path}>{exp.title}</Link>
+          <Link to={getExperienceLinkPath(exp)}>{exp.title}</Link>
         </h3>
         <p className="mt-2 text-sm text-muted-foreground">{exp.short}</p>
 
@@ -54,7 +78,7 @@ export function ExperienceCard({
 
         <div className="mt-5 flex flex-wrap gap-2 pt-1">
           <Link
-            to={exp.path}
+            to={getExperienceLinkPath(exp)}
             className="inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
           >
             View Experience

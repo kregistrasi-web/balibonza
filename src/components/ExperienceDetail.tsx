@@ -79,12 +79,12 @@ const intentLinkSlugs: Record<string, string[]> = {
 };
 
 const intentLinkPaths: Record<string, string> = {
-  "breakfast-with-orangutan": "/experiences/bali-zoo-breakfast-with-orangutan",
-  "elephant-mud-fun": "/experiences/bali-zoo-elephant-mud-fun",
+  "breakfast-with-orangutan": "/bali-zoo/breakfast-with-orangutan",
+  "elephant-mud-fun": "/bali-zoo/elephant-mud-fun",
   "breakfast-with-orangutan-brunch-with-capybara":
-    "/experiences/bali-zoo-breakfast-with-orangutan-and-brunch-with-capybara",
+    "/bali-zoo/breakfast-with-orangutan-brunch-with-capybara",
   "breakfast-with-orangutan-elephant-mud-fun":
-    "/experiences/bali-zoo-breakfast-with-orangutan-and-elephant-mud-fun",
+    "/bali-zoo/breakfast-with-orangutan-elephant-mud-fun",
 };
 
 export function ExperienceDetail({

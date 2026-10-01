@@ -807,7 +807,7 @@ export const categories = [
       "Bali Jeep Sunrise Tour – Mount Batur",
       "Mount Batur Sunrise Hiking",
     ],
-    to: "/experiences/bali-atv-ride-adventure",
+    to: "/bali-atv-adventure",
   },
   {
     id: "rafting-river-adventures",
@@ -838,7 +838,7 @@ export const categories = [
       "Snorkeling Tour Bali",
       "Scuba Diving Bali",
     ],
-    to: "/experiences/jet-ski-ride-bali",
+    to: "/tanjung-benoa-jet-ski",
   },
   {
     id: "wildlife-animal",
@@ -850,7 +850,7 @@ export const categories = [
       "Bali Zoo Park Experience",
       "Bali Wildlife & Animal Encounters",
     ],
-    to: "/experiences/bali-safari-marine-park",
+    to: "/bali-safari-marine-park",
   },
   {
     id: "island-cultural",
