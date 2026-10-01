@@ -11,7 +11,7 @@ function absoluteUrl(path: string) {
 }
 
 export function experienceHead(exp: Experience, canonicalPath?: string) {
-  const url = absoluteUrl(exp.path);
+  const url = absoluteUrl(canonicalPath ?? exp.path);
   const homeUrl = siteConfig.url;
   const experiencesUrl = absoluteUrl("/experiences");
   const safariLandingUrl = absoluteUrl("/bali-safari-marine-park");
