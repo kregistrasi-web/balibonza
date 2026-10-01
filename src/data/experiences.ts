@@ -312,7 +312,7 @@ export const experiences: Experience[] = [
     ],
     alt: "Bali ATV Ride Adventure through muddy tracks and caves in Ubud",
     location: "Ubud area, Bali",
-    duration: "Approx. 1,5 hours riding (confirm on booking)",
+    duration: "Approximately 1.5 hours of riding (confirm on booking)",
     type: "Adventure • Off-road",
     suitableFor: "Couples, friends, families with teens",
     price: "Single Ride : Rp700.000 | Tandem Ride : Rp1.200.000",
