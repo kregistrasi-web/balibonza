@@ -352,7 +352,7 @@ priceNote:
       "Hotel pickup may be available from selected areas of South Bali and Ubud. Share your hotel name on WhatsApp and we will confirm availability, pickup time and any transport surcharge.",
     requirements: [
       "Minimum age requirements vary by operator and should be confirmed at booking.",
-      "Riders should be in reasonable physical condition",
+      "Riders should be comfortable with an active off-road experience and in reasonable physical condition.",
       "Closed shoes recommended",
       "Bring a change of clothes; tracks can be muddy",
     ],
