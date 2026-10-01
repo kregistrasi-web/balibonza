@@ -6,6 +6,6 @@ import { experienceHead } from "@/lib/seo";
 const exp = getExperience("bali-atv-adventure");
 
 export const Route = createFileRoute("/bali-atv-adventure")({
-  head: () => experienceHead(exp),
+  head: () => experienceHead(exp, "/bali-atv-adventure"),
   component: () => <ExperienceDetail exp={exp} />,
 });

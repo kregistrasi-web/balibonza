@@ -10,7 +10,7 @@ function absoluteUrl(path: string) {
   return `${siteConfig.url}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
-export function experienceHead(exp: Experience) {
+export function experienceHead(exp: Experience, canonicalPath?: string) {
   const url = absoluteUrl(exp.path);
   const homeUrl = siteConfig.url;
   const experiencesUrl = absoluteUrl("/experiences");
@@ -202,7 +202,7 @@ export function experienceHead(exp: Experience) {
 
   return {
     meta: metaList,
-    links: [{ rel: "canonical", href: url }],
+    links: [{ rel: "canonical", href: absoluteUrl(canonicalPath ?? exp.path) }],
     scripts: [
       {
         type: "application/ld+json",
