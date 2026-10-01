@@ -299,7 +299,7 @@ export const experiences: Experience[] = [
     title: "Bali ATV Ride Adventure",
     h1: "Bali ATV Ride Adventure",
     short:
-      "Ride a quad through jungle tracks, rice fields and village trails on one of Bali's most popular adventures.",
+      "Ride a quad through jungle tracks, rice fields and village trails for an exciting Bali off-road experience.",
     metaTitle: "Bali ATV Ride Adventure | Jungle ATV Ride | BaliBonza",
     metaDescription:
       "Book a Bali ATV ride adventure through jungle tracks and rice fields. Single or tandem quad rides arranged by BaliBonza, with pickup available.",
@@ -322,7 +322,7 @@ priceNote:
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book the Bali ATV Adventure.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
     intro: [
-      "A Bali ATV tour is the easiest way to swap the beach for real Bali countryside. You ride an all-terrain quad along dirt tracks that cut between rice fields, plantations and village lanes, with a guide leading the group the whole way.",
+      "A Bali ATV tour is a fun way to swap the beach for real Bali countryside. You ride an all-terrain quad along dirt tracks that cut between rice fields, plantations and village lanes, with a guide leading the group the whole way.",
       "BaliBonza arranges your Bali ATV ride with trusted local operators, handles the transport, and confirms availability over WhatsApp before you pay anything.",
     ],
     highlights: [

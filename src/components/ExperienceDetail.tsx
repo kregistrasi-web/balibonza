@@ -337,12 +337,16 @@ export function ExperienceDetail({
                 <p className="font-medium text-foreground">
                   {exp.categoryId === "rafting-river-adventures"
                     ? "Trusted Local Operators"
-                    : "Official Ticket Vouchers"}
+                    : exp.slug === "bali-atv-ride-adventure"
+                      ? "Direct Booking Assistance"
+                      : "Official Ticket Vouchers"}
                 </p>
                 <p className="text-muted-foreground">
                   {exp.categoryId === "rafting-river-adventures"
                     ? "We confirm the selected rafting operator, activity package and availability before you book."
-                    : "Direct voucher confirmation from official operators, guaranteed entry upon arrival."}
+                    : exp.slug === "bali-atv-ride-adventure"
+                      ? "Booking confirmation is provided after your availability and booking details are confirmed."
+                      : "Direct voucher confirmation from official operators, guaranteed entry upon arrival."}
                 </p>
               </div>
               <div className="space-y-1">
