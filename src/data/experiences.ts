@@ -351,7 +351,7 @@ priceNote:
     pickup:
       "Hotel pickup can be arranged for most areas of South Bali and Ubud. Share your hotel name on WhatsApp and we will confirm the pickup time and any transport surcharge.",
     requirements: [
-      "Minimum age policy applies — confirmed with the operator at booking",
+      "Minimum age requirements vary by operator and should be confirmed at booking.",
       "Riders should be in reasonable physical condition",
       "Closed shoes recommended",
       "Bring a change of clothes; tracks can be muddy",
