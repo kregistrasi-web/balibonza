@@ -317,7 +317,7 @@ export const experiences: Experience[] = [
     suitableFor: "Couples, friends, families with teens",
     price: "Single Ride : Rp700.000 | Tandem Ride : Rp1.200.000",
 priceNote:
-  "Final price confirmed for your date and group size. Final payment is charged in IDR. Foreign currency estimates are for reference only and may vary with the daily exchange rate.",
+  "Final payment is charged in IDR.",
     categoryId: "adventure-off-road",
     whatsappText:
       "Hello BaliBonza,\n\nI would like to book the Bali ATV Adventure.\n\nPlease send me availability, total price, and hotel pickup options.\n\nThank you.",
